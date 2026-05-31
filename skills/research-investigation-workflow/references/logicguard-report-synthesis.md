@@ -97,7 +97,7 @@ limitation or rebuttal
 
 Each important factual claim, official-claim report, analytic inference, limitation, and future hypothesis must have either an inline citation marker or an explicit note that it is uncited framing/background. Do not leave a key paragraph supported only by a final bibliography.
 
-For policy-rumor or current-event writing, the matrix must keep official action, jurisdiction/scope, implementation evidence, fiscal or motive context, expert commentary, and forecast separate. Expert commentary or fiscal pressure can support plausibility or motive, but cannot support a claim that implementation has occurred.
+For all substantive investigation writing, the matrix must keep claim origin, direct facts, source statements, scope limits, execution or outcome evidence, context or motive evidence, expert interpretation, counter or limiting evidence, and forecast triggers separate. Interpretation or motive context can support plausibility, but cannot support a claim that execution, causality, outcome, or broader scope has been established.
 
 ## Section And Paragraph Blueprint
 
@@ -122,12 +122,24 @@ paragraph job
 claim sentence
 support sentence(s)
 limitation or counter sentence when relevant
+who says it or which source role supports it
 source markers
 claim strength label
 source-role label when ambiguity matters
 ```
 
 This blueprint is the bridge between LogicGuard modeling and readable prose. If it is missing for a core section, report the draft as under-modeled.
+
+Before drafting each core paragraph, know:
+
+```text
+what this paragraph proves
+which sentence is direct fact
+which sentence is a source or actor claim
+which sentence is expert interpretation
+which sentence is the report's inference
+which [S#] marker supports or limits each sentence
+```
 
 ## Synthesis
 
@@ -168,10 +180,12 @@ Audit final prose for:
 - source existence written as source support.
 - important claim without inline citation marker;
 - official claim written as independent fact;
-- expert commentary, fiscal pressure, or motive context written as implementation evidence;
-- local pilot action written as national rollout evidence without a bridging source;
+- interpretation, context, or motive evidence written as execution, causality, outcome, or broader-scope evidence;
+- local or scope-limited evidence written as broader-scope evidence without a bridging source;
 - limiting source omitted from a paragraph that relies on a contested claim;
 - section order that lacks a clear reasoning handoff.
+- internal Guard-family tool names leaked into the reader-facing main report when no methods appendix was requested;
+- missing "who says this" wording for paragraphs that combine source claims, evidence, and inference.
 
 Run this audit after the last material prose edit. If the report changes after audit, rerun the audit or mark the closure evidence stale.
 

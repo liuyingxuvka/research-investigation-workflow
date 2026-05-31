@@ -10,7 +10,7 @@
 </p>
 <!-- README HERO END -->
 
-- **Current version:** `v0.1.1`
+- **Current version:** `v0.1.2`
 - **Surface:** Codex skill and reference workflow, not a standalone app
 - **Guard stack:** TraceGuard, LogicGuard, FlowGuard, and a local Research Investigation History Ledger
 - **Language note:** English comes first; the second half is a Chinese mirror.
@@ -18,6 +18,8 @@
 Research Investigation Workflow is a Codex skill for planning and running source-backed investigation work over multiple rounds. It coordinates existing Guard-family workflows instead of inventing a new reasoning engine: TraceGuard reconstructs evidence-backed timelines and storylines, LogicGuard preserves sources and checks whether claims are structurally supported, and FlowGuard keeps the process ordered, current, and honestly closed.
 
 The core rule is simple: investigation depth is measured by pursued logic leads and evidence chains, not by source counts or shallow/medium/deep modes.
+
+Version `v0.1.2` generalizes the first real-run repair: every substantive investigation now uses a general evidence-role map and minimum investigation rounds for original facts, counter/limiting evidence, impact or execution, stakeholder views, and future triggers. Incomplete rounds force qualified or staged wording instead of a "complete report" claim.
 
 ## Why It Exists
 
@@ -67,6 +69,8 @@ The workflow continues until the requested claim strength is supported, importan
 - readable findings first, appendix material second;
 - inline citation markers for important claims;
 - source roles such as event fact, official claim, independent report, limiting evidence, expert analysis, historical background, or hypothesis;
+- visible "who says this" wording when a paragraph mixes direct facts, source claims, interpretation, and the report's inference;
+- completion or downgrade status for original-fact, counter/limiting, impact/execution, stakeholder, and future-trigger rounds;
 - a logic-lead coverage table;
 - an event/evidence timeline or storyline when relevant;
 - a claim-to-source matrix;
@@ -123,13 +127,15 @@ CHANGELOG.md                            Release history
 
 # Research Investigation Workflow 中文镜像
 
-- **当前版本：** `v0.1.1`
+- **当前版本：** `v0.1.2`
 - **形态：** Codex skill 和 reference workflow，不是独立 app
 - **Guard stack：** TraceGuard、LogicGuard、FlowGuard 和本地 Research Investigation History Ledger
 
 Research Investigation Workflow 是一个用于多轮调查研究的 Codex skill。它不新造一套推理引擎，而是编排已有 Guard-family 工作流：TraceGuard 负责把证据重建成时间线和故事线，LogicGuard 负责保存来源并检查结论是否被结构化支持，FlowGuard 负责让流程顺序、证据新鲜度和完成声明可审计。
 
 核心规则是：调查深度不按来源数量或浅/中/深档位衡量，而按关键逻辑线索和证据链是否被追踪、限制、反驳、补证或降级来衡量。
+
+`v0.1.2` 把第一次真实使用后的修补从“政策传闻”泛化为通用规则：实质性调查都要先做证据角色图，并至少检查原始事实、反证/限制、影响或执行、利益相关方和未来触发点五轮。没有完成的轮次必须让报告降级为阶段性结论，而不能写成完整调查报告。
 
 ## 为什么需要它
 
@@ -179,6 +185,8 @@ history preflight
 - 先给可读主报告，再给 appendix；
 - 重要 claim 有正文引用标记；
 - 标明来源角色，例如 event fact、official claim、independent report、limiting evidence、expert analysis、historical background 或 hypothesis；
+- 段落里混合事实、来源说法、解释和推论时，要能看出“是谁说的”和“我们推到哪里为止”；
+- 标明原始事实、反证/限制、影响/执行、利益相关方和未来触发点五轮是否完成，未完成时降级闭合；
 - logic-lead coverage table；
 - 相关的事件/证据时间线或故事线；
 - claim-to-source matrix；

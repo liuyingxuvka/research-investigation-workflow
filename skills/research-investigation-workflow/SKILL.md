@@ -25,9 +25,10 @@ Use this skill to run a deep, evidence-led investigation from user goal intake t
 2. Search the Research Investigation History Ledger before new evidence work.
 3. Classify the evidence-source policy: public, local, internal, permission-gated, and hypothesis/inference.
 4. Build an initial logic-lead map before broad writing: actors, motives, event facts, outcomes, contradictions, limiting evidence, follow-up consequences, and alternative explanations.
-5. For policy rumors or current-event "new clue" requests, build a role ladder before writing: trigger claim, official action, jurisdiction/scope, implementation evidence, market/execution data, fiscal or motive context, expert commentary, and future hypothesis. Do not collapse these roles into one storyline.
-6. Check current TraceGuard, LogicGuard, and FlowGuard command surfaces before claiming a concrete command path is valid.
-7. Use FlowGuard for multi-stage freshness and closure when the investigation has more than a short single-pass answer.
+5. Build a general evidence-role map before writing: claim or rumor origin, direct/original facts, source statements, scope boundaries, execution or outcome evidence, context or motive evidence, expert interpretation, counter/limiting evidence, and future trigger conditions. Do not collapse these roles into one storyline.
+6. For substantive reports, run the minimum investigation rounds: original-fact round, counter/limiting round, impact/execution round, stakeholder round, and future-trigger round. If a round cannot be completed, downgrade the closure and claim strength.
+7. Check current TraceGuard, LogicGuard, and FlowGuard command surfaces before claiming a concrete command path is valid.
+8. Use FlowGuard for multi-stage freshness and closure when the investigation has more than a short single-pass answer.
 
 ## Route
 
@@ -44,15 +45,19 @@ Use `references/evidence-source-policy.md` before searching or using non-public 
 Run the investigation as:
 
 ```text
-history preflight -> goal intake -> evidence policy -> logic-lead map -> search/save sources -> TraceGuard lead/event/evidence-chain model -> gap-driven search loop -> explicit source promotion -> LogicGuard claim-to-source matrix -> section/paragraph blueprint -> citation-grounded report -> LogicGuard final claim audit -> FlowGuard closure -> final delivery -> history postflight
+history preflight -> goal intake -> evidence policy -> logic-lead map -> evidence-role map -> minimum investigation rounds -> search/save sources -> TraceGuard lead/event/evidence-chain model -> gap-driven search loop -> explicit source promotion -> LogicGuard claim-to-source matrix -> section/paragraph blueprint -> citation-grounded report -> LogicGuard final claim audit -> reader-report cleanup -> FlowGuard closure -> final delivery -> history postflight
 ```
 
 Continue the loop until the requested conclusion strength is supported, the budget is reached, critical evidence is inaccessible, remaining gaps are accepted, or claims are downgraded to match evidence.
 
 ## Final Delivery
 
-Deliver a readable main report first, then appendix material. Long reports need a brief reader route near the start so the reader knows which question is answered first, why sections follow in that order, and where limitations appear. The main report must include inline citation markers for important claims and make source roles visible: event fact, official claim, independent report, limiting evidence, expert analysis, historical background, hypothesis, or forecast. Include findings, confidence/evidence levels, timeline or storyline, logic-lead coverage, hypotheses, assumptions, unresolved gaps, source appendix, TraceGuard summary, LogicGuard audit summary, FlowGuard closure summary, and History Ledger postflight status as appropriate.
+Deliver a readable main report first, then appendix material. Long reports need a brief reader route near the start so the reader knows which question is answered first, why sections follow in that order, and where limitations appear. The reader-facing main report must not expose internal Guard-family terms such as `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` unless the user explicitly asks for a methods appendix. Use ordinary language instead: event chain, evidence chain, argument structure, process check, and run notes. Keep internal workflow summaries in the appendix or local run record.
 
-For negative or partial findings, name the missing implementation signals that were checked or not found. Examples: implementing rule, jurisdiction list, tax rate or standard, effective date, enforcement guidance, budget treatment, execution data, or later market outcome evidence.
+The main report must include inline citation markers for important claims and make source roles visible: event fact, source claim, independent report, limiting evidence, expert analysis, historical background, hypothesis, or forecast. Include findings, confidence/evidence levels, timeline or storyline, logic-lead coverage, hypotheses, assumptions, unresolved gaps, source appendix, and appendix-level Guard-family summaries as appropriate.
+
+For negative or partial findings, name the missing evidence roles or concrete signals that were checked or not found. Examples: direct primary record, scope-defining document, implementation or execution record, outcome data, affected-stakeholder evidence, limiting source, or observable future trigger.
+
+If the fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, do not label the output a complete investigation report. Deliver an initial investigation, staged report, qualified finding, or downgraded conclusion that matches the evidence.
 
 If closure is partial or blocked, say exactly what is missing and which claim strength remains supported.

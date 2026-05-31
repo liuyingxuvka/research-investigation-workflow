@@ -1,15 +1,15 @@
 ## 1. Research Workflow Contract
 
 - [x] 1.1 Update `research-investigation-workflow/SKILL.md` to make deep logic-lead investigation the default and remove any implication that source count defines depth.
-- [x] 1.2 Update `references/workflow.md` with logic-lead map, evidence-chain status, gap-driven follow-up, and pre-write report blueprint stages.
-- [x] 1.3 Update `references/output-contract.md` with inline citation markers, source-role labels, claim-to-source matrix, section/paragraph blueprint expectations, and closure statement requirements.
-- [x] 1.4 Update `references/history-ledger.md` so run history records reusable logic leads and workflow lessons without storing factual proof or private report content.
+- [x] 1.2 Replace the policy-specific role ladder with a general evidence-role map and five minimum investigation rounds in `references/workflow.md`.
+- [x] 1.3 Update `references/output-contract.md` with inline citation markers, source-role labels, claim-to-source matrix, section/paragraph blueprint expectations, reader-report cleanup, downgrade wording, and closure statement requirements.
+- [x] 1.4 Update `references/history-ledger.md` so run history records reusable logic leads, evidence-role maps, minimum-round status, and workflow lessons without storing factual proof or private report content.
 
 ## 2. Guard-Family References
 
-- [x] 2.1 Update `references/traceguard-loop.md` so TraceGuard handoff includes lead maps, event chains, explanation chains, evidence-chain state, contradictions, gaps, and safe wording.
-- [x] 2.2 Update `references/logicguard-report-synthesis.md` so LogicGuard requires claim-to-source matrices, section/paragraph blueprints, inline citation markers, source roles, and final prose audit after the last material edit.
-- [x] 2.3 Update `references/flowguard-closure.md` in this skill only, using FlowGuard for process/freshness/privacy closure without changing the FlowGuard skill itself.
+- [x] 2.1 Update `references/traceguard-loop.md` so TraceGuard handoff includes lead maps, event chains, explanation chains, evidence-role state, contradictions, gaps, and safe wording.
+- [x] 2.2 Update `references/logicguard-report-synthesis.md` so LogicGuard requires claim-to-source matrices, section/paragraph blueprints, who-says-it sentence roles, inline citation markers, source roles, and final prose audit after the last material edit.
+- [x] 2.3 Update `references/flowguard-closure.md` in this skill only, using FlowGuard for process/freshness/privacy/reader-cleanup closure without changing the FlowGuard skill itself.
 
 ## 3. Direct Skill Sync
 

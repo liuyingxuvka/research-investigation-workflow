@@ -73,24 +73,25 @@ Typical lead classes:
 
 Depth is judged by lead coverage and evidence-chain status, not by the number of sources collected.
 
-## Stage 3A: Policy-Rumor And Current-Event Ladder
+## Stage 3A: General Evidence-Role Map
 
-When the user asks about a possible new policy, regulatory event, market rumor, or "new clue", split the apparent event into evidence roles before writing:
+For every substantive investigation, split the apparent story into evidence roles before writing:
 
 ```text
-trigger claim or rumor
-official action actually found
-jurisdiction and population in scope
-implementation evidence: rule, tax rate, effective date, agency guidance, city list, budget treatment, enforcement data
-market or execution data
-fiscal, political, or actor-motive context
-expert or media interpretation
-future hypothesis and observable triggers
+claim origin or rumor source
+direct/original fact record
+source statement or actor claim
+scope and boundary evidence
+execution, outcome, or impact evidence
+context, motive, or constraint evidence
+expert, media, or analyst interpretation
+counter, limiting, or non-occurrence evidence
+future hypothesis and observable trigger conditions
 ```
 
-Each role needs a status and source markers. Fiscal pressure, actor motive, expert commentary, or market fear can explain why a policy is plausible, but they are not implementation evidence. A local pilot action is not national rollout evidence unless a national source creates that link.
+Each role needs a status, source markers, and claim-use label. Context, motive, expert commentary, or market concern can explain why a claim is plausible, but they do not prove execution, outcome, causality, or broader scope unless a bridging source establishes that link.
 
-For a negative or partial finding, record which implementation signals were searched, absent, access-gated, or not applicable. Search failure alone is not proof of absence unless the searched source set is strong enough for that claim.
+For a negative or partial finding, record which evidence roles or concrete signals were searched, absent, access-gated, or not applicable. Search failure alone is not proof of absence unless the searched source set is strong enough for that claim.
 
 ## Stage 4: First-Round Search
 
@@ -148,9 +149,25 @@ missing warrant or explanation -> LogicGuard model gap
 conflicting evidence -> TraceGuard contradiction review
 one-sided evidence -> counter/limiting source search
 claimed outcome without execution evidence -> execution follow-up search
+missing stakeholder view -> stakeholder search
+future-impact claim -> observable trigger search
 ```
 
 Loop through search, save, extract, rebuild, evaluate, and write back gaps until the claim strength is supported or downgraded.
+
+## Stage 7A: Minimum Investigation Rounds
+
+For any report that claims to be detailed, complete, or comprehensive, run these rounds before final prose:
+
+```text
+official/original fact round: what happened, according to primary or closest available records
+counter/limiting round: what weakens, narrows, contradicts, or fails to support the claim
+impact/execution round: what actual effects, implementation, outcomes, or market/process changes can be observed
+stakeholder round: what affected actors, institutions, experts, users, residents, companies, or opponents say or do
+future-trigger round: what later evidence would confirm, falsify, or materially change the current conclusion
+```
+
+Do not treat these as source-count quotas. A round is complete only when its lead status is recorded as supported, contradicted, access-gap, not-supported, or deliberately downgraded. If an important round is incomplete, label the output as an initial investigation, staged report, qualified finding, or downgraded conclusion.
 
 ## Stage 8: Explicit LogicGuard Promotion
 
@@ -217,9 +234,19 @@ Write final prose from the story plan and claim-to-source matrix. Each core para
 
 Audit final prose for overclaiming, missing warrant, hidden assumption, unsupported causality, scope mismatch, unanswered rebuttal, missing limitation, and candidate claims written as confirmed.
 
-Also audit for missing inline citations, source-role confusion, unsupported synthesis, and section transitions that leave the reasoning path unclear.
+Also audit for missing inline citations, source-role confusion, unsupported synthesis, missing counter/limiting evidence, official or actor claims written as independent facts, inferences written as facts, and section transitions that leave the reasoning path unclear.
 
 If the audit fails, search more, weaken the claim, or move it to hypothesis/unresolved.
+
+## Stage 13A: Reader-Report Cleanup
+
+Before final delivery, clean the reader-facing main report:
+
+- remove internal Guard-family terms such as `TraceGuard`, `LogicGuard`, `FlowGuard`, and `History Ledger` unless the user explicitly asked for a methods appendix;
+- replace them with ordinary language such as event chain, evidence chain, argument structure, process check, source appendix, or run notes;
+- keep method details, command evidence, and run bookkeeping in the appendix or local ledger;
+- verify each core paragraph says who is speaking or what type of source supports the point when that matters;
+- verify the section order follows the reader route rather than a tool log.
 
 ## Stage 14: FlowGuard Closure
 

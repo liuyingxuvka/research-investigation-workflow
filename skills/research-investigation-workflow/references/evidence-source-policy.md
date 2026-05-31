@@ -65,28 +65,31 @@ Rules:
 - Evidence is not an event by itself.
 - An event is not a trace by itself.
 - A trace is not a final claim by itself.
-- Motive, fiscal pressure, expert commentary, and market concern are context or interpretation unless the model links them to concrete implementation or outcome evidence.
-- A local pilot, local exemption, or local enforcement notice is not national implementation evidence unless a national source or implementing rule creates that link.
+- Motive, incentives, constraints, expert commentary, and market concern are context or interpretation unless the model links them to concrete execution, causality, or outcome evidence.
+- Local, scope-limited, or actor-specific evidence does not support broader-scope claims unless a bridging source creates that link.
 - Confidence language must follow evidence strength and claim-boundary review.
 - Contradictions must stay visible until resolved or explicitly scoped.
 
-## Policy And Current-Event Source Roles
+## General Evidence Roles
 
-For policy rumors, regulation changes, market-moving "new clues", and current-event investigations, classify each important source by role:
+For substantive investigations, classify each important source by role:
 
 ```text
-trigger claim or rumor
-official action
-jurisdiction/scope
-implementation evidence
-market or execution data
-fiscal or motive context
-expert commentary
+claim origin or rumor source
+direct/original fact record
+source statement or actor claim
+scope or boundary evidence
+execution, outcome, or impact evidence
+context, motive, or constraint evidence
+expert, media, or analyst interpretation
+counter, limiting, or non-occurrence evidence
 historical background
 future hypothesis trigger
 ```
 
-Implementation evidence includes items such as implementing rules, effective dates, rates or standards, covered population, city or agency lists, enforcement guidance, budget treatment, and observed execution. If those signals are absent, state which were checked before writing a negative or partial finding.
+Execution or outcome evidence includes items such as implementation records, observed behavior, transaction or usage data, follow-up decisions, affected-stakeholder evidence, enforcement or operating records, measurement data, or later outcome records. If key signals are absent, state which were checked before writing a negative or partial finding.
+
+Counter or limiting evidence includes contrary sources, failed searches with strong coverage, scope limits, non-occurrence records, affected-party silence that is itself evidenced, methodological caveats, and sources showing that an interpretation remains only a hypothesis.
 
 ## Source Freshness
 

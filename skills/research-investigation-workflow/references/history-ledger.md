@@ -76,16 +76,23 @@ traceguard:
     - id: lead-id
       status: confirmed-or-gap-or-hypothesis
       reusable_search_direction: ""
-  policy_or_current_event_ladder:
-    trigger_claim: ""
-    official_action: ""
-    jurisdiction_scope: ""
-    implementation_signals_checked: []
-    missing_implementation_signals: []
-    market_or_execution_data: []
-    fiscal_or_motive_context: []
-    expert_commentary: []
-    future_hypothesis_triggers: []
+  evidence_role_map:
+    claim_origin: ""
+    direct_or_original_facts: []
+    source_statements: []
+    scope_boundaries: []
+    execution_or_outcome_evidence: []
+    context_or_motive_evidence: []
+    expert_or_analyst_interpretation: []
+    counter_or_limiting_evidence: []
+    future_trigger_conditions: []
+  minimum_rounds:
+    original_fact: complete-or-gap-or-not-run
+    counter_limiting: complete-or-gap-or-not-run
+    impact_execution: complete-or-gap-or-not-run
+    stakeholder: complete-or-gap-or-not-run
+    future_trigger: complete-or-gap-or-not-run
+    downgrade_reason: ""
   important_gaps: []
 logicguard:
   source_library_root: path-or-null
@@ -168,7 +175,7 @@ At the end of a run:
 2. Update `index.yaml` with topic, date, status, privacy label, report type, artifact pointers, and reusable keywords.
 3. Record useful and failed search directions.
 4. Record reusable logic leads and whether support, limiting evidence, and execution evidence were found.
-5. For policy rumors or current-event investigations, record the reusable evidence-role ladder, implementation signals checked, missing implementation signals, and watchlist triggers.
+5. Record the reusable evidence-role map, minimum investigation round status, checked missing signals, and watchlist triggers.
 6. Record unresolved gaps.
 7. Record requested versus delivered conclusion strength.
 8. Record inline citation coverage and claim-to-source matrix pointer when available.

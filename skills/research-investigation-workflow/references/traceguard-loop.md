@@ -12,7 +12,7 @@ What story does the evidence support?
 
 It does not write final truth claims. It does not replace LogicGuard final claim audit. It should separate event facts from explanation leads: evidence that an event happened is not automatically evidence for motive, outcome, or future impact.
 
-For policy rumors or current-event "new clue" work, TraceGuard should also separate official action, jurisdiction/scope, implementation evidence, market or execution data, fiscal/motive context, expert commentary, and future hypothesis. Context can explain why a policy is plausible, but it does not validate rollout or execution.
+For substantive investigations, TraceGuard should also separate claim origin, direct facts, source statements, scope boundaries, execution or outcome evidence, context or motive evidence, interpretation, counter or limiting evidence, and future triggers. Context can explain why a claim is plausible, but it does not validate execution, causality, outcome, or broader scope.
 
 ## Current Command Surface Check
 
@@ -70,6 +70,8 @@ Before handing material to LogicGuard, produce or maintain a compact handoff:
 lead id
 lead question or hypothesis
 event facts involved
+explanation hypothesis involved
+follow-up impact or outcome claim
 supporting evidence ids
 counter or support-limiting evidence ids
 missing evidence
@@ -82,7 +84,8 @@ next search direction
 Recommended tables:
 
 - event chain: date, event, source, evidence status, claim boundary;
-- policy/action ladder when applicable: trigger claim, official action, jurisdiction/scope, implementation signal, fiscal/context evidence, expert commentary, future trigger;
+- three-layer lead table: event fact, explanation hypothesis, follow-up impact or outcome;
+- evidence-role table: claim origin, direct fact, source statement, scope, execution/outcome, context/motive, interpretation, counter/limiting evidence, future trigger;
 - explanation chain: candidate explanation, supporting evidence, limiting evidence, current status;
 - execution chain: announced outcome, implementation evidence, missing execution proof;
 - contradiction/gap table: conflict or gap, affected lead, needed evidence, action.
@@ -102,7 +105,7 @@ For each important gap, decide:
 - Is there only positive/supporting evidence, requiring a counter or limiting-source search?
 - Is this an outcome claim that requires later execution evidence?
 - Is this a future-impact claim that needs observable trigger conditions?
-- Is this a policy implementation claim that requires implementing rule, covered jurisdiction, effective date, rate/standard, enforcement guidance, budget treatment, or execution data?
+- Does this claim require a concrete execution, outcome, causal, scope, or stakeholder signal that is still missing?
 
 After new evidence:
 

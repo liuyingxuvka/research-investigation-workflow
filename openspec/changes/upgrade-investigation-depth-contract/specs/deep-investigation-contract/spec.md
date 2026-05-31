@@ -14,6 +14,20 @@ The skill SHALL create or maintain a logic-lead map before final prose. Each imp
 - **WHEN** a motive, cause, actor-interest, outcome, contradiction, or future-impact lead lacks support or has only one-sided support
 - **THEN** the lead remains a gap, hypothesis, or downgraded claim rather than being written as a finding
 
+### Requirement: Minimum investigation rounds
+Substantive investigation reports SHALL run or explicitly downgrade five investigation rounds before final prose: official/original fact, counter or limiting evidence, impact or execution, stakeholder perspective, and future trigger conditions. The workflow MUST NOT treat these rounds as source-count quotas.
+
+#### Scenario: Stakeholder and future-trigger rounds are incomplete
+- **WHEN** an investigation has direct fact evidence but has not checked stakeholder positions or future trigger conditions
+- **THEN** the output is labeled as an initial investigation, staged report, qualified finding, or downgraded conclusion rather than a complete investigation report
+
+### Requirement: General evidence-role map
+The workflow SHALL maintain a general evidence-role map for important claims, including claim origin, direct/original facts, source statements, scope boundaries, execution or outcome evidence, context or motive evidence, expert or analyst interpretation, counter or limiting evidence, and future trigger conditions.
+
+#### Scenario: Interpretation is used as if it were execution evidence
+- **WHEN** expert commentary, motive context, or market concern supports plausibility but not execution, causality, outcome, or broader scope
+- **THEN** the report labels it as interpretation or context and does not write it as established execution evidence
+
 ### Requirement: TraceGuard evidence-chain handoff
 TraceGuard usage SHALL produce investigation handoff material containing event chains, explanation leads, evidence-chain status, contradictions, gaps, safe wording, and follow-up search directions for important unresolved leads.
 
@@ -27,6 +41,13 @@ LogicGuard usage SHALL require a claim-to-source matrix, section blueprint, para
 #### Scenario: A paragraph combines official claims and limiting evidence
 - **WHEN** report prose states an official outcome claim and a third-party limitation
 - **THEN** the paragraph includes inline citation markers for both source roles and labels the resulting conclusion with the appropriate claim strength
+
+### Requirement: Reader-facing report cleanup
+The workflow SHALL remove internal Guard-family tool names from the reader-facing main report unless the user explicitly requests a methods appendix. Internal workflow evidence MAY remain in appendices or local run records.
+
+#### Scenario: Draft main report includes internal workflow labels
+- **WHEN** final prose includes `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` in the reader-facing main report without a user-requested methods context
+- **THEN** the workflow rewrites those passages into ordinary report language such as event chain, evidence chain, argument structure, process check, source appendix, or run notes
 
 ### Requirement: Final prose audit after last material change
 The workflow SHALL run or perform a LogicGuard final claim audit after the last material report edit. The audit MUST check unsupported claims, missing inline citations, missing warrants, overclaiming, hidden assumptions, unanswered rebuttals, missing limitations, and candidate claims written as findings.

@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.2 - 2026-05-31
+
+General deep-investigation contract repair.
+
+- Replaced the narrow policy/current-event ladder with a general evidence-role map for claim origin, direct facts, source statements, scope, execution/outcome, context/motive, interpretation, counter/limiting evidence, and future triggers.
+- Added mandatory investigation-round guidance for substantive reports: original fact, counter/limiting, impact/execution, stakeholder, and future-trigger rounds.
+- Added reader-facing report cleanup and downgrade rules so incomplete rounds cannot be labeled as complete reports and internal Guard-family terms stay out of the main report.
+- Updated OpenSpec evidence for the generalized upgrade while preserving FlowGuard as a process/freshness/privacy tool only.
+
 ## v0.1.1 - 2026-05-31
 
 Policy-rumor investigation audit hardening.

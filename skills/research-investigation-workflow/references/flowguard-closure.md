@@ -37,8 +37,9 @@ Track these artifacts and versions:
 
 - user goal and evidence-source policy;
 - logic-lead map and current lead statuses;
-- policy-rumor/current-event role ladder when applicable;
-- checked implementation signals and missing-signal list when a rollout, implementation, or negative finding is material;
+- general evidence-role map: claim origin, direct facts, source claims, scope, execution/outcome, context/motive, interpretation, counter/limiting evidence, and future triggers;
+- minimum investigation round status: original-fact, counter/limiting, impact/execution, stakeholder, and future-trigger rounds;
+- checked concrete signals and missing-signal list when execution, outcome, causality, broader scope, or negative findings are material;
 - History Ledger preflight result;
 - TraceGuard case material and model;
 - TraceGuard evaluations, gaps, contradictions, and reports;
@@ -48,6 +49,7 @@ Track these artifacts and versions:
 - LogicGuard section/paragraph blueprint;
 - reader route and section handoffs for long reports;
 - LogicGuard synthesis plan and final audit;
+- reader-facing report cleanup and internal-term leak check;
 - final report and appendix;
 - History Ledger postflight record.
 
@@ -77,14 +79,16 @@ Before final delivery, check:
 6. Were important gaps either searched, downgraded, accepted, or marked blocked?
 7. Were stable sources promoted to LogicGuard explicitly?
 8. Does the final report have inline citation markers for important claims?
-9. For policy or current-event rumors, did the report separate official action, jurisdiction/scope, implementation evidence, context/motive, expert commentary, and forecast?
-10. For negative or partial findings, were missing implementation signals named instead of silently assumed?
-11. Did long reports include a reader route, section handoffs, and paragraph jobs before final prose?
-12. Did LogicGuard audit final claims after final prose changes?
-13. Did new evidence or report edits stale earlier checks?
-14. Are generated reports, case libraries, source libraries, and ledgers local-only or ignored unless explicitly approved for publication?
-15. If a skill source was changed, was the installed skill copy synced and parity checked?
-16. Was the History Ledger postflight written or explicitly blocked?
+9. Did the report separate claim origin, direct facts, source statements, scope limits, execution/outcome evidence, context/motive, interpretation, counter/limiting evidence, and future triggers?
+10. Did the official/original fact, counter/limiting, impact/execution, stakeholder, and future-trigger rounds complete, or was the output downgraded?
+11. For negative or partial findings, were missing evidence roles or concrete signals named instead of silently assumed?
+12. Did long reports include a reader route, section handoffs, and paragraph jobs before final prose?
+13. Did LogicGuard audit final claims after final prose changes?
+14. Did the reader-facing main report avoid internal Guard-family terms unless the user asked for a methods appendix?
+15. Did new evidence or report edits stale earlier checks?
+16. Are generated reports, case libraries, source libraries, and ledgers local-only or ignored unless explicitly approved for publication?
+17. If a skill source was changed, was the installed skill copy synced and parity checked?
+18. Was the History Ledger postflight written or explicitly blocked?
 
 ## Closure Status
 

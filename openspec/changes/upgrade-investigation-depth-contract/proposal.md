@@ -5,10 +5,13 @@ The first real run of `research-investigation-workflow` produced a usable report
 ## What Changes
 
 - Make deep investigation the default behavior for this skill; do not add shallow/medium/deep modes or use source counts as the primary depth measure.
+- Require a minimum set of investigation rounds for substantive reports: official/original fact, counter/limiting, impact/execution, stakeholder, and future-trigger. Incomplete rounds force downgraded closure rather than "complete report" wording.
+- Replace the earlier policy-rumor ladder with a general evidence-role map covering claim origin, direct facts, source statements, scope, execution/outcome, context/motive, interpretation, counter/limiting evidence, and future triggers.
 - Require a logic-lead map for every substantive investigation: each major causal, actor, motive, outcome, contradiction, and future-impact line must have a status, support, counter/support-limiting evidence, open gaps, and report eligibility.
 - Strengthen TraceGuard usage to produce event chains, explanation leads, evidence-chain states, contradiction/gap ledgers, and gap-driven follow-up searches before final writing.
 - Strengthen LogicGuard usage to require claim-to-source matrices, paragraph/section blueprints, inline citation markers, source-role labels, and final prose audit for every important claim.
 - Keep FlowGuard as a process/freshness tool and do not change the FlowGuard skill itself. Add stricter FlowGuard closure rules inside `research-investigation-workflow` for logic-lead coverage, citation completeness, final-audit freshness, and local-output privacy.
+- Clean the reader-facing main report so Guard-family tool names remain in appendices or local run records unless the user asks for methodology detail.
 - Keep investigation outputs local-only by default: reports, TraceGuard cases, LogicGuard source libraries, and History Ledger records must not be committed to the software repository unless the user explicitly requests a sanitized published sample.
 - Sync every upgraded skill surface between installed skill folders and local repository mirrors, and commit only software/skill source changes to the relevant local Git repositories.
 

@@ -17,6 +17,8 @@ Include, when relevant:
 
 Write in human-readable prose. Do not make the main report a diagnostic dump.
 
+The reader-facing main report should not expose internal Guard-family tool names such as `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` unless the user explicitly asked for a methods appendix. Use ordinary report language instead: event chain, evidence chain, argument structure, process check, source appendix, and run notes.
+
 Important claims in the main report must carry compact inline source markers such as `[S1]`, `[S2; S5]`, or `[S3, limiting]`. Do not rely on a final bibliography alone for source-backed claims.
 
 Each important paragraph should make the source role clear when ambiguity matters:
@@ -32,7 +34,9 @@ Each important paragraph should make the source role clear when ambiguity matter
 
 Use a brief reader route near the start of long reports: what question is answered first, why the next section follows, and where limitations appear.
 
-For policy-rumor or current-event reports, explicitly separate official action, jurisdiction/scope, implementation evidence, fiscal or motive context, expert commentary, and forecast. Do not let fiscal pressure or expert commentary stand in for implementation evidence.
+For every substantive report, explicitly separate claim origin, direct facts, source statements, scope limits, execution or outcome evidence, context or motive evidence, expert interpretation, counter or limiting evidence, and forecast triggers. Do not let context, motive, or expert interpretation stand in for execution, causality, outcome, or broader-scope evidence.
+
+If the official/original fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, title and close the output as an initial investigation, staged report, qualified finding, or downgraded conclusion rather than a complete investigation report.
 
 ## Evidence Levels
 
@@ -95,7 +99,11 @@ Avoid:
 - presenting a search failure as evidence of absence unless search coverage supports that inference.
 - placing citations only in the bibliography when a paragraph makes source-backed claims;
 - writing official claims as independent facts;
-- hiding limiting evidence in an appendix when it materially narrows a main finding.
+- hiding limiting evidence in an appendix when it materially narrows a main finding;
+- writing inference, interpretation, or source commentary as established fact;
+- omitting source-role wording when the reader needs to know who says the point;
+- leaking internal workflow terms into the reader-facing main report;
+- using a section order that reads like a process log rather than a reasoned report.
 
 ## Closure Statement
 

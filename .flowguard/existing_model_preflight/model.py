@@ -26,6 +26,7 @@ SEARCH_PATHS = (
     "docs/history-ledger.md",
     "docs/implementation-roadmap.md",
     "openspec/changes/add-research-investigation-workflow-skill",
+    "openspec/changes/upgrade-investigation-depth-contract",
     ".flowguard",
     "<CODEX_HOME>/skills",
 )
@@ -34,7 +35,7 @@ SEARCH_PATHS = (
 def correct_preflight() -> ExistingModelPreflight:
     return ExistingModelPreflight(
         "research-investigation-workflow-existing-model-preflight",
-        "Create an orchestration skill for TraceGuard, LogicGuard, FlowGuard, and a run-history ledger.",
+        "Generalize the orchestration skill's investigation-depth contract without duplicating Guard-family engines.",
         mode="full",
         existing_modeled_system=True,
         model_search_performed=True,
@@ -69,7 +70,7 @@ def correct_preflight() -> ExistingModelPreflight:
             ModelContextHit(
                 "flowguard-development-process-flow",
                 model_path=".flowguard/development_process_flow/model.py",
-                evidence_id="flowguard-package-0.39.1-schema-1.0",
+                evidence_id="flowguard-package-0.39.3-schema-1.0",
                 evidence_tier="package_import_checked",
                 responsibilities=("process order", "evidence freshness", "closure safety"),
                 function_blocks=("ReviewDevelopmentProcess",),
@@ -77,7 +78,7 @@ def correct_preflight() -> ExistingModelPreflight:
                 side_effects_owned=("write_flowguard_logs",),
                 public_entrypoints=("python -m flowguard",),
                 validation_evidence=("python -c import flowguard; print(flowguard.SCHEMA_VERSION)",),
-                rationale="FlowGuard owns lifecycle safety for this implementation.",
+                rationale="FlowGuard owns lifecycle safety for this implementation and stays separate from research report content rules.",
             ),
         ),
         ownership_snapshot=ExistingOwnershipSnapshot(
@@ -111,9 +112,9 @@ def correct_preflight() -> ExistingModelPreflight:
         downstream_routes=("development_process_flow",),
         proposed_new_boundaries=("research-investigation-workflow skill orchestration",),
         rationale=(
-            "Existing Guard-family workflows own reasoning subdomains, but no existing skill owns the cross-run "
-            "research orchestration and History Ledger boundary. A new thin orchestration skill is justified if it "
-            "delegates reasoning work instead of replacing it."
+            "Existing Guard-family workflows own reasoning subdomains, but the research skill owns the cross-run "
+            "orchestration contract, minimum investigation rounds, reader-report cleanup, and History Ledger boundary. "
+            "The generalized upgrade is justified if it delegates reasoning work instead of replacing it."
         ),
     )
 
