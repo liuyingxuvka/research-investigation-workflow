@@ -27,7 +27,9 @@ SEARCH_PATHS = (
     "docs/implementation-roadmap.md",
     "openspec/changes/add-research-investigation-workflow-skill",
     "openspec/changes/upgrade-investigation-depth-contract",
+    "openspec/changes/integrate-sourceguard-discovery-loop",
     ".flowguard",
+    "<CODEX_HOME>/skills/sourceguard",
     "<CODEX_HOME>/skills",
 )
 
@@ -35,12 +37,25 @@ SEARCH_PATHS = (
 def correct_preflight() -> ExistingModelPreflight:
     return ExistingModelPreflight(
         "research-investigation-workflow-existing-model-preflight",
-        "Generalize the orchestration skill's investigation-depth contract without duplicating Guard-family engines.",
+        "Integrate SourceGuard as the source-discovery planner without duplicating Guard-family engines.",
         mode="full",
         existing_modeled_system=True,
         model_search_performed=True,
         search_paths=SEARCH_PATHS,
         relevant_models=(
+            ModelContextHit(
+                "sourceguard-workflows",
+                model_path="<CODEX_HOME>/skills/sourceguard; C:/Users/liu_y/Documents/SourceGuard_20260531",
+                evidence_id="sourceguard-command-surface-20260531",
+                evidence_tier="command_surface_checked",
+                responsibilities=("source discovery", "candidate sources", "evidence anchors", "search actions", "access gaps"),
+                function_blocks=("BuildBeliefState", "ScoreSearchActions", "RecordObservation", "ExportHandoffBundle"),
+                state_owned=("belief_state", "source_candidate_registry", "source_gap_frontier", "search_action_frontier"),
+                side_effects_owned=("write_sourceguard_state", "write_sourceguard_handoff_exports"),
+                public_entrypoints=("python -m sourceguard",),
+                validation_evidence=("python -m sourceguard --help",),
+                rationale="SourceGuard owns source-discovery planning but does not own event reconstruction, argument audit, or process closure.",
+            ),
             ModelContextHit(
                 "traceguard-workflows",
                 model_path="<CODEX_HOME>/skills/traceguard",
@@ -83,26 +98,33 @@ def correct_preflight() -> ExistingModelPreflight:
         ),
         ownership_snapshot=ExistingOwnershipSnapshot(
             function_block_owners=(
+                ("BuildBeliefState", "sourceguard-workflows"),
+                ("ScoreSearchActions", "sourceguard-workflows"),
                 ("BuildTraceModel", "traceguard-workflows"),
                 ("ModelArgument", "logicguard-workflows"),
                 ("ReviewDevelopmentProcess", "flowguard-development-process-flow"),
             ),
             state_owners=(
+                ("belief_state", "sourceguard-workflows"),
+                ("source_gap_frontier", "sourceguard-workflows"),
                 ("case_library", "traceguard-workflows"),
                 ("source_library", "logicguard-workflows"),
                 ("artifact_versions", "flowguard-development-process-flow"),
             ),
             side_effect_owners=(
+                ("write_sourceguard_state", "sourceguard-workflows"),
                 ("write_traceguard_case_library", "traceguard-workflows"),
                 ("write_logicguard_source_library", "logicguard-workflows"),
                 ("write_flowguard_logs", "flowguard-development-process-flow"),
             ),
             public_entrypoint_owners=(
+                ("python -m sourceguard", "sourceguard-workflows"),
                 ("python -m traceguard", "traceguard-workflows"),
                 ("run_logicguard.py", "logicguard-workflows"),
                 ("python -m flowguard", "flowguard-development-process-flow"),
             ),
             responsibility_owners=(
+                ("source-discovery planning", "sourceguard-workflows"),
                 ("evidence-to-storyline", "traceguard-workflows"),
                 ("claim-to-support audit", "logicguard-workflows"),
                 ("process freshness", "flowguard-development-process-flow"),
@@ -112,8 +134,9 @@ def correct_preflight() -> ExistingModelPreflight:
         downstream_routes=("development_process_flow",),
         proposed_new_boundaries=("research-investigation-workflow skill orchestration",),
         rationale=(
-            "Existing Guard-family workflows own reasoning subdomains, but the research skill owns the cross-run "
-            "orchestration contract, minimum investigation rounds, reader-report cleanup, and History Ledger boundary. "
+            "Existing Guard-family workflows own source-discovery, trace reconstruction, argument-audit, and process "
+            "subdomains, but the research skill owns the cross-run orchestration contract, minimum investigation rounds, "
+            "reader-report cleanup, and History Ledger boundary. "
             "The generalized upgrade is justified if it delegates reasoning work instead of replacing it."
         ),
     )
@@ -122,7 +145,7 @@ def correct_preflight() -> ExistingModelPreflight:
 def broken_parallel_engine_preflight() -> ExistingModelPreflight:
     return ExistingModelPreflight(
         "research-investigation-workflow-broken-parallel-engine",
-        "Create one new engine that stores evidence, sources, process records, and reusable run memory together.",
+        "Create one new engine that stores source discovery, evidence, sources, process records, and reusable run memory together.",
         mode="full",
         existing_modeled_system=True,
         model_search_performed=True,
@@ -133,6 +156,12 @@ def broken_parallel_engine_preflight() -> ExistingModelPreflight:
         downstream_routes=("development_process_flow",),
         proposed_new_boundaries=("combined-research-reasoning-engine",),
         duplicate_risks=(
+            DuplicateBoundaryRisk(
+                "state",
+                "belief_state",
+                "sourceguard-workflows",
+                proposed_owner_id="combined-research-reasoning-engine",
+            ),
             DuplicateBoundaryRisk(
                 "state",
                 "case_library",

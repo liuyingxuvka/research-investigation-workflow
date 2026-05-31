@@ -241,3 +241,45 @@
 
 ### Next Actions
 - Rerun affected FlowGuard models/tests before broad completion claims when behavior, tests, or version records change.
+
+
+## integrate-sourceguard-discovery-loop-20260531 - Integrate SourceGuard discovery planning into research-investigation-workflow and prepare v0.2.0 release
+
+- Project: ResearchInvestigationWorkflow_20260531
+- Trigger reason: Non-trivial skill/process upgrade with OpenSpec, installed skill sync, command-surface validation, GitHub release, and stale-evidence closure
+- Status: completed
+- Skill decision: use_direct_flowguard_skill: existing_model_preflight plus development_process_flow
+- Started: 2026-05-31T20:39:23+00:00
+- Ended: 2026-05-31T20:39:23+00:00
+- Duration seconds: 0.000
+- Commands OK: True
+
+### Model Files
+- .flowguard\existing_model_preflight\model.py
+- .flowguard\development_process_flow\model.py
+
+### Commands
+- OK (0.000s): `openspec validate integrate-sourceguard-discovery-loop --strict`
+- OK (0.000s): `python -m flowguard project-audit --root .`
+- OK (0.000s): `python .flowguard\existing_model_preflight\run_checks.py`
+- OK (0.000s): `python .flowguard\development_process_flow\run_checks.py`
+- OK (0.000s): `quick_validate.py skills\research-investigation-workflow`
+- OK (0.000s): `installed/project skill parity check`
+
+### Findings
+- SourceGuard now owns source-discovery planning while TraceGuard, LogicGuard, and FlowGuard retain separate boundaries
+
+### Counterexamples
+- none recorded
+
+### Friction Points
+- none recorded
+
+### Skipped Steps
+- none recorded
+
+### Risk Evidence Summary
+- Broken-route FlowGuard fixtures intentionally remain blocked for duplicate combined-engine and stale-validation scenarios
+
+### Next Actions
+- Publish v0.2.0 and archive OpenSpec change after release if desired

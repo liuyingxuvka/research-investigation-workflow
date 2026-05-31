@@ -17,7 +17,7 @@ Include, when relevant:
 
 Write in human-readable prose. Do not make the main report a diagnostic dump.
 
-The reader-facing main report should not expose internal Guard-family tool names such as `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` unless the user explicitly asked for a methods appendix. Use ordinary report language instead: event chain, evidence chain, argument structure, process check, source appendix, and run notes.
+The reader-facing main report should not expose internal Guard-family tool names such as `SourceGuard`, `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` unless the user explicitly asked for a methods appendix. Use ordinary report language instead: source search plan, event chain, evidence chain, argument structure, process check, source appendix, and run notes.
 
 Important claims in the main report must carry compact inline source markers such as `[S1]`, `[S2; S5]`, or `[S3, limiting]`. Do not rely on a final bibliography alone for source-backed claims.
 
@@ -56,6 +56,7 @@ Do not equate a numeric score with truth.
 For substantial reports, include or append:
 
 - logic-lead coverage table: lead, status, support, limiting evidence, gap, report treatment;
+- source-discovery coverage table: source role, search action, result, access status, follow-up, claim impact;
 - event/evidence timeline: date, event, source markers, confidence, relevance;
 - claim-to-source matrix: important claim, paragraph/section, source markers, source role, source date/freshness, claim use, limitation;
 - unresolved gap/watchlist table.
@@ -67,6 +68,7 @@ If a table is omitted, state why it would not add value for the current report.
 Include:
 
 - evidence-source policy summary;
+- source-discovery plan, completed search actions, access gaps, and candidate-source downgrade notes;
 - source appendix;
 - logic-lead coverage summary;
 - claim-to-source matrix;

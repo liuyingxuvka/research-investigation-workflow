@@ -1,6 +1,6 @@
 # LogicGuard Report Synthesis
 
-Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a report, attach inline citation markers, or audit final prose.
+Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a report, attach inline citation markers, or audit final prose. Use SourceGuard before promotion when the investigation still needs source-discovery planning, missing-role search, or counter/limiting source search.
 
 ## Boundary
 
@@ -12,6 +12,8 @@ Does the written conclusion follow from declared support?
 
 It does not decide factual truth. It does not store messy case evidence. It does not replace TraceGuard contradiction review.
 
+It also does not rank search actions. When a LogicGuard gap depends on missing evidence, send that gap back to SourceGuard unless the correct result is to downgrade or omit the claim.
+
 ## Current Command Surface Check
 
 Before relying on a specific command, check:
@@ -22,7 +24,7 @@ python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py --help
 
 Inspect subcommand help for the route being used.
 
-## Promotion From TraceGuard
+## Promotion From SourceGuard Or TraceGuard
 
 Promote a source only when it is:
 
@@ -33,11 +35,14 @@ Promote a source only when it is:
 
 Record the promotion explicitly:
 
-- TraceGuard case id;
+- SourceGuard case/action id when the source came from a discovery plan;
+- TraceGuard case id when the source has been used in a trace;
 - source id or path;
 - reason for promotion;
 - LogicGuard library id or model path;
 - claim or section it supports.
+
+Do not bulk-promote SourceGuard candidate sources. A candidate source is eligible only after it is found, relevant, stable enough to cite or preserve, and tied to a source role in the claim-to-source matrix.
 
 ## Source Preservation
 
@@ -192,7 +197,7 @@ Run this audit after the last material prose edit. If the report changes after a
 If audit fails, choose one:
 
 ```text
-search more
+search more through SourceGuard
 weaken the claim
 move claim to hypothesis
 move claim to unresolved gap

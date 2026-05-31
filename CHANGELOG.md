@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.2.0 - 2026-05-31
+
+SourceGuard discovery orchestration.
+
+- Added SourceGuard as the default source-discovery planner for substantive investigations, before TraceGuard reconstruction and LogicGuard claim modeling.
+- Added a SourceGuard discovery loop reference for belief-state setup, ranked search actions, observations, access gaps, backflow, and handoff boundaries.
+- Updated workflow, evidence policy, TraceGuard, LogicGuard, output, FlowGuard closure, and History Ledger contracts so missing-source gaps return to SourceGuard or force claim downgrades.
+- Updated public README and skill metadata to describe the full SourceGuard, TraceGuard, LogicGuard, FlowGuard, and History Ledger stack.
+
 ## v0.1.2 - 2026-05-31
 
 General deep-investigation contract repair.

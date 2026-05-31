@@ -1,6 +1,6 @@
 # TraceGuard Loop
 
-Use TraceGuard for messy investigation material, evidence-to-event reconstruction, logic leads, explanation candidates, storyline candidates, gaps, contradictions, and claim boundaries.
+Use TraceGuard for messy investigation material, evidence-to-event reconstruction, logic leads, explanation candidates, storyline candidates, gaps, contradictions, and claim boundaries. Use SourceGuard before TraceGuard when the task still needs source discovery planning, source-role coverage, counter-source search, or access-gap routing.
 
 ## Boundary
 
@@ -13,6 +13,14 @@ What story does the evidence support?
 It does not write final truth claims. It does not replace LogicGuard final claim audit. It should separate event facts from explanation leads: evidence that an event happened is not automatically evidence for motive, outcome, or future impact.
 
 For substantive investigations, TraceGuard should also separate claim origin, direct facts, source statements, scope boundaries, execution or outcome evidence, context or motive evidence, interpretation, counter or limiting evidence, and future triggers. Context can explain why a claim is plausible, but it does not validate execution, causality, outcome, or broader scope.
+
+SourceGuard answers a different question:
+
+```text
+Which source should be searched or preserved next?
+```
+
+Do not make TraceGuard carry candidate-source ranking or permission planning. Hand SourceGuard results into TraceGuard only after a source candidate has been found, preserved, and given an evidence role.
 
 ## Current Command Surface Check
 
@@ -30,7 +38,7 @@ Use project-specific help output over stale remembered command syntax.
 Use or create:
 
 ```text
-lead/direction -> source -> evidence -> event fact or explanation candidate -> trace/storyline -> gap ledger -> contradiction ledger -> claim boundary
+SourceGuard source action -> lead/direction -> source -> evidence -> event fact or explanation candidate -> trace/storyline -> gap ledger -> contradiction ledger -> claim boundary
 ```
 
 Suggested commands when available:
@@ -96,8 +104,8 @@ Do not pass a lead to final prose as a finding unless its status and safe wordin
 
 For each important gap, decide:
 
-- Is a public search likely to help?
-- Is a local or internal search allowed and likely to help?
+- Should this gap return to SourceGuard for a ranked public, local, internal, counter, limiting, stakeholder, or future-trigger search?
+- Is a local or internal search allowed and likely to help, or should it be marked as an access gap?
 - Is this an access gap?
 - Is this a warrant or explanation gap for LogicGuard?
 - Is this a contradiction that needs TraceGuard review?
@@ -109,12 +117,13 @@ For each important gap, decide:
 
 After new evidence:
 
-1. Save the source.
-2. Extract evidence.
-3. Update events and trace.
-4. Rebuild or update the model.
-5. Rerun evaluation and diagnostics.
-6. Write back gaps if the Case Library supports it.
+1. Update SourceGuard observations for the search action.
+2. Save the source.
+3. Extract evidence.
+4. Update events and trace.
+5. Rebuild or update the model.
+6. Rerun evaluation and diagnostics.
+7. Write back gaps to TraceGuard and SourceGuard if the libraries support it.
 
 Suggested write-back:
 

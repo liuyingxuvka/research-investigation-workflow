@@ -47,6 +47,8 @@ Do not ask the user to choose a shallow/medium/deep mode. If this skill is used 
 
 Load `evidence-source-policy.md`. Classify sources before treating material as evidence.
 
+Also load `sourceguard-discovery-loop.md` for substantive investigations. Use it to decide where evidence should be searched next, which source roles are missing, what access gaps exist, and when a claim must be downgraded because source discovery is incomplete.
+
 ## Stage 3: Logic-Lead Map
 
 Before broad writing, create a lightweight lead map. Each important lead should have:
@@ -93,7 +95,26 @@ Each role needs a status, source markers, and claim-use label. Context, motive, 
 
 For a negative or partial finding, record which evidence roles or concrete signals were searched, absent, access-gated, or not applicable. Search failure alone is not proof of absence unless the searched source set is strong enough for that claim.
 
-## Stage 4: First-Round Search
+## Stage 4: SourceGuard Discovery Plan
+
+Before broad search, build or update a SourceGuard discovery state:
+
+```text
+case goal
+claim strength target
+lead map
+required evidence roles
+known source candidates
+public/local/internal permissions
+access gaps
+contradictions or weak source coverage
+next search actions with expected value
+handoff targets for TraceGuard and LogicGuard
+```
+
+Use SourceGuard to rank the first search batch across public, local, internal, counter, limiting, and follow-up evidence directions. SourceGuard scores source-discovery value only; they do not prove a claim.
+
+## Stage 5: First-Round Search
 
 Search several directions when relevant:
 
@@ -108,9 +129,26 @@ Search several directions when relevant:
 - public record;
 - local or internal record when allowed.
 
-Save found items as sources first, not as conclusions.
+Use the SourceGuard-ranked plan as the default order unless the user has a stricter deadline, permission boundary, or target artifact need. Save found items as source candidates first, not as conclusions.
 
-## Stage 5: TraceGuard Case Library
+## Stage 6: SourceGuard Observation Update
+
+After each meaningful search batch, write observations back into the SourceGuard state:
+
+```text
+source found
+source role covered
+lead or claim affected
+freshness and coverage-period clues
+access result
+contradiction or limitation discovered
+new search lead
+handoff readiness
+```
+
+If an important evidence role is still missing, route the gap back through SourceGuard before promoting the material to TraceGuard or LogicGuard. If the missing role cannot be searched under the current permissions, record an access gap and downgrade the claim boundary.
+
+## Stage 7: TraceGuard Case Library
 
 Create or reuse:
 
@@ -120,7 +158,7 @@ case -> lead/direction -> source -> evidence -> event/explanation candidate -> t
 
 Use TraceGuard for messy case material, weak signals, and gaps. Keep rejected or weak directions visible when they may prevent repeated failed searches.
 
-## Stage 6: TraceGuard Evaluation
+## Stage 8: TraceGuard Evaluation
 
 Build and evaluate a TraceGuard model. Record:
 
@@ -136,26 +174,26 @@ Build and evaluate a TraceGuard model. Record:
 - safe and unsafe wording guidance;
 - suggested next evidence.
 
-## Stage 7: Gap-Driven Search Loop
+## Stage 9: Gap-Driven Search Loop
 
 Route important gaps:
 
 ```text
-missing public evidence -> public search
-missing local evidence -> local file / Drive / notes / logs search if allowed
-missing internal evidence -> internal source search if allowed
+missing public evidence -> SourceGuard public search action
+missing local evidence -> SourceGuard local file / Drive / notes / logs action if allowed
+missing internal evidence -> SourceGuard internal source action if allowed
 missing source permission -> access gap
 missing warrant or explanation -> LogicGuard model gap
 conflicting evidence -> TraceGuard contradiction review
-one-sided evidence -> counter/limiting source search
-claimed outcome without execution evidence -> execution follow-up search
-missing stakeholder view -> stakeholder search
-future-impact claim -> observable trigger search
+one-sided evidence -> SourceGuard counter/limiting source action
+claimed outcome without execution evidence -> SourceGuard execution follow-up action
+missing stakeholder view -> SourceGuard stakeholder action
+future-impact claim -> SourceGuard observable-trigger action
 ```
 
-Loop through search, save, extract, rebuild, evaluate, and write back gaps until the claim strength is supported or downgraded.
+Loop through SourceGuard plan, search, save, observe, TraceGuard extract/evaluate, LogicGuard warrant review, and gap write-back until the claim strength is supported or downgraded.
 
-## Stage 7A: Minimum Investigation Rounds
+## Stage 9A: Minimum Investigation Rounds
 
 For any report that claims to be detailed, complete, or comprehensive, run these rounds before final prose:
 
@@ -169,15 +207,17 @@ future-trigger round: what later evidence would confirm, falsify, or materially 
 
 Do not treat these as source-count quotas. A round is complete only when its lead status is recorded as supported, contradicted, access-gap, not-supported, or deliberately downgraded. If an important round is incomplete, label the output as an initial investigation, staged report, qualified finding, or downgraded conclusion.
 
-## Stage 8: Explicit LogicGuard Promotion
+## Stage 10: Explicit LogicGuard Promotion
 
 Promote only selected sources that are stable, important to the final claim, and worth formal preservation. Do not bulk-copy the TraceGuard case into LogicGuard.
 
-## Stage 9: LogicGuard Modeling And Deepening
+SourceGuard candidates may point to material worth preserving, but promotion requires source stability, claim importance, and clear relevance to the final reasoning path.
+
+## Stage 11: LogicGuard Modeling And Deepening
 
 Model root claims, support, warrants, assumptions, rebuttals, limitations, and scope. Deepen high-importance or weak nodes before writing confident prose.
 
-## Stage 10: Claim-To-Source Matrix
+## Stage 12: Claim-To-Source Matrix
 
 Before final prose, create a matrix that links important claims to source roles:
 
@@ -195,7 +235,7 @@ missing support or limitation
 
 Every important factual claim, official-claim report, analytic inference, limitation, and future hypothesis needs a citation marker or an explicit reason it is uncited background.
 
-## Stage 11: Artifact Synthesis
+## Stage 13: Artifact Synthesis
 
 Create a target story plan before final prose. Common profiles:
 
@@ -221,7 +261,7 @@ where future-impact material begins
 what is appendix-only
 ```
 
-## Stage 12: Citation-Grounded Drafting
+## Stage 14: Citation-Grounded Drafting
 
 Write final prose from the story plan and claim-to-source matrix. Each core paragraph should make clear:
 
@@ -230,32 +270,32 @@ Write final prose from the story plan and claim-to-source matrix. Each core para
 - which source markers support or limit it;
 - whether it is fact, official claim, analysis, or hypothesis.
 
-## Stage 13: Final Claim Audit
+## Stage 15: Final Claim Audit
 
 Audit final prose for overclaiming, missing warrant, hidden assumption, unsupported causality, scope mismatch, unanswered rebuttal, missing limitation, and candidate claims written as confirmed.
 
 Also audit for missing inline citations, source-role confusion, unsupported synthesis, missing counter/limiting evidence, official or actor claims written as independent facts, inferences written as facts, and section transitions that leave the reasoning path unclear.
 
-If the audit fails, search more, weaken the claim, or move it to hypothesis/unresolved.
+If the audit fails because source coverage is missing, return to SourceGuard for a targeted search action. If it fails because event interpretation or contradiction handling is weak, return to TraceGuard. If it fails because the warrant or argument boundary is weak, return to LogicGuard. If the missing material cannot be obtained, weaken the claim or move it to hypothesis/unresolved.
 
-## Stage 13A: Reader-Report Cleanup
+## Stage 15A: Reader-Report Cleanup
 
 Before final delivery, clean the reader-facing main report:
 
-- remove internal Guard-family terms such as `TraceGuard`, `LogicGuard`, `FlowGuard`, and `History Ledger` unless the user explicitly asked for a methods appendix;
-- replace them with ordinary language such as event chain, evidence chain, argument structure, process check, source appendix, or run notes;
+- remove internal Guard-family terms such as `SourceGuard`, `TraceGuard`, `LogicGuard`, `FlowGuard`, and `History Ledger` unless the user explicitly asked for a methods appendix;
+- replace them with ordinary language such as source search plan, event chain, evidence chain, argument structure, process check, source appendix, or run notes;
 - keep method details, command evidence, and run bookkeeping in the appendix or local ledger;
 - verify each core paragraph says who is speaking or what type of source supports the point when that matters;
 - verify the section order follows the reader route rather than a tool log.
 
-## Stage 14: FlowGuard Closure
+## Stage 16: FlowGuard Closure
 
 Use FlowGuard to check stage order, artifact versions, validations, stale evidence, revalidation, and completion boundaries.
 
-## Stage 15: Final Delivery
+## Stage 17: Final Delivery
 
 Load `output-contract.md`. Deliver readable prose first, appendix second.
 
-## Stage 16: History Postflight
+## Stage 18: History Postflight
 
 Write the run record, artifact pointers, reusable search directions, failed routes, unresolved gaps, privacy labels, and closure status.

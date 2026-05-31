@@ -4,6 +4,8 @@ The History Ledger stores reusable workflow memory for investigation runs. It is
 
 Record reusable investigation strategy, not private report content. When working inside a skill/software repository, keep ledger records local-only and ignored unless the user explicitly asks to publish a sanitized sample.
 
+For substantive investigations, record SourceGuard discovery strategy alongside TraceGuard, LogicGuard, and FlowGuard records. The ledger should remember useful search directions, failed routes, access gaps, and source-role coverage patterns, not private source contents or unverified claims.
+
 ## Default Location
 
 Prefer a project-local root unless the user specifies another location:
@@ -68,6 +70,24 @@ evidence_policy:
   local_search: ask_user
   internal_search: ask_user
   hypothesis_allowed: true
+sourceguard:
+  state_path: path-or-null
+  planned_actions: []
+  completed_actions: []
+  candidate_sources: []
+  source_role_coverage:
+    claim_origin: complete-or-gap-or-not-run
+    direct_or_original_facts: complete-or-gap-or-not-run
+    source_statements: complete-or-gap-or-not-run
+    scope_boundaries: complete-or-gap-or-not-run
+    execution_or_outcome_evidence: complete-or-gap-or-not-run
+    context_or_motive_evidence: complete-or-gap-or-not-run
+    expert_or_analyst_interpretation: complete-or-gap-or-not-run
+    counter_or_limiting_evidence: complete-or-gap-or-not-run
+    future_trigger_conditions: complete-or-gap-or-not-run
+  access_gaps: []
+  handoff_to_traceguard: []
+  handoff_to_logicguard: []
 traceguard:
   case_library_root: path-or-null
   case_id: case-id-or-null
@@ -126,6 +146,8 @@ traceguard_cases: []
 traceguard_models: []
 logicguard_sources: []
 logicguard_models: []
+sourceguard_states: []
+sourceguard_exports: []
 reports: []
 appendices: []
 flowguard_logs: []
@@ -144,6 +166,16 @@ worked:
 failed:
   - direction: ""
     why: ""
+sourceguard:
+  useful_source_actions:
+    - action: ""
+      why: ""
+  failed_or_low_value_actions:
+    - action: ""
+      why: ""
+  access_gap_patterns:
+    - gap: ""
+      useful_fallback: ""
 logic_leads:
   - lead: ""
     useful_support_route: ""
@@ -174,12 +206,13 @@ At the end of a run:
 1. Add or update the run directory.
 2. Update `index.yaml` with topic, date, status, privacy label, report type, artifact pointers, and reusable keywords.
 3. Record useful and failed search directions.
-4. Record reusable logic leads and whether support, limiting evidence, and execution evidence were found.
-5. Record the reusable evidence-role map, minimum investigation round status, checked missing signals, and watchlist triggers.
-6. Record unresolved gaps.
-7. Record requested versus delivered conclusion strength.
-8. Record inline citation coverage and claim-to-source matrix pointer when available.
-9. Record FlowGuard closure status and installed/source parity status when the run changed skill behavior.
-10. Keep sensitive source content in owning systems, not in the ledger.
+4. Record SourceGuard planned and completed search actions, failed routes, useful fallback actions, access gaps, and source-role coverage.
+5. Record reusable logic leads and whether support, limiting evidence, and execution evidence were found.
+6. Record the reusable evidence-role map, minimum investigation round status, checked missing signals, and watchlist triggers.
+7. Record unresolved gaps.
+8. Record requested versus delivered conclusion strength.
+9. Record inline citation coverage and claim-to-source matrix pointer when available.
+10. Record FlowGuard closure status and installed/source parity status when the run changed skill behavior.
+11. Keep sensitive source content in owning systems, not in the ledger.
 
 If postflight cannot be written, report the blocker and provide the intended record structure in the final appendix.
