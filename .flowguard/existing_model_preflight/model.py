@@ -27,7 +27,7 @@ SEARCH_PATHS = (
     "docs/implementation-roadmap.md",
     "openspec/changes/add-research-investigation-workflow-skill",
     ".flowguard",
-    "C:/Users/liu_y/.codex/skills",
+    "<CODEX_HOME>/skills",
 )
 
 
@@ -42,7 +42,7 @@ def correct_preflight() -> ExistingModelPreflight:
         relevant_models=(
             ModelContextHit(
                 "traceguard-workflows",
-                model_path="C:/Users/liu_y/.codex/skills/traceguard",
+                model_path="<CODEX_HOME>/skills/traceguard",
                 evidence_id="traceguard-command-surface-20260531",
                 evidence_tier="command_surface_checked",
                 responsibilities=("case evidence", "events", "traces", "gaps", "contradictions"),
@@ -55,7 +55,7 @@ def correct_preflight() -> ExistingModelPreflight:
             ),
             ModelContextHit(
                 "logicguard-workflows",
-                model_path="C:/Users/liu_y/.codex/skills/logicguard",
+                model_path="<CODEX_HOME>/skills/logicguard",
                 evidence_id="logicguard-command-surface-20260531",
                 evidence_tier="command_surface_checked",
                 responsibilities=("source preservation", "argument modeling", "artifact synthesis", "claim audit"),

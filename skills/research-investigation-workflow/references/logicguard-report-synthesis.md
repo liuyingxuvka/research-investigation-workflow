@@ -17,7 +17,7 @@ It does not decide factual truth. It does not store messy case evidence. It does
 Before relying on a specific command, check:
 
 ```powershell
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py --help
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py --help
 ```
 
 Inspect subcommand help for the route being used.
@@ -44,8 +44,8 @@ Record the promotion explicitly:
 Use source-library or intake routes when durable support is needed:
 
 ```powershell
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py intake ...
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py library ...
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py intake ...
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py library ...
 ```
 
 Keep source chronology distinct:
@@ -70,10 +70,10 @@ Model:
 Run checks when available:
 
 ```powershell
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py validate <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py evaluate <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py diagnose <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py gaps <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py validate <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py evaluate <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py diagnose <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py gaps <model>
 ```
 
 Deepen high-importance, weak, or reader-risk nodes before confident prose.
@@ -128,7 +128,7 @@ This blueprint is the bridge between LogicGuard modeling and readable prose. If 
 Create a story plan or outline before final prose:
 
 ```powershell
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py synthesize <model> --goal "<goal>" --profile report --delivery
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py synthesize <model> --goal "<goal>" --profile report --delivery
 ```
 
 Use the synthesized plan to write a readable report. Do not expose every diagnostic detail in the main report, but keep source markers and claim-strength wording visible where they matter.

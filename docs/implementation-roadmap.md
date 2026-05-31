@@ -5,7 +5,7 @@
 Tasks:
 
 - confirm final skill name: `research-investigation-workflow`;
-- confirm target install location, likely `C:\Users\liu_y\.codex\skills`;
+- confirm target install location, likely `%USERPROFILE%\\.codex\\skills`;
 - confirm first version is a Codex skill, not a UI or standalone app;
 - confirm the History Ledger root convention.
 
@@ -69,7 +69,7 @@ Write references:
 Run skill validation:
 
 ```powershell
-python C:\Users\liu_y\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\liu_y\.codex\skills\research-investigation-workflow
+python %USERPROFILE%\\.codex\\skills\.system\skill-creator\scripts\quick_validate.py %USERPROFILE%\\.codex\\skills\research-investigation-workflow
 ```
 
 Then do a manual smoke test with a fake investigation prompt:
@@ -100,4 +100,3 @@ Possible later scripts:
 - produce a final run summary.
 
 Only add these after the file format stabilizes.
-

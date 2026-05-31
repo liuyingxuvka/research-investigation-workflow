@@ -56,14 +56,14 @@ LogicGuard currently supports:
 Relevant command surface:
 
 ```powershell
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py intake ...
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py library ...
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py validate <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py evaluate <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py diagnose <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py gaps <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py structure audit <model>
-python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py synthesize <model> --goal "<goal>" --profile report --delivery
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py intake ...
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py library ...
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py validate <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py evaluate <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py diagnose <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py gaps <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py structure audit <model>
+python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py synthesize <model> --goal "<goal>" --profile report --delivery
 ```
 
 LogicGuard boundary:
@@ -109,4 +109,3 @@ LogicGuard answers: Does the written conclusion follow from the support?
 FlowGuard answers: Was the process current, ordered, and honestly closed?
 History Ledger answers: Have we done similar work before, and what did we learn?
 ```
-

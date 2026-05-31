@@ -45,7 +45,7 @@ Before non-trivial work:
 Create a skill folder named `research-investigation-workflow`, likely under:
 
 ```text
-C:\Users\liu_y\.codex\skills\research-investigation-workflow
+%USERPROFILE%\\.codex\\skills\research-investigation-workflow
 ```
 
 Use this structure:

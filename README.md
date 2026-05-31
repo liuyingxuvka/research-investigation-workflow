@@ -1,5 +1,7 @@
 # Research Investigation Workflow
 
+**Current version:** `v0.1.0`
+
 This project captures the plan for a new Codex skill named
 `research-investigation-workflow`.
 
@@ -19,8 +21,19 @@ existing TraceGuard, LogicGuard, and FlowGuard workflows.
 ## Project Location
 
 ```text
-C:\Users\liu_y\Documents\ResearchInvestigationWorkflow_20260531
+<workspace-root>
 ```
+
+The installable skill source lives under:
+
+```text
+skills/research-investigation-workflow/
+```
+
+Local investigation outputs are intentionally excluded from the software
+repository. Do not commit generated reports, TraceGuard cases, LogicGuard
+source libraries, or Research Investigation History Ledger records unless a
+separate sanitized publication sample is explicitly approved.
 
 ## What To Read First
 
@@ -54,4 +67,3 @@ skill. It helps Codex run multi-round investigations by:
 - Do not turn saved sources into final claims.
 - Do not generate confident prose from missing evidence.
 - Do not build a UI or database server in the first version.
-

@@ -6,7 +6,7 @@
 
 ## 2. Skill Skeleton
 
-- [x] 2.1 Initialize `research-investigation-workflow` under `C:\Users\liu_y\.codex\skills` with required resources.
+- [x] 2.1 Initialize `research-investigation-workflow` under `%USERPROFILE%\\.codex\\skills` with required resources.
 - [x] 2.2 Write concise `SKILL.md` frontmatter and core instructions.
 - [x] 2.3 Write `agents/openai.yaml` metadata.
 

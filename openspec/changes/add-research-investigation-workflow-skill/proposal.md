@@ -23,7 +23,7 @@ Long-running research and investigation tasks need a repeatable Codex workflow t
 
 ## Impact
 
-- Creates an installed skill under `C:\Users\liu_y\.codex\skills\research-investigation-workflow`.
+- Creates an installed skill under `%USERPROFILE%\\.codex\\skills\research-investigation-workflow`.
 - Adds a synchronized project copy for local repository review.
 - Adds OpenSpec artifacts for this implementation in `openspec/changes/add-research-investigation-workflow-skill`.
 - Does not add a UI, standalone service, database server, new reasoning engine, or merged evidence/source store.

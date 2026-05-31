@@ -6,7 +6,7 @@ Use this in a new Codex conversation after opening this project folder:
 请用中文和我交流。
 
 工作目录是：
-C:\Users\liu_y\Documents\ResearchInvestigationWorkflow_20260531
+<workspace-root>
 
 我要开始实现一个新的 Codex skill，名字叫：
 research-investigation-workflow

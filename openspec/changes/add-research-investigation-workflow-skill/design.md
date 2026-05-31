@@ -7,7 +7,7 @@ The project is a planning workspace for a new Codex skill, not a runnable app. T
 - FlowGuard owns workflow order, evidence freshness, stale-check review, and closure confidence.
 - Research Investigation History Ledger owns cross-run workflow memory and artifact pointers, not factual proof.
 
-The target installed skill path is `C:\Users\liu_y\.codex\skills\research-investigation-workflow`. A synchronized project copy is useful because this workspace is not currently a Git repository and the installed skill directory is outside the project root.
+The target installed skill path is `%USERPROFILE%\\.codex\\skills\research-investigation-workflow`. A synchronized project copy is useful because this workspace is not currently a Git repository and the installed skill directory is outside the project root.
 
 ## Goals / Non-Goals
 
@@ -29,7 +29,7 @@ The target installed skill path is `C:\Users\liu_y\.codex\skills\research-invest
 ## Decisions
 
 1. Install-first with project sync
-   - Decision: Create the canonical skill under `C:\Users\liu_y\.codex\skills`, then mirror it into `skills/research-investigation-workflow` in this project for local review.
+   - Decision: Create the canonical skill under `%USERPROFILE%\\.codex\\skills`, then mirror it into `skills/research-investigation-workflow` in this project for local review.
    - Rationale: Codex discovers installed skills from the user skill directory, while the project still needs a local synchronized copy.
    - Alternative considered: Only create the project copy. Rejected because it would not satisfy the user's request to sync the installed local version.
 
