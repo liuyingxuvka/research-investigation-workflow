@@ -47,6 +47,19 @@ The result is a report workflow that can say what is supported, what is contradi
 
 These stores are deliberately not merged. A saved source, a history record, a confidence score, or a hypothesis is not factual proof by itself.
 
+## Guard Stack Repositories
+
+This workflow depends on separate Guard-family skills and keeps their responsibilities distinct:
+
+| Sub-skill / tool | Repository | Role in this workflow |
+| --- | --- | --- |
+| SourceGuard | [liuyingxuvka/SourceGuard](https://github.com/liuyingxuvka/SourceGuard) | Plans source discovery, ranks search actions, records candidate sources, anchors, observations, and access gaps |
+| TraceGuard | [liuyingxuvka/TraceGuard](https://github.com/liuyingxuvka/TraceGuard) | Reconstructs event chains, storylines, contradictions, gaps, and claim boundaries from anchored evidence |
+| LogicGuard | [liuyingxuvka/LogicGuard](https://github.com/liuyingxuvka/LogicGuard) | Preserves durable sources and audits whether final claims follow from declared support |
+| FlowGuard | [liuyingxuvka/FlowGuard](https://github.com/liuyingxuvka/FlowGuard) | Checks process order, validation freshness, skipped checks, and completion claims |
+
+The Research Investigation History Ledger is local workflow memory inside this repository's skill contract, not a separate public sub-skill repository.
+
 ## Main Workflow
 
 ```text
@@ -167,6 +180,19 @@ Research Investigation Workflow 是一个用于多轮调查研究的 Codex skill
 | 运行记忆 | Research Investigation History Ledger | 可复用的工作流经验、搜索方向、历史 run 摘要和本地 artifact 指针 |
 
 这些存储边界不能合并。保存过的来源、历史记录、置信度分数或假设，本身都不是事实证明。
+
+## Guard Stack 仓库
+
+这个 workflow 依赖几个相互独立的 Guard-family 技能，并且保持它们的职责边界：
+
+| 子技能 / 工具 | GitHub 仓库 | 在本 workflow 中的职责 |
+| --- | --- | --- |
+| SourceGuard | [liuyingxuvka/SourceGuard](https://github.com/liuyingxuvka/SourceGuard) | 规划来源发现、排序搜索动作、记录候选来源、锚点、观察和访问缺口 |
+| TraceGuard | [liuyingxuvka/TraceGuard](https://github.com/liuyingxuvka/TraceGuard) | 基于已锚定证据重建事件链、故事线、矛盾、缺口和 claim boundary |
+| LogicGuard | [liuyingxuvka/LogicGuard](https://github.com/liuyingxuvka/LogicGuard) | 保存稳定来源，并审核最终 claim 是否能从声明的支持中推出 |
+| FlowGuard | [liuyingxuvka/FlowGuard](https://github.com/liuyingxuvka/FlowGuard) | 检查流程顺序、验证新鲜度、跳过检查和完成声明 |
+
+Research Investigation History Ledger 是这个仓库技能合同里的本地 workflow 记忆，不是单独的公开子技能仓库。
 
 ## 主流程
 
