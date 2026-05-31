@@ -1,6 +1,6 @@
 # TraceGuard Loop
 
-Use TraceGuard for messy investigation material, evidence-to-event reconstruction, storyline candidates, gaps, contradictions, and claim boundaries.
+Use TraceGuard for messy investigation material, evidence-to-event reconstruction, logic leads, explanation candidates, storyline candidates, gaps, contradictions, and claim boundaries.
 
 ## Boundary
 
@@ -10,7 +10,7 @@ TraceGuard answers:
 What story does the evidence support?
 ```
 
-It does not write final truth claims. It does not replace LogicGuard final claim audit.
+It does not write final truth claims. It does not replace LogicGuard final claim audit. It should separate event facts from explanation leads: evidence that an event happened is not automatically evidence for motive, outcome, or future impact.
 
 ## Current Command Surface Check
 
@@ -28,7 +28,7 @@ Use project-specific help output over stale remembered command syntax.
 Use or create:
 
 ```text
-source -> evidence -> event -> trace/storyline -> gap ledger -> contradiction ledger -> claim boundary
+lead/direction -> source -> evidence -> event fact or explanation candidate -> trace/storyline -> gap ledger -> contradiction ledger -> claim boundary
 ```
 
 Suggested commands when available:
@@ -60,6 +60,32 @@ When final writing begins, export LogicGuard-ready support if the command is ava
 python -m traceguard export-logicguard <model.yaml> --output trace_logicguard_bundle.yaml
 ```
 
+## Lead And Evidence-Chain Handoff
+
+Before handing material to LogicGuard, produce or maintain a compact handoff:
+
+```text
+lead id
+lead question or hypothesis
+event facts involved
+supporting evidence ids
+counter or support-limiting evidence ids
+missing evidence
+status: confirmed | supported-incomplete | candidate | weak | contradicted | access-gap | not-supported
+safe wording
+unsafe wording
+next search direction
+```
+
+Recommended tables:
+
+- event chain: date, event, source, evidence status, claim boundary;
+- explanation chain: candidate explanation, supporting evidence, limiting evidence, current status;
+- execution chain: announced outcome, implementation evidence, missing execution proof;
+- contradiction/gap table: conflict or gap, affected lead, needed evidence, action.
+
+Do not pass a lead to final prose as a finding unless its status and safe wording support that strength.
+
 ## Gap-Driven Loop
 
 For each important gap, decide:
@@ -70,6 +96,9 @@ For each important gap, decide:
 - Is this a warrant or explanation gap for LogicGuard?
 - Is this a contradiction that needs TraceGuard review?
 - Should the claim be downgraded instead of searched further?
+- Is there only positive/supporting evidence, requiring a counter or limiting-source search?
+- Is this an outcome claim that requires later execution evidence?
+- Is this a future-impact claim that needs observable trigger conditions?
 
 After new evidence:
 
@@ -95,5 +124,7 @@ Keep wording guidance explicit:
 - `weak`: present only as a lead or omit.
 - `contradicted`: do not state as finding unless scoped to the contradiction.
 - `access_gap`: state that support could not be checked.
+- `supported-incomplete`: state as a qualified finding and name the missing evidence.
+- `not-supported`: omit as a claim or move to a rejected lead.
 
 Pass only stable, important, selected support to LogicGuard. Do not bulk-promote the whole case.

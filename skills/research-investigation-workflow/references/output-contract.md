@@ -16,6 +16,20 @@ Include, when relevant:
 
 Write in human-readable prose. Do not make the main report a diagnostic dump.
 
+Important claims in the main report must carry compact inline source markers such as `[S1]`, `[S2; S5]`, or `[S3, limiting]`. Do not rely on a final bibliography alone for source-backed claims.
+
+Each important paragraph should make the source role clear when ambiguity matters:
+
+- event fact;
+- official claim;
+- independent report;
+- limiting or counter evidence;
+- expert analysis;
+- historical background;
+- hypothesis or inference.
+
+Use a brief reader route near the start of long reports: what question is answered first, why the next section follows, and where limitations appear.
+
 ## Evidence Levels
 
 Use clear labels:
@@ -29,12 +43,25 @@ Use clear labels:
 
 Do not equate a numeric score with truth.
 
+## Required Report Tables
+
+For substantial reports, include or append:
+
+- logic-lead coverage table: lead, status, support, limiting evidence, gap, report treatment;
+- event/evidence timeline: date, event, source markers, confidence, relevance;
+- claim-to-source matrix: important claim, paragraph/section, source markers, source role, limitation;
+- unresolved gap/watchlist table.
+
+If a table is omitted, state why it would not add value for the current report.
+
 ## Appendix
 
 Include:
 
 - evidence-source policy summary;
 - source appendix;
+- logic-lead coverage summary;
+- claim-to-source matrix;
 - TraceGuard case and model summary;
 - TraceGuard gaps and contradictions;
 - LogicGuard source promotion summary;
@@ -53,6 +80,8 @@ Use strong wording only when evidence and audit support it:
 - Provisional: "A plausible working hypothesis is..."
 - Gap-aware: "The available record does not establish..."
 - Contradiction-aware: "The sources conflict on..."
+- Source-role aware: "The official source claims..."
+- Execution-aware: "The available execution evidence does not yet show..."
 
 Avoid:
 
@@ -60,6 +89,9 @@ Avoid:
 - "clearly" when support is partial;
 - presenting a source's existence as support for its contents;
 - presenting a search failure as evidence of absence unless search coverage supports that inference.
+- placing citations only in the bibliography when a paragraph makes source-backed claims;
+- writing official claims as independent facts;
+- hiding limiting evidence in an appendix when it materially narrows a main finding.
 
 ## Closure Statement
 
@@ -68,6 +100,8 @@ End the appendix with:
 ```text
 Closure status: passed | partial | blocked | downgraded
 Current claim strength:
+Inline citation coverage:
+Logic-lead coverage:
 Stale or skipped checks:
 Unresolved gaps:
 History Ledger postflight:

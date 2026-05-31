@@ -2,6 +2,8 @@
 
 The History Ledger stores reusable workflow memory for investigation runs. It is not an evidence database and must not be cited as factual support.
 
+Record reusable investigation strategy, not private report content. When working inside a skill/software repository, keep ledger records local-only and ignored unless the user explicitly asks to publish a sanitized sample.
+
 ## Default Location
 
 Prefer a project-local root unless the user specifies another location:
@@ -70,11 +72,17 @@ traceguard:
   case_library_root: path-or-null
   case_id: case-id-or-null
   model_paths: []
+  logic_leads:
+    - id: lead-id
+      status: confirmed-or-gap-or-hypothesis
+      reusable_search_direction: ""
   important_gaps: []
 logicguard:
   source_library_root: path-or-null
   model_paths: []
   promoted_source_ids: []
+  claim_to_source_matrix: path-or-null
+  inline_citation_coverage: complete-or-partial-or-not-run
 flowguard:
   closure_status: passed-or-partial-or-blocked-or-downgraded
   stale_checks: []
@@ -89,6 +97,7 @@ reusable:
 privacy:
   contains_internal_references: false
   safe_to_reuse_summary: true
+  safe_for_git_or_github: false
 ```
 
 ## Linked Artifacts
@@ -118,6 +127,11 @@ worked:
 failed:
   - direction: ""
     why: ""
+logic_leads:
+  - lead: ""
+    useful_support_route: ""
+    useful_limiting_route: ""
+    remaining_gap: ""
 try_first_next_time: []
 avoid_next_time: []
 ```
@@ -143,9 +157,11 @@ At the end of a run:
 1. Add or update the run directory.
 2. Update `index.yaml` with topic, date, status, privacy label, report type, artifact pointers, and reusable keywords.
 3. Record useful and failed search directions.
-4. Record unresolved gaps.
-5. Record requested versus delivered conclusion strength.
-6. Record FlowGuard closure status.
-7. Keep sensitive source content in owning systems, not in the ledger.
+4. Record reusable logic leads and whether support, limiting evidence, and execution evidence were found.
+5. Record unresolved gaps.
+6. Record requested versus delivered conclusion strength.
+7. Record inline citation coverage and claim-to-source matrix pointer when available.
+8. Record FlowGuard closure status.
+9. Keep sensitive source content in owning systems, not in the ledger.
 
 If postflight cannot be written, report the blocker and provide the intended record structure in the final appendix.

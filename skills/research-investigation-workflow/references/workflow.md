@@ -1,6 +1,6 @@
 # End-To-End Workflow
 
-Use this file for the default investigation route. Keep the work staged, and show when evidence, claims, or validation are partial.
+Use this file for the default investigation route. This skill defaults to deep, logic-lead-driven investigation. Keep the work staged, and show when evidence, claims, or validation are partial.
 
 ## Stage 0: History Preflight
 
@@ -27,6 +27,7 @@ Identify:
 - public, local, and internal search permissions;
 - time or depth budget;
 - output length and tone.
+- important actors, motives, event facts, outcomes, contradictions, limiting evidence, follow-up consequences, and alternative explanations that may become logic leads.
 
 Conclusion strength levels:
 
@@ -40,11 +41,39 @@ formal report / paper-grade conclusion
 
 If the user has not specified a conclusion strength, default to `working hypothesis` for a quick pass and `evidence-backed finding` for a report request.
 
+Do not ask the user to choose a shallow/medium/deep mode. If this skill is used for a substantive report, treat the default as deep investigation and manage scope by claim strength, evidence access, and explicit unresolved gaps.
+
 ## Stage 2: Evidence Source Policy
 
 Load `evidence-source-policy.md`. Classify sources before treating material as evidence.
 
-## Stage 3: First-Round Search
+## Stage 3: Logic-Lead Map
+
+Before broad writing, create a lightweight lead map. Each important lead should have:
+
+```text
+lead question or hypothesis
+why it matters to the user's requested conclusion
+known support
+counter or support-limiting evidence
+unresolved gaps
+current status: confirmed | supported-incomplete | candidate | contradicted | access-gap | not-supported
+report eligibility: finding | qualified finding | hypothesis | omit | follow-up
+```
+
+Typical lead classes:
+
+- event fact: what happened, when, where, and with whom;
+- actor motive: why each actor may have acted;
+- historical mechanism: what prior pattern explains the event;
+- outcome claim: what was allegedly achieved;
+- execution evidence: what has actually happened after the claim;
+- contradiction or limitation: what weakens or narrows a claim;
+- future impact: what later evidence would confirm or falsify the projection.
+
+Depth is judged by lead coverage and evidence-chain status, not by the number of sources collected.
+
+## Stage 4: First-Round Search
 
 Search several directions when relevant:
 
@@ -61,29 +90,33 @@ Search several directions when relevant:
 
 Save found items as sources first, not as conclusions.
 
-## Stage 4: TraceGuard Case Library
+## Stage 5: TraceGuard Case Library
 
 Create or reuse:
 
 ```text
-case -> direction -> source -> evidence -> event -> trace
+case -> lead/direction -> source -> evidence -> event/explanation candidate -> trace/storyline -> gap/contradiction -> claim boundary
 ```
 
 Use TraceGuard for messy case material, weak signals, and gaps. Keep rejected or weak directions visible when they may prevent repeated failed searches.
 
-## Stage 5: TraceGuard Evaluation
+## Stage 6: TraceGuard Evaluation
 
 Build and evaluate a TraceGuard model. Record:
 
 - storyline candidates;
+- lead map and lead status;
 - validated, candidate, weak, or contradicted status;
 - timeline;
+- event-chain table;
+- explanation-chain table;
+- evidence-chain state for each important lead;
 - gap ledger;
 - contradiction ledger;
 - safe and unsafe wording guidance;
 - suggested next evidence.
 
-## Stage 6: Gap-Driven Search Loop
+## Stage 7: Gap-Driven Search Loop
 
 Route important gaps:
 
@@ -94,19 +127,37 @@ missing internal evidence -> internal source search if allowed
 missing source permission -> access gap
 missing warrant or explanation -> LogicGuard model gap
 conflicting evidence -> TraceGuard contradiction review
+one-sided evidence -> counter/limiting source search
+claimed outcome without execution evidence -> execution follow-up search
 ```
 
 Loop through search, save, extract, rebuild, evaluate, and write back gaps until the claim strength is supported or downgraded.
 
-## Stage 7: Explicit LogicGuard Promotion
+## Stage 8: Explicit LogicGuard Promotion
 
 Promote only selected sources that are stable, important to the final claim, and worth formal preservation. Do not bulk-copy the TraceGuard case into LogicGuard.
 
-## Stage 8: LogicGuard Modeling And Deepening
+## Stage 9: LogicGuard Modeling And Deepening
 
 Model root claims, support, warrants, assumptions, rebuttals, limitations, and scope. Deepen high-importance or weak nodes before writing confident prose.
 
-## Stage 9: Artifact Synthesis
+## Stage 10: Claim-To-Source Matrix
+
+Before final prose, create a matrix that links important claims to source roles:
+
+```text
+claim or paragraph target
+lead id
+source ids
+source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis
+claim strength
+required inline citation marker
+missing support or limitation
+```
+
+Every important factual claim, official-claim report, analytic inference, limitation, and future hypothesis needs a citation marker or an explicit reason it is uncited background.
+
+## Stage 11: Artifact Synthesis
 
 Create a target story plan before final prose. Common profiles:
 
@@ -120,20 +171,33 @@ paper-style long report
 executive summary
 ```
 
-## Stage 10: Final Claim Audit
+The story plan should include section order, section handoffs, paragraph blueprints for core sections, and where inline citations must appear.
+
+## Stage 12: Citation-Grounded Drafting
+
+Write final prose from the story plan and claim-to-source matrix. Each core paragraph should make clear:
+
+- what it claims;
+- which lead it resolves;
+- which source markers support or limit it;
+- whether it is fact, official claim, analysis, or hypothesis.
+
+## Stage 13: Final Claim Audit
 
 Audit final prose for overclaiming, missing warrant, hidden assumption, unsupported causality, scope mismatch, unanswered rebuttal, missing limitation, and candidate claims written as confirmed.
 
+Also audit for missing inline citations, source-role confusion, unsupported synthesis, and section transitions that leave the reasoning path unclear.
+
 If the audit fails, search more, weaken the claim, or move it to hypothesis/unresolved.
 
-## Stage 11: FlowGuard Closure
+## Stage 14: FlowGuard Closure
 
 Use FlowGuard to check stage order, artifact versions, validations, stale evidence, revalidation, and completion boundaries.
 
-## Stage 12: Final Delivery
+## Stage 15: Final Delivery
 
 Load `output-contract.md`. Deliver readable prose first, appendix second.
 
-## Stage 13: History Postflight
+## Stage 16: History Postflight
 
 Write the run record, artifact pointers, reusable search directions, failed routes, unresolved gaps, privacy labels, and closure status.

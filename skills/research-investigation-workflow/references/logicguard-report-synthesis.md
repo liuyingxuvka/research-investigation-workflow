@@ -1,6 +1,6 @@
 # LogicGuard Report Synthesis
 
-Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a report, or audit final prose.
+Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a report, attach inline citation markers, or audit final prose.
 
 ## Boundary
 
@@ -78,6 +78,51 @@ python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py gaps <m
 
 Deepen high-importance, weak, or reader-risk nodes before confident prose.
 
+## Claim-To-Source Matrix
+
+Before writing final report prose, build or inspect a claim-to-source matrix:
+
+```text
+claim id
+lead id
+section or paragraph target
+source ids
+source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis
+claim strength
+inline citation marker, such as [S1] or [S1; S4]
+limitation or rebuttal
+```
+
+Each important factual claim, official-claim report, analytic inference, limitation, and future hypothesis must have either an inline citation marker or an explicit note that it is uncited framing/background. Do not leave a key paragraph supported only by a final bibliography.
+
+## Section And Paragraph Blueprint
+
+Create a story plan before final prose. For core sections, include:
+
+```text
+section purpose
+previous-section handoff
+main claim
+lead ids resolved
+paragraph sequence
+evidence and limiting evidence
+required citation markers
+next-section handoff
+```
+
+For core paragraphs, include:
+
+```text
+paragraph job
+claim sentence
+support sentence(s)
+limitation or counter sentence when relevant
+source markers
+claim strength label
+```
+
+This blueprint is the bridge between LogicGuard modeling and readable prose. If it is missing for a core section, report the draft as under-modeled.
+
 ## Synthesis
 
 Create a story plan or outline before final prose:
@@ -86,7 +131,20 @@ Create a story plan or outline before final prose:
 python C:\Users\liu_y\.codex\skills\logicguard\scripts\run_logicguard.py synthesize <model> --goal "<goal>" --profile report --delivery
 ```
 
-Use the synthesized plan to write a readable report. Do not expose every diagnostic detail in the main report.
+Use the synthesized plan to write a readable report. Do not expose every diagnostic detail in the main report, but keep source markers and claim-strength wording visible where they matter.
+
+Recommended prose pattern:
+
+```text
+Event fact from source [S1]. Official claim from source [S2]. Limiting or independent evidence from source [S3]. Therefore, qualified conclusion rather than overclaim.
+```
+
+Separate direct quotes, paraphrases, and synthesis:
+
+- direct quote: short and attributed;
+- paraphrase: source marker required;
+- synthesis: multiple source markers and clear wording such as "taken together" or "the available evidence supports";
+- hypothesis: label as candidate and cite why it is plausible plus what remains missing.
 
 ## Final Claim Audit
 
@@ -102,6 +160,12 @@ Audit final prose for:
 - candidate written as confirmed;
 - hypothesis written as evidence;
 - source existence written as source support.
+- important claim without inline citation marker;
+- official claim written as independent fact;
+- limiting source omitted from a paragraph that relies on a contested claim;
+- section order that lacks a clear reasoning handoff.
+
+Run this audit after the last material prose edit. If the report changes after audit, rerun the audit or mark the closure evidence stale.
 
 If audit fails, choose one:
 
