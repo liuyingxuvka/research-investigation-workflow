@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Investigation Workflow"
+  short_description: "Coordinate evidence-led research with Guard workflows"
+  default_prompt: "Use $research-investigation-workflow to investigate a topic, preserve evidence boundaries, synthesize a report, and record run history."
