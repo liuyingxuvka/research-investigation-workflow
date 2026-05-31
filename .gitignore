@@ -7,3 +7,10 @@ __pycache__/
 
 .DS_Store
 Thumbs.db
+
+# Local research runs and investigation outputs.
+# These may contain private prompts, sources, reports, and run history.
+.traceguard-cases/
+.logicguard-library/
+.research-investigation-history/
+investigations/
