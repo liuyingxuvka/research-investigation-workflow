@@ -76,6 +76,16 @@ traceguard:
     - id: lead-id
       status: confirmed-or-gap-or-hypothesis
       reusable_search_direction: ""
+  policy_or_current_event_ladder:
+    trigger_claim: ""
+    official_action: ""
+    jurisdiction_scope: ""
+    implementation_signals_checked: []
+    missing_implementation_signals: []
+    market_or_execution_data: []
+    fiscal_or_motive_context: []
+    expert_commentary: []
+    future_hypothesis_triggers: []
   important_gaps: []
 logicguard:
   source_library_root: path-or-null
@@ -158,10 +168,11 @@ At the end of a run:
 2. Update `index.yaml` with topic, date, status, privacy label, report type, artifact pointers, and reusable keywords.
 3. Record useful and failed search directions.
 4. Record reusable logic leads and whether support, limiting evidence, and execution evidence were found.
-5. Record unresolved gaps.
-6. Record requested versus delivered conclusion strength.
-7. Record inline citation coverage and claim-to-source matrix pointer when available.
-8. Record FlowGuard closure status.
-9. Keep sensitive source content in owning systems, not in the ledger.
+5. For policy rumors or current-event investigations, record the reusable evidence-role ladder, implementation signals checked, missing implementation signals, and watchlist triggers.
+6. Record unresolved gaps.
+7. Record requested versus delivered conclusion strength.
+8. Record inline citation coverage and claim-to-source matrix pointer when available.
+9. Record FlowGuard closure status and installed/source parity status when the run changed skill behavior.
+10. Keep sensitive source content in owning systems, not in the ledger.
 
 If postflight cannot be written, report the blocker and provide the intended record structure in the final appendix.

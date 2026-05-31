@@ -65,8 +65,28 @@ Rules:
 - Evidence is not an event by itself.
 - An event is not a trace by itself.
 - A trace is not a final claim by itself.
+- Motive, fiscal pressure, expert commentary, and market concern are context or interpretation unless the model links them to concrete implementation or outcome evidence.
+- A local pilot, local exemption, or local enforcement notice is not national implementation evidence unless a national source or implementing rule creates that link.
 - Confidence language must follow evidence strength and claim-boundary review.
 - Contradictions must stay visible until resolved or explicitly scoped.
+
+## Policy And Current-Event Source Roles
+
+For policy rumors, regulation changes, market-moving "new clues", and current-event investigations, classify each important source by role:
+
+```text
+trigger claim or rumor
+official action
+jurisdiction/scope
+implementation evidence
+market or execution data
+fiscal or motive context
+expert commentary
+historical background
+future hypothesis trigger
+```
+
+Implementation evidence includes items such as implementing rules, effective dates, rates or standards, covered population, city or agency lists, enforcement guidance, budget treatment, and observed execution. If those signals are absent, state which were checked before writing a negative or partial finding.
 
 ## Source Freshness
 
@@ -76,6 +96,8 @@ For time-sensitive topics, record:
 - coverage period;
 - access date;
 - whether the source is primary, secondary, or commentary;
+- whether the source is current enough for the claim it supports;
+- whether a later source supersedes or narrows it;
 - whether newer evidence may stale the conclusion.
 
 Do not force a timeline section unless time boundaries matter to the conclusion.

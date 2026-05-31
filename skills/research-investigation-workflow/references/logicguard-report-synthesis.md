@@ -87,13 +87,17 @@ claim id
 lead id
 section or paragraph target
 source ids
-source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis
+source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis | forecast trigger
+source date or freshness
+claim use: direct support | scope limiter | contrast | context | forecast trigger
 claim strength
 inline citation marker, such as [S1] or [S1; S4]
 limitation or rebuttal
 ```
 
 Each important factual claim, official-claim report, analytic inference, limitation, and future hypothesis must have either an inline citation marker or an explicit note that it is uncited framing/background. Do not leave a key paragraph supported only by a final bibliography.
+
+For policy-rumor or current-event writing, the matrix must keep official action, jurisdiction/scope, implementation evidence, fiscal or motive context, expert commentary, and forecast separate. Expert commentary or fiscal pressure can support plausibility or motive, but cannot support a claim that implementation has occurred.
 
 ## Section And Paragraph Blueprint
 
@@ -104,6 +108,7 @@ section purpose
 previous-section handoff
 main claim
 lead ids resolved
+reader question answered
 paragraph sequence
 evidence and limiting evidence
 required citation markers
@@ -119,6 +124,7 @@ support sentence(s)
 limitation or counter sentence when relevant
 source markers
 claim strength label
+source-role label when ambiguity matters
 ```
 
 This blueprint is the bridge between LogicGuard modeling and readable prose. If it is missing for a core section, report the draft as under-modeled.
@@ -162,6 +168,8 @@ Audit final prose for:
 - source existence written as source support.
 - important claim without inline citation marker;
 - official claim written as independent fact;
+- expert commentary, fiscal pressure, or motive context written as implementation evidence;
+- local pilot action written as national rollout evidence without a bridging source;
 - limiting source omitted from a paragraph that relies on a contested claim;
 - section order that lacks a clear reasoning handoff.
 

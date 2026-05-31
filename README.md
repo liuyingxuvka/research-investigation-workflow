@@ -10,7 +10,7 @@
 </p>
 <!-- README HERO END -->
 
-- **Current version:** `v0.1.0`
+- **Current version:** `v0.1.1`
 - **Surface:** Codex skill and reference workflow, not a standalone app
 - **Guard stack:** TraceGuard, LogicGuard, FlowGuard, and a local Research Investigation History Ledger
 - **Language note:** English comes first; the second half is a Chinese mirror.
@@ -123,7 +123,7 @@ CHANGELOG.md                            Release history
 
 # Research Investigation Workflow 中文镜像
 
-- **当前版本：** `v0.1.0`
+- **当前版本：** `v0.1.1`
 - **形态：** Codex skill 和 reference workflow，不是独立 app
 - **Guard stack：** TraceGuard、LogicGuard、FlowGuard 和本地 Research Investigation History Ledger
 

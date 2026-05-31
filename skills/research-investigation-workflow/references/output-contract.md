@@ -8,6 +8,7 @@ Include, when relevant:
 
 - title;
 - executive summary;
+- reader route for long reports: first question answered, why the next section follows, where limitations and future hypotheses appear;
 - key findings;
 - timeline or storyline;
 - explanation of confidence and evidence levels;
@@ -26,9 +27,12 @@ Each important paragraph should make the source role clear when ambiguity matter
 - limiting or counter evidence;
 - expert analysis;
 - historical background;
-- hypothesis or inference.
+- hypothesis or inference;
+- forecast or future trigger.
 
 Use a brief reader route near the start of long reports: what question is answered first, why the next section follows, and where limitations appear.
+
+For policy-rumor or current-event reports, explicitly separate official action, jurisdiction/scope, implementation evidence, fiscal or motive context, expert commentary, and forecast. Do not let fiscal pressure or expert commentary stand in for implementation evidence.
 
 ## Evidence Levels
 
@@ -49,7 +53,7 @@ For substantial reports, include or append:
 
 - logic-lead coverage table: lead, status, support, limiting evidence, gap, report treatment;
 - event/evidence timeline: date, event, source markers, confidence, relevance;
-- claim-to-source matrix: important claim, paragraph/section, source markers, source role, limitation;
+- claim-to-source matrix: important claim, paragraph/section, source markers, source role, source date/freshness, claim use, limitation;
 - unresolved gap/watchlist table.
 
 If a table is omitted, state why it would not add value for the current report.

@@ -25,8 +25,9 @@ Use this skill to run a deep, evidence-led investigation from user goal intake t
 2. Search the Research Investigation History Ledger before new evidence work.
 3. Classify the evidence-source policy: public, local, internal, permission-gated, and hypothesis/inference.
 4. Build an initial logic-lead map before broad writing: actors, motives, event facts, outcomes, contradictions, limiting evidence, follow-up consequences, and alternative explanations.
-5. Check current TraceGuard, LogicGuard, and FlowGuard command surfaces before claiming a concrete command path is valid.
-6. Use FlowGuard for multi-stage freshness and closure when the investigation has more than a short single-pass answer.
+5. For policy rumors or current-event "new clue" requests, build a role ladder before writing: trigger claim, official action, jurisdiction/scope, implementation evidence, market/execution data, fiscal or motive context, expert commentary, and future hypothesis. Do not collapse these roles into one storyline.
+6. Check current TraceGuard, LogicGuard, and FlowGuard command surfaces before claiming a concrete command path is valid.
+7. Use FlowGuard for multi-stage freshness and closure when the investigation has more than a short single-pass answer.
 
 ## Route
 
@@ -50,6 +51,8 @@ Continue the loop until the requested conclusion strength is supported, the budg
 
 ## Final Delivery
 
-Deliver a readable main report first, then appendix material. The main report must include inline citation markers for important claims and make source roles visible: event fact, official claim, independent report, limiting evidence, expert analysis, historical background, or hypothesis. Include findings, confidence/evidence levels, timeline or storyline, logic-lead coverage, hypotheses, assumptions, unresolved gaps, source appendix, TraceGuard summary, LogicGuard audit summary, FlowGuard closure summary, and History Ledger postflight status as appropriate.
+Deliver a readable main report first, then appendix material. Long reports need a brief reader route near the start so the reader knows which question is answered first, why sections follow in that order, and where limitations appear. The main report must include inline citation markers for important claims and make source roles visible: event fact, official claim, independent report, limiting evidence, expert analysis, historical background, hypothesis, or forecast. Include findings, confidence/evidence levels, timeline or storyline, logic-lead coverage, hypotheses, assumptions, unresolved gaps, source appendix, TraceGuard summary, LogicGuard audit summary, FlowGuard closure summary, and History Ledger postflight status as appropriate.
+
+For negative or partial findings, name the missing implementation signals that were checked or not found. Examples: implementing rule, jurisdiction list, tax rate or standard, effective date, enforcement guidance, budget treatment, execution data, or later market outcome evidence.
 
 If closure is partial or blocked, say exactly what is missing and which claim strength remains supported.

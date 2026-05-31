@@ -73,6 +73,25 @@ Typical lead classes:
 
 Depth is judged by lead coverage and evidence-chain status, not by the number of sources collected.
 
+## Stage 3A: Policy-Rumor And Current-Event Ladder
+
+When the user asks about a possible new policy, regulatory event, market rumor, or "new clue", split the apparent event into evidence roles before writing:
+
+```text
+trigger claim or rumor
+official action actually found
+jurisdiction and population in scope
+implementation evidence: rule, tax rate, effective date, agency guidance, city list, budget treatment, enforcement data
+market or execution data
+fiscal, political, or actor-motive context
+expert or media interpretation
+future hypothesis and observable triggers
+```
+
+Each role needs a status and source markers. Fiscal pressure, actor motive, expert commentary, or market fear can explain why a policy is plausible, but they are not implementation evidence. A local pilot action is not national rollout evidence unless a national source creates that link.
+
+For a negative or partial finding, record which implementation signals were searched, absent, access-gated, or not applicable. Search failure alone is not proof of absence unless the searched source set is strong enough for that claim.
+
 ## Stage 4: First-Round Search
 
 Search several directions when relevant:
@@ -150,6 +169,8 @@ claim or paragraph target
 lead id
 source ids
 source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis
+source date or freshness
+claim use: direct support | scope limiter | contrast | context | forecast trigger
 claim strength
 required inline citation marker
 missing support or limitation
@@ -172,6 +193,16 @@ executive summary
 ```
 
 The story plan should include section order, section handoffs, paragraph blueprints for core sections, and where inline citations must appear.
+
+For long reports, add a reader route at the start of the plan:
+
+```text
+first question answered
+why section 2 follows section 1
+where contradictory or limiting evidence appears
+where future-impact material begins
+what is appendix-only
+```
 
 ## Stage 12: Citation-Grounded Drafting
 
