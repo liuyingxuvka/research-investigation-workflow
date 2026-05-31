@@ -19,7 +19,7 @@
 
 - [x] 3.1 Update research workflow README, CHANGELOG, and VERSION for `v0.2.0`.
 - [x] 3.2 Rewrite or enhance SourceGuard README with README Showcase Writer standards.
-- [ ] 3.3 Prepare SourceGuard as first public GitHub release `v0.1.0`.
+- [x] 3.3 Prepare SourceGuard as first public GitHub release `v0.1.0`.
 
 ## 4. Install Sync And Validation
 
@@ -31,7 +31,7 @@
 
 ## 5. GitHub Publication
 
-- [ ] 5.1 Commit scoped research workflow release changes without including local investigation outputs.
-- [ ] 5.2 Push research workflow and publish GitHub release `v0.2.0`.
-- [ ] 5.3 Initialize SourceGuard git repository, create GitHub repository, commit scoped source files, push, protect default branch where possible, and publish release `v0.1.0`.
-- [ ] 5.4 Record KB postflight and report exact links, versions, tests, and remaining boundaries.
+- [x] 5.1 Commit scoped research workflow release changes without including local investigation outputs.
+- [x] 5.2 Push research workflow and publish GitHub release `v0.2.0`.
+- [x] 5.3 Initialize SourceGuard git repository, create GitHub repository, commit scoped source files, push, protect default branch where possible, and publish release `v0.1.0`.
+- [x] 5.4 Record KB postflight and report exact links, versions, tests, and remaining boundaries.
