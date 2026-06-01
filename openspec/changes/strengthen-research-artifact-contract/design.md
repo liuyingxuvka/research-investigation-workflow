@@ -53,7 +53,7 @@ The upgrade is not a product/UI change. The requested improvement is a behavior-
 
 1. Update OpenSpec proposal/design/spec/tasks in `ResearchInvestigationWorkflow_20260531`.
 2. Patch source repo skill/reference files for research workflow, SourceGuard, TraceGuard, and LogicGuard.
-3. Sync the corresponding installed Codex skill folders under `C:\Users\liu_y\.codex\skills`.
+3. Sync the corresponding installed Codex skill folders under the local Codex skills directory, normally `$CODEX_HOME/skills`.
 4. Run skill validation, focused command-surface checks, OpenSpec validation, FlowGuard checks, and package examples/tests.
 5. Record FlowGuard adoption evidence and final git status without reverting other agents' work.
 

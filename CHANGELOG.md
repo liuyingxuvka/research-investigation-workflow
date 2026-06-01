@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.2.1 - 2026-06-01
+
+Research artifact contract hardening.
+
+- Added requested final artifact genre capture so the workflow can produce reports, papers, memos, briefs, articles, literature reviews, deck storylines, or decision notes without forcing report-only language.
+- Added a Research Plan Card and per-round replanning gate for substantive investigations.
+- Strengthened SourceGuard discovery-loop guidance with search tactics and source-reading observations.
+- Strengthened TraceGuard and LogicGuard handoffs so event facts, explanations, outcomes, evidence roles, gaps, and final prose treatment remain separate.
+- Synchronized installed Codex skill guidance and local FlowGuard/OpenSpec validation evidence.
+
 ## v0.2.0 - 2026-05-31
 
 SourceGuard discovery orchestration.
