@@ -68,6 +68,23 @@ When TraceGuard or LogicGuard reports a gap, convert it into SourceGuard search 
 | Contradiction | freshness-focused search, original record search, limiting evidence search |
 | Permission gap | access gap unless user provides authorized access |
 
+## Search Tactic Catalog
+
+For important leads, choose tactics by evidence role rather than repeating one generic keyword search. Common tactics:
+
+| Tactic | Use when | Guardrail |
+| --- | --- | --- |
+| `original-source` | A claim needs primary or closest-available records | Do not treat summaries as primary records |
+| `specific-site` | The user, source policy, or evidence role points to a known domain, publisher, repository, or archive | Preserve the site/domain searched and access limits |
+| `source-lineage` | A claim, rumor, quotation, or statistic needs its origin traced | Do not cite later repeats as origin unless lineage is checked |
+| `independent-source` | Support is one-sided, official-only, vendor-only, or otherwise dependent | Record independence limits when sources share origin |
+| `counter-limiting` | A claim may be overstated, contested, or scope-limited | Preserve limiting evidence instead of treating it as noise |
+| `execution-outcome` | A claim says something happened, launched, operated, changed behavior, or produced impact | Separate announcement evidence from implementation or outcome evidence |
+| `freshness` | A current-state or recent-event claim may have changed | Record source date and coverage period |
+| `stakeholder` | Affected actors, implementers, critics, users, residents, companies, or regulators may materially change interpretation | Do not make stakeholder quotes stand in for event facts |
+| `absence-signal` | The likely record should exist if a claim were established | Record searched sources and coverage before treating non-findings as meaningful |
+| `multimodal-anchor` | A claim depends on an image, chart, PDF page, map, video, audio, table, row, or timestamp | Do not invent OCR, transcript, or visual/audio content without extraction input |
+
 ## Observation Rules
 
 After a search:
@@ -78,6 +95,23 @@ After a search:
 4. Mark permission-gated or unavailable material as access gap.
 5. Record contradictions and limiting evidence instead of overwriting earlier support.
 6. Replan after important observations.
+
+For every important source-reading observation, record as much of this support boundary as is known:
+
+```text
+what the source says
+what it can support
+what it cannot support
+source role
+source date or freshness
+coverage period
+locator
+contradiction or limitation
+new lead or follow-up tactic
+handoff readiness: SourceGuard only | TraceGuard-ready | LogicGuard-candidate | omit/downgrade
+```
+
+Title relevance, snippet relevance, or source existence alone is not enough for promotion. A source that has not been read or anchored remains a candidate.
 
 ## Handoff To TraceGuard
 

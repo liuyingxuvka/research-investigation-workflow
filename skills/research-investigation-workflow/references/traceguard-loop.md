@@ -14,6 +14,16 @@ It does not write final truth claims. It does not replace LogicGuard final claim
 
 For substantive investigations, TraceGuard should also separate claim origin, direct facts, source statements, scope boundaries, execution or outcome evidence, context or motive evidence, interpretation, counter or limiting evidence, and future triggers. Context can explain why a claim is plausible, but it does not validate execution, causality, outcome, or broader scope.
 
+Keep three claim layers separate:
+
+```text
+event fact: what happened, when, where, and who is involved
+explanation: why it happened, what mechanism or motive is supported
+outcome or impact: what changed, operated, shipped, failed, improved, or harmed
+```
+
+Evidence for one layer does not validate the others. An official announcement may support a source statement; it does not establish execution or outcome without execution/outcome evidence. Motive or context evidence may support plausibility; it does not establish causality without a warrant and bridging evidence.
+
 SourceGuard answers a different question:
 
 ```text
@@ -100,6 +110,22 @@ Recommended tables:
 
 Do not pass a lead to final prose as a finding unless its status and safe wording support that strength.
 
+Before handing material to LogicGuard, check:
+
+```text
+lead status known
+event evidence anchored
+explanation evidence separated from event evidence
+outcome or impact evidence separated from announcement/context evidence
+counter or limiting evidence considered
+safe wording available
+unsafe wording listed when overclaim risk is material
+missing evidence identified
+access gaps carried forward
+```
+
+If the handoff is incomplete, either route the missing evidence need back to SourceGuard, keep the lead as candidate/weak/access-gap, or downgrade the final artifact claim.
+
 ## Gap-Driven Loop
 
 For each important gap, decide:
@@ -124,6 +150,15 @@ After new evidence:
 5. Rebuild or update the model.
 6. Rerun evaluation and diagnostics.
 7. Write back gaps to TraceGuard and SourceGuard if the libraries support it.
+
+When sources conflict, do not resolve the conflict by averaging or by selecting the smoothest story. Record:
+
+- which source conflicts with which;
+- which source is fresher;
+- which source is closer to the event;
+- which source has stronger locator or provenance;
+- whether the conflict affects event fact, explanation, outcome, or scope;
+- whether SourceGuard follow-up, LogicGuard warrant review, or claim downgrade is required.
 
 Suggested write-back:
 

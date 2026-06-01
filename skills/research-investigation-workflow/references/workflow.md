@@ -22,7 +22,7 @@ Identify:
 
 - topic and scope;
 - target audience;
-- report type;
+- requested final artifact genre, such as report, paper, memo, brief, article, literature review, deck storyline, decision note, or another user-requested format;
 - desired conclusion strength;
 - public, local, and internal search permissions;
 - time or depth budget;
@@ -39,9 +39,28 @@ deep research conclusion
 formal report / paper-grade conclusion
 ```
 
-If the user has not specified a conclusion strength, default to `working hypothesis` for a quick pass and `evidence-backed finding` for a report request.
+If the user has not specified a conclusion strength, default to `working hypothesis` for a quick pass and `evidence-backed finding` for a substantive final artifact request.
 
-Do not ask the user to choose a shallow/medium/deep mode. If this skill is used for a substantive report, treat the default as deep investigation and manage scope by claim strength, evidence access, and explicit unresolved gaps.
+Do not ask the user to choose a shallow/medium/deep mode. If this skill is used for a substantive final artifact, treat the default as deep investigation and manage scope by claim strength, evidence access, and explicit unresolved gaps.
+
+## Stage 1A: Research Plan Card
+
+Before broad search, create a lightweight research plan card. Do not stop for user input unless a missing choice would materially change the artifact or evidence boundary. Include:
+
+```text
+research question
+target claim strength
+requested final artifact genre
+target audience
+3-7 key leads or subquestions
+priority source classes
+required counter or support-limiting evidence
+required execution, outcome, stakeholder, or freshness evidence when relevant
+out-of-scope boundaries
+downgrade rule if evidence is missing, stale, permission-gated, or contradicted
+```
+
+The plan card is an internal control surface, not the final artifact style. It should guide research behavior without forcing the final artifact into a fixed diagnostic format.
 
 ## Stage 2: Evidence Source Policy
 
@@ -148,6 +167,23 @@ handoff readiness
 
 If an important evidence role is still missing, route the gap back through SourceGuard before promoting the material to TraceGuard or LogicGuard. If the missing role cannot be searched under the current permissions, record an access gap and downgrade the claim boundary.
 
+## Stage 6A: Per-Round Replan Gate
+
+After each meaningful search or source-reading batch, choose and record one next move before drafting final claims:
+
+```text
+continue deepening the same lead
+switch source class or search tactic
+seek counter or limiting evidence
+seek execution, outcome, stakeholder, or freshness evidence
+route stable event material to TraceGuard
+route stable source support to LogicGuard
+downgrade the claim
+stop and state the unresolved gap
+```
+
+Use the replan gate to prevent linear "search once, write confidently" behavior. If a new source changes the target artifact, audience, conclusion strength, or evidence policy, mark earlier validation evidence stale and update the plan card.
+
 ## Stage 7: TraceGuard Case Library
 
 Create or reuse:
@@ -195,7 +231,7 @@ Loop through SourceGuard plan, search, save, observe, TraceGuard extract/evaluat
 
 ## Stage 9A: Minimum Investigation Rounds
 
-For any report that claims to be detailed, complete, or comprehensive, run these rounds before final prose:
+For any final artifact that claims to be detailed, complete, comprehensive, conclusive, or deep, run these rounds before final prose:
 
 ```text
 official/original fact round: what happened, according to primary or closest available records
@@ -205,7 +241,7 @@ stakeholder round: what affected actors, institutions, experts, users, residents
 future-trigger round: what later evidence would confirm, falsify, or materially change the current conclusion
 ```
 
-Do not treat these as source-count quotas. A round is complete only when its lead status is recorded as supported, contradicted, access-gap, not-supported, or deliberately downgraded. If an important round is incomplete, label the output as an initial investigation, staged report, qualified finding, or downgraded conclusion.
+Do not treat these as source-count quotas. A round is complete only when its lead status is recorded as supported, contradicted, access-gap, not-supported, or deliberately downgraded. If an important round is incomplete, label the output as an initial investigation, staged artifact, qualified finding, or downgraded conclusion.
 
 ## Stage 10: Explicit LogicGuard Promotion
 
@@ -222,7 +258,7 @@ Model root claims, support, warrants, assumptions, rebuttals, limitations, and s
 Before final prose, create a matrix that links important claims to source roles:
 
 ```text
-claim or paragraph target
+claim or target artifact locator
 lead id
 source ids
 source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis
@@ -231,13 +267,14 @@ claim use: direct support | scope limiter | contrast | context | forecast trigge
 claim strength
 required inline citation marker
 missing support or limitation
+final prose treatment: main text | footnote | appendix | omitted with reason
 ```
 
 Every important factual claim, official-claim report, analytic inference, limitation, and future hypothesis needs a citation marker or an explicit reason it is uncited background.
 
 ## Stage 13: Artifact Synthesis
 
-Create a target story plan before final prose. Common profiles:
+Create a target story plan before final prose. The requested artifact genre controls final organization and tone. Common profiles:
 
 ```text
 news-style article
@@ -247,11 +284,14 @@ incident review
 policy memo
 paper-style long report
 executive summary
+literature review
+decision note
+deck storyline
 ```
 
-The story plan should include section order, section handoffs, paragraph blueprints for core sections, and where inline citations must appear.
+The story plan should include section order, section handoffs, paragraph or artifact-location blueprints for core sections, and where inline citations must appear. Coverage obligations may be satisfied through narrative prose, compact citations, footnotes, tables, or appendix. Do not force evidence-role categories into visible headings unless that improves the requested artifact.
 
-For long reports, add a reader route at the start of the plan:
+For long artifacts, add a reader route at the start of the plan:
 
 ```text
 first question answered
@@ -278,15 +318,15 @@ Also audit for missing inline citations, source-role confusion, unsupported synt
 
 If the audit fails because source coverage is missing, return to SourceGuard for a targeted search action. If it fails because event interpretation or contradiction handling is weak, return to TraceGuard. If it fails because the warrant or argument boundary is weak, return to LogicGuard. If the missing material cannot be obtained, weaken the claim or move it to hypothesis/unresolved.
 
-## Stage 15A: Reader-Report Cleanup
+## Stage 15A: Reader-Facing Artifact Cleanup
 
-Before final delivery, clean the reader-facing main report:
+Before final delivery, clean the reader-facing final artifact:
 
 - remove internal Guard-family terms such as `SourceGuard`, `TraceGuard`, `LogicGuard`, `FlowGuard`, and `History Ledger` unless the user explicitly asked for a methods appendix;
 - replace them with ordinary language such as source search plan, event chain, evidence chain, argument structure, process check, source appendix, or run notes;
 - keep method details, command evidence, and run bookkeeping in the appendix or local ledger;
 - verify each core paragraph says who is speaking or what type of source supports the point when that matters;
-- verify the section order follows the reader route rather than a tool log.
+- verify the section, paragraph, page, slide, or artifact order follows the reader route rather than a tool log.
 
 ## Stage 16: FlowGuard Closure
 

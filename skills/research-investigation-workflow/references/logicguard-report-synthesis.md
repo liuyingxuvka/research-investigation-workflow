@@ -1,6 +1,6 @@
 # LogicGuard Report Synthesis
 
-Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a report, attach inline citation markers, or audit final prose. Use SourceGuard before promotion when the investigation still needs source-discovery planning, missing-role search, or counter/limiting source search.
+Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a target artifact such as a report, paper, memo, brief, article, or deck storyline, attach inline citation markers, or audit final prose. Use SourceGuard before promotion when the investigation still needs source-discovery planning, missing-role search, or counter/limiting source search.
 
 ## Boundary
 
@@ -83,14 +83,20 @@ python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py gaps <
 
 Deepen high-importance, weak, or reader-risk nodes before confident prose.
 
+## Genre-Preserving Synthesis Boundary
+
+The requested artifact genre controls final organization and tone. LogicGuard must not force a diagnostic-table style or fixed fact/official-claim/inference/gap headings into the reader-facing artifact.
+
+Use source roles, claim types, limitations, and gaps as internal coverage obligations and audit dimensions. They may appear as natural prose, citations, footnotes, tables, or appendix depending on the requested artifact. The final artifact should read like the requested artifact, not like a model audit, while still keeping important claims traceable.
+
 ## Claim-To-Source Matrix
 
-Before writing final report prose, build or inspect a claim-to-source matrix:
+Before writing final artifact prose, build or inspect a claim-to-source matrix:
 
 ```text
 claim id
 lead id
-section or paragraph target
+target artifact locator: section | paragraph | page | slide | note | appendix
 source ids
 source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis | forecast trigger
 source date or freshness
@@ -98,6 +104,7 @@ claim use: direct support | scope limiter | contrast | context | forecast trigge
 claim strength
 inline citation marker, such as [S1] or [S1; S4]
 limitation or rebuttal
+final prose treatment: main text | footnote | appendix | omitted with reason
 ```
 
 Each important factual claim, official-claim report, analytic inference, limitation, and future hypothesis must have either an inline citation marker or an explicit note that it is uncited framing/background. Do not leave a key paragraph supported only by a final bibliography.
@@ -106,7 +113,7 @@ For all substantive investigation writing, the matrix must keep claim origin, di
 
 ## Section And Paragraph Blueprint
 
-Create a story plan before final prose. For core sections, include:
+Create a story plan before final prose. For core sections or artifact regions, include:
 
 ```text
 section purpose
@@ -114,16 +121,16 @@ previous-section handoff
 main claim
 lead ids resolved
 reader question answered
-paragraph sequence
+paragraph, page, slide, or artifact sequence
 evidence and limiting evidence
 required citation markers
 next-section handoff
 ```
 
-For core paragraphs, include:
+For core paragraphs or artifact units, include:
 
 ```text
-paragraph job
+paragraph/page/slide/unit job
 claim sentence
 support sentence(s)
 limitation or counter sentence when relevant
@@ -131,9 +138,10 @@ who says it or which source role supports it
 source markers
 claim strength label
 source-role label when ambiguity matters
+final treatment: main text | footnote | appendix | omitted with reason
 ```
 
-This blueprint is the bridge between LogicGuard modeling and readable prose. If it is missing for a core section, report the draft as under-modeled.
+This blueprint is the bridge between LogicGuard modeling and readable target-artifact prose. If it is missing for a core section or artifact region, report the draft as under-modeled.
 
 Before drafting each core paragraph, know:
 
@@ -154,7 +162,7 @@ Create a story plan or outline before final prose:
 python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py synthesize <model> --goal "<goal>" --profile report --delivery
 ```
 
-Use the synthesized plan to write a readable report. Do not expose every diagnostic detail in the main report, but keep source markers and claim-strength wording visible where they matter.
+Use the synthesized plan to write a readable target artifact. Do not expose every diagnostic detail in the reader-facing artifact, but keep source markers and claim-strength wording visible where they matter. Preserve the requested genre: report, paper, memo, brief, article, literature review, deck storyline, or another user-specified artifact.
 
 Recommended prose pattern:
 
@@ -189,8 +197,10 @@ Audit final prose for:
 - local or scope-limited evidence written as broader-scope evidence without a bridging source;
 - limiting source omitted from a paragraph that relies on a contested claim;
 - section order that lacks a clear reasoning handoff.
-- internal Guard-family tool names leaked into the reader-facing main report when no methods appendix was requested;
+- internal Guard-family tool names leaked into the reader-facing artifact when no methods appendix was requested;
 - missing "who says this" wording for paragraphs that combine source claims, evidence, and inference.
+- final artifact reads like a diagnostic dump or tool log instead of the requested genre;
+- required coverage categories appear as forced visible headings when they would damage the requested artifact.
 
 Run this audit after the last material prose edit. If the report changes after audit, rerun the audit or mark the closure evidence stale.
 

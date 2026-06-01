@@ -283,3 +283,38 @@
 
 ### Next Actions
 - Publish v0.2.0 and archive OpenSpec change after release if desired
+
+## strengthen-research-artifact-contract-20260601 - Strengthen research investigation artifact contract across Guard skills
+
+- Project: ResearchInvestigationWorkflow_20260531
+- Trigger reason: User requested OpenSpec and FlowGuard governed optimization after comparing local Guard-family research workflow with ChatGPT deep research behavior
+- Status: completed
+- Skill decision: use_direct_flowguard_skill: existing_model_preflight plus development_process_flow; companion OpenSpec change strengthen-research-artifact-contract
+- Started: 2026-06-01T13:00:00+00:00
+- Ended: 2026-06-01T13:05:00+00:00
+- Commands OK: True
+
+### Model Files
+- .flowguard/existing_model_preflight/model.py
+- .flowguard/development_process_flow/model.py
+
+### Commands
+- OK: `python -c "import flowguard; print(flowguard.SCHEMA_VERSION)"` -> schema 1.0
+- OK: `python -m flowguard project-audit --root .`
+- OK: `python .flowguard\existing_model_preflight\run_checks.py` -> valid route passed; built-in duplicate-boundary fixture remains blocked as expected
+- OK: `python .flowguard\development_process_flow\run_checks.py` -> valid lifecycle passed; built-in stale-validation fixture remains blocked as expected
+- OK: `openspec validate strengthen-research-artifact-contract --strict`
+- OK: changed installed and source skill `quick_validate.py` checks
+- OK: installed/source hash parity check
+
+### Findings
+- Research workflow now records requested final artifact genre and a research plan card before collecting evidence.
+- The workflow now has a per-round replan gate and supports report, paper, memo, brief, article, literature review, deck storyline, and decision note outputs.
+- Final output coverage obligations remain internal reasoning checks and do not force diagnostic headings into reader-facing prose.
+
+### Risk Evidence Summary
+- Broken-route fixture still blocks duplicate all-in-one engine ownership by design.
+- Stale-lifecycle fixture still blocks old validation evidence by design.
+
+### Skipped Steps
+- No remote push or release publication was performed.

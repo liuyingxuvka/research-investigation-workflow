@@ -1,25 +1,25 @@
 # Output Contract
 
-Use this contract before final delivery. The main report should be readable; the appendix should carry evidence, audit, and process details.
+Use this contract before final delivery. The final artifact should follow the user's requested genre; the appendix or support material should carry evidence, audit, and process details when useful.
 
-## Main Report
+## Main Artifact
 
-Include, when relevant:
+The final artifact may be a research report, paper, memo, brief, article, literature review, deck storyline, decision note, or another research-backed artifact requested by the user. Include, when relevant to that genre:
 
 - title;
-- executive summary;
-- reader route for long reports: first question answered, why the next section follows, where limitations and future hypotheses appear;
+- executive summary, abstract, thesis, brief answer, or equivalent opening;
+- reader route for long artifacts: first question answered, why the next section follows, where limitations and future hypotheses appear;
 - key findings;
 - timeline or storyline;
 - explanation of confidence and evidence levels;
 - impact or implications;
 - recommended next steps.
 
-Write in human-readable prose. Do not make the main report a diagnostic dump.
+Write in human-readable artifact-native prose. Do not make the final artifact a diagnostic dump or Guard-family process log.
 
-The reader-facing main report should not expose internal Guard-family tool names such as `SourceGuard`, `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` unless the user explicitly asked for a methods appendix. Use ordinary report language instead: source search plan, event chain, evidence chain, argument structure, process check, source appendix, and run notes.
+The reader-facing final artifact should not expose internal Guard-family tool names such as `SourceGuard`, `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` unless the user explicitly asked for a methods appendix. Use ordinary artifact-appropriate language instead: source search plan, event chain, evidence chain, argument structure, process check, source appendix, and run notes.
 
-Important claims in the main report must carry compact inline source markers such as `[S1]`, `[S2; S5]`, or `[S3, limiting]`. Do not rely on a final bibliography alone for source-backed claims.
+Important claims in the final artifact must carry compact inline source markers such as `[S1]`, `[S2; S5]`, or `[S3, limiting]`, or another citation form appropriate to the requested artifact. Do not rely on a final bibliography alone for source-backed claims.
 
 Each important paragraph should make the source role clear when ambiguity matters:
 
@@ -32,11 +32,11 @@ Each important paragraph should make the source role clear when ambiguity matter
 - hypothesis or inference;
 - forecast or future trigger.
 
-Use a brief reader route near the start of long reports: what question is answered first, why the next section follows, and where limitations appear.
+Use a brief reader route near the start of long artifacts: what question is answered first, why the next section follows, and where limitations appear.
 
-For every substantive report, explicitly separate claim origin, direct facts, source statements, scope limits, execution or outcome evidence, context or motive evidence, expert interpretation, counter or limiting evidence, and forecast triggers. Do not let context, motive, or expert interpretation stand in for execution, causality, outcome, or broader-scope evidence.
+For every substantive final artifact, explicitly separate claim origin, direct facts, source statements, scope limits, execution or outcome evidence, context or motive evidence, expert interpretation, counter or limiting evidence, and forecast triggers in the underlying reasoning. Do not force these categories into visible headings unless that improves the requested artifact. Do not let context, motive, or expert interpretation stand in for execution, causality, outcome, or broader-scope evidence.
 
-If the official/original fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, title and close the output as an initial investigation, staged report, qualified finding, or downgraded conclusion rather than a complete investigation report.
+If the official/original fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, title and close the output as an initial investigation, staged artifact, qualified finding, or downgraded conclusion rather than a complete or conclusive artifact.
 
 ## Evidence Levels
 
@@ -53,15 +53,15 @@ Do not equate a numeric score with truth.
 
 ## Required Report Tables
 
-For substantial reports, include or append:
+For substantial final artifacts, include or append:
 
 - logic-lead coverage table: lead, status, support, limiting evidence, gap, report treatment;
 - source-discovery coverage table: source role, search action, result, access status, follow-up, claim impact;
 - event/evidence timeline: date, event, source markers, confidence, relevance;
-- claim-to-source matrix: important claim, paragraph/section, source markers, source role, source date/freshness, claim use, limitation;
+- claim-to-source matrix: important claim, artifact locator such as paragraph, section, page, or slide, source markers, source role, source date/freshness, claim use, limitation, final treatment;
 - unresolved gap/watchlist table.
 
-If a table is omitted, state why it would not add value for the current report.
+If a table is omitted, state why it would not add value for the current artifact.
 
 ## Appendix
 
@@ -101,11 +101,11 @@ Avoid:
 - presenting a search failure as evidence of absence unless search coverage supports that inference.
 - placing citations only in the bibliography when a paragraph makes source-backed claims;
 - writing official claims as independent facts;
-- hiding limiting evidence in an appendix when it materially narrows a main finding;
+- hiding limiting evidence in an appendix when it materially narrows a main finding or artifact thesis;
 - writing inference, interpretation, or source commentary as established fact;
 - omitting source-role wording when the reader needs to know who says the point;
-- leaking internal workflow terms into the reader-facing main report;
-- using a section order that reads like a process log rather than a reasoned report.
+- leaking internal workflow terms into the reader-facing final artifact;
+- using a section, paragraph, page, or slide order that reads like a process log rather than the requested artifact.
 
 ## Closure Statement
 
