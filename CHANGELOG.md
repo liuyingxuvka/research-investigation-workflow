@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.4.0 - 2026-06-02
+
+Layered research evidence contract upgrade.
+
+- Added source portfolio planning so substantive investigations check primary or closest-available, official/regulatory, execution/outcome, independent, expert/model, counter/limiting, source-lineage, and future-trigger source classes instead of relying on source count alone.
+- Added key-claim/key-number ledgers, semantic source-fit checks, and helper scripts for source portfolio, key-number provenance, and claim/source mismatch smoke checks.
+- Strengthened TraceGuard and LogicGuard orchestration so important leads, effect chains, sections, paragraphs, slides, and artifact units are modeled at their natural hierarchy before strong final wording.
+- Kept final artifact review genre-adaptive, so the workflow judges reports, papers, memos, articles, literature reviews, deck storylines, and decision notes against the user-requested target rather than a fixed report template.
+
 ## v0.3.0 - 2026-06-02
 
 Generic Research Reasoning Atlas upgrade.

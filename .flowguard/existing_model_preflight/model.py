@@ -61,7 +61,7 @@ def correct_preflight() -> ExistingModelPreflight:
             ),
             ModelContextHit(
                 "sourceguard-workflows",
-                model_path="<CODEX_HOME>/skills/sourceguard; C:/Users/liu_y/Documents/SourceGuard_20260531",
+                model_path="<CODEX_HOME>/skills/sourceguard; <local-source-repo>/SourceGuard_20260531",
                 evidence_id="sourceguard-command-surface-20260531",
                 evidence_tier="command_surface_checked",
                 responsibilities=("source discovery", "candidate sources", "evidence anchors", "source portfolio class coverage", "key-number provenance search", "bridge-evidence search", "source lineage", "access gaps", "post-draft source-gap review"),
