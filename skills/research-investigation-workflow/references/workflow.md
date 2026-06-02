@@ -114,6 +114,65 @@ Each role needs a status, source markers, and claim-use label. Context, motive, 
 
 For a negative or partial finding, record which evidence roles or concrete signals were searched, absent, access-gated, or not applicable. Search failure alone is not proof of absence unless the searched source set is strong enough for that claim.
 
+## Stage 3B: Research Reasoning Atlas
+
+Load `reasoning-atlas.md` for substantive investigations. Build a generic Atlas before broad search or final writing:
+
+```text
+branch tree
+debate matrix
+alternative explanation matrix
+confounder ledger
+model lens selection
+expert stance map when expert interpretation matters
+causal-chain questions
+counterfactual trace questions
+conclusion tournament candidates
+future triggers and falsifiers
+```
+
+Use generic categories only. Topic-specific checks may be selected as model lenses or domain notes, but they must not become core workflow rules.
+
+For each central claim candidate, record:
+
+```text
+claim candidate
+support branches
+opposing branches
+alternative explanations
+confounders
+stakeholder or scope branches when relevant
+selected analytical lenses
+expert stance families when relevant
+falsifying evidence
+future trigger conditions
+current treatment: finding | qualified finding | hypothesis | unresolved | omit
+```
+
+The Atlas should increase reasoning quality, not produce branch noise. Prune or downgrade branches that do not affect conclusion strength, scope, method, or reader decisions.
+
+## Stage 3C: Source Registry
+
+Start a source registry before broad search. The registry is the shared spine that SourceGuard, TraceGuard, LogicGuard, and the final artifact all point back to; it is not a separate proof system.
+
+Use stable ids such as `[S1]`, `[S2]`, or another artifact-appropriate scheme. For each source, record:
+
+```text
+source id
+title or short label
+URL, file path, document id, or access-gap pointer
+source date or freshness clue
+coverage period when known
+publisher, author, or owner when relevant
+source role: claim origin | direct/original fact | source statement | scope boundary | execution/outcome | context/motive | expert interpretation | counter/limiting | future trigger
+locator: page, paragraph, table, timestamp, image region, row, or section when available
+access status: read | candidate | permission-gated | unavailable | local-only | internal-only
+claim use: direct support | scope limiter | contrast | context | forecast trigger | appendix-only | omitted
+important claims supported or limited
+```
+
+A source may have multiple roles, but do not let a broad role such as context or interpretation silently become proof of execution, outcome, causality, or scope. If a source cannot be read or anchored, keep it as candidate or access gap rather than final support.
+
 ## Stage 4: SourceGuard Discovery Plan
 
 Before broad search, build or update a SourceGuard discovery state:
@@ -122,7 +181,9 @@ Before broad search, build or update a SourceGuard discovery state:
 case goal
 claim strength target
 lead map
+Research Reasoning Atlas branch ids and missing branch roles
 required evidence roles
+source registry path or current entries
 known source candidates
 public/local/internal permissions
 access gaps
@@ -132,6 +193,8 @@ handoff targets for TraceGuard and LogicGuard
 ```
 
 Use SourceGuard to rank the first search batch across public, local, internal, counter, limiting, and follow-up evidence directions. SourceGuard scores source-discovery value only; they do not prove a claim.
+
+For Atlas-driven work, each important search action should identify the branch it supports, opposes, falsifies, or distinguishes from an alternative explanation.
 
 ## Stage 5: First-Round Search
 
@@ -156,6 +219,7 @@ After each meaningful search batch, write observations back into the SourceGuard
 
 ```text
 source found
+source registry id
 source role covered
 lead or claim affected
 freshness and coverage-period clues
@@ -167,7 +231,37 @@ handoff readiness
 
 If an important evidence role is still missing, route the gap back through SourceGuard before promoting the material to TraceGuard or LogicGuard. If the missing role cannot be searched under the current permissions, record an access gap and downgrade the claim boundary.
 
-## Stage 6A: Per-Round Replan Gate
+If an important Atlas branch still lacks evidence, opposition, alternative-explanation coverage, expert/model support, or falsifier search, route the gap back through SourceGuard before treating the Atlas as complete.
+
+## Stage 6A: Source-Role Coverage Review
+
+Before final drafting begins, review whether the source registry covers the source roles required by the target conclusion:
+
+```text
+claim origin
+direct/original facts
+source statements
+scope boundaries
+execution or outcome evidence
+context or motive evidence
+expert or analyst interpretation
+counter or limiting evidence
+future trigger conditions
+```
+
+For each role, record one status:
+
+```text
+complete | supported-incomplete | gap | access-gap | not-applicable | not-run
+```
+
+If the artifact claims to be complete, deep, or conclusive, `gap`, `access-gap`, or `not-run` on any important role must trigger a targeted SourceGuard search, a visible limitation, or a downgraded conclusion. When a JSON or YAML coverage ledger exists, run the coverage helper if available:
+
+```powershell
+python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\source_role_coverage_check.py <coverage.json-or-yaml> --json
+```
+
+## Stage 6B: Per-Round Replan Gate
 
 After each meaningful search or source-reading batch, choose and record one next move before drafting final claims:
 
@@ -199,12 +293,18 @@ Use TraceGuard for messy case material, weak signals, and gaps. Keep rejected or
 Build and evaluate a TraceGuard model. Record:
 
 - storyline candidates;
+- competing storyline candidates;
 - lead map and lead status;
 - validated, candidate, weak, or contradicted status;
 - timeline;
 - event-chain table;
 - explanation-chain table;
 - evidence-chain state for each important lead;
+- execution-chain state for claims that move from announcement, plan, or claim to implementation, outcome, impact, or non-occurrence;
+- causal-chain state for cause, mechanism, and effect claims;
+- counterfactual trace state when the claim depends on a proposed cause;
+- confounder ledger for material alternative drivers or scope conditions;
+- red-team storyline for the strongest opposing narrative when relevant;
 - gap ledger;
 - contradiction ledger;
 - safe and unsafe wording guidance;
@@ -225,6 +325,9 @@ one-sided evidence -> SourceGuard counter/limiting source action
 claimed outcome without execution evidence -> SourceGuard execution follow-up action
 missing stakeholder view -> SourceGuard stakeholder action
 future-impact claim -> SourceGuard observable-trigger action
+branch lacks disconfirming source -> SourceGuard disconfirming search action
+alternative explanation remains live -> SourceGuard branch-distinguishing search action or LogicGuard conclusion tournament
+counterfactual remains unresolved -> TraceGuard counterfactual review or SourceGuard evidence action
 ```
 
 Loop through SourceGuard plan, search, save, observe, TraceGuard extract/evaluate, LogicGuard warrant review, and gap write-back until the claim strength is supported or downgraded.
@@ -253,6 +356,18 @@ SourceGuard candidates may point to material worth preserving, but promotion req
 
 Model root claims, support, warrants, assumptions, rebuttals, limitations, and scope. Deepen high-importance or weak nodes before writing confident prose.
 
+For Atlas-driven work, model or preserve:
+
+```text
+preferred conclusion
+steelman opposition
+alternative explanations
+selected model lenses as warrants or limitations
+expert stances as typed support
+confounders and scope boundaries
+robustness checks
+```
+
 ## Stage 12: Claim-To-Source Matrix
 
 Before final prose, create a matrix that links important claims to source roles:
@@ -263,6 +378,7 @@ lead id
 source ids
 source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis
 source date or freshness
+source registry status: registered | candidate | access-gap | appendix-only
 claim use: direct support | scope limiter | contrast | context | forecast trigger
 claim strength
 required inline citation marker
@@ -271,6 +387,25 @@ final prose treatment: main text | footnote | appendix | omitted with reason
 ```
 
 Every important factual claim, official-claim report, analytic inference, limitation, and future hypothesis needs a citation marker or an explicit reason it is uncited background.
+
+The matrix and source registry must agree on ids and roles. A marker that appears in final prose but has no source-registry entry is a hard failure. A source-registry entry used for a materially different role than the final prose implies is a claim-audit failure.
+
+For central conclusions, add conclusion-tournament fields:
+
+```text
+preferred conclusion
+strongest support
+strongest opposition
+best alternative explanation
+model lens or warrant used
+expert stance family if relevant
+assumption load
+scope fit
+robustness if strongest support is removed
+robustness if strongest opposition is accepted
+winner: preferred | alternative | unresolved | downgraded
+allowed final wording
+```
 
 ## Stage 13: Artifact Synthesis
 
@@ -290,6 +425,8 @@ deck storyline
 ```
 
 The story plan should include section order, section handoffs, paragraph or artifact-location blueprints for core sections, and where inline citations must appear. Coverage obligations may be satisfied through narrative prose, compact citations, footnotes, tables, or appendix. Do not force evidence-role categories into visible headings unless that improves the requested artifact.
+
+Atlas obligations may appear in the final artifact as natural prose, concise comparison tables, footnotes, or appendix material. Do not turn the reader-facing artifact into a full internal Atlas unless the user asks for a methods or research-notes appendix.
 
 For long artifacts, add a reader route at the start of the plan:
 
@@ -318,7 +455,48 @@ Also audit for missing inline citations, source-role confusion, unsupported synt
 
 If the audit fails because source coverage is missing, return to SourceGuard for a targeted search action. If it fails because event interpretation or contradiction handling is weak, return to TraceGuard. If it fails because the warrant or argument boundary is weak, return to LogicGuard. If the missing material cannot be obtained, weaken the claim or move it to hypothesis/unresolved.
 
-## Stage 15A: Reader-Facing Artifact Cleanup
+Also audit citation consistency:
+
+```text
+every inline marker resolves to one registered source
+duplicate source ids are intentional and not ambiguous
+important paragraphs have markers near the claims they support
+source roles in prose match source roles in the registry and matrix
+no final bibliography-only support for important claims
+unused registry sources are appendix-only, method-only, background-only, or removed
+```
+
+For Markdown artifacts using `[S#]` markers, run the citation helper when available:
+
+```powershell
+python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\audit_markdown_sources.py <artifact.md> --json
+```
+
+Undefined markers or duplicate source definitions require repair before a passed closure claim.
+
+## Stage 15A: Final Research Quality Gate
+
+Before reader-facing cleanup and FlowGuard closure, decide whether the final artifact passes the research-quality gate:
+
+```text
+Research Reasoning Atlas status: complete | partial | blocked | reduced
+branch tree status: complete | partial | blocked | reduced
+debate and alternative-explanation status: complete | partial | blocked
+model lens status: selected-and-used | not-needed | partial | decorative-only-blocked
+expert stance status: mapped | not-needed | partial | blocked
+conclusion tournament status: passed | qualified | unresolved | blocked
+source registry status: complete | partial | blocked
+source-role coverage: complete | partial | blocked
+minimum investigation rounds: complete | partial | blocked | downgraded
+TraceGuard execution/evidence chain status: complete | partial | blocked
+LogicGuard claim-to-source and citation audit: passed | partial | blocked
+reader-facing limitation placement: passed | partial | blocked
+final claim strength allowed by weakest gate
+```
+
+If any gate is partial or blocked, the final artifact may still be useful, but it must be labeled as an initial investigation, staged artifact, qualified finding, or downgraded conclusion. Do not let a polished prose draft override a weak gate.
+
+## Stage 15B: Reader-Facing Artifact Cleanup
 
 Before final delivery, clean the reader-facing final artifact:
 

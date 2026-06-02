@@ -1,6 +1,6 @@
 # LogicGuard Report Synthesis
 
-Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a target artifact such as a report, paper, memo, brief, article, or deck storyline, attach inline citation markers, or audit final prose. Use SourceGuard before promotion when the investigation still needs source-discovery planning, missing-role search, or counter/limiting source search.
+Use LogicGuard after evidence has been organized enough to model claims, preserve important sources, synthesize a target artifact such as a report, paper, memo, brief, article, or deck storyline, attach inline citation markers, audit final prose, or adjudicate a Research Reasoning Atlas conclusion tournament. Use SourceGuard before promotion when the investigation still needs source-discovery planning, branch-aware search, missing-role search, or counter/limiting source search.
 
 ## Boundary
 
@@ -13,6 +13,10 @@ Does the written conclusion follow from declared support?
 It does not decide factual truth. It does not store messy case evidence. It does not replace TraceGuard contradiction review.
 
 It also does not rank search actions. When a LogicGuard gap depends on missing evidence, send that gap back to SourceGuard unless the correct result is to downgrade or omit the claim.
+
+LogicGuard is the final owner for claim-to-source consistency. It should check that inline markers, source registry entries, claim roles, limitations, and final prose treatment agree before the artifact is treated as passed.
+
+LogicGuard is also the final owner for deciding whether a preferred conclusion is structurally stronger than steelman opposition and material alternatives. It checks support structure, not factual truth.
 
 ## Current Command Surface Check
 
@@ -39,6 +43,7 @@ Record the promotion explicitly:
 - TraceGuard case id when the source has been used in a trace;
 - source id or path;
 - reason for promotion;
+- source registry id or citation marker when one exists;
 - LogicGuard library id or model path;
 - claim or section it supports.
 
@@ -72,6 +77,15 @@ Model:
 - scope;
 - missing support.
 
+For Atlas-driven work, also model:
+
+- preferred conclusions;
+- steelman opposing views;
+- material alternative explanations;
+- selected analytical lenses as warrants, scope rules, or limitations;
+- expert stances as fact evidence, interpretation, forecast, stakeholder statement, method lens, disputed claim, or background;
+- robustness checks and conclusion downgrades.
+
 Run checks when available:
 
 ```powershell
@@ -98,6 +112,7 @@ claim id
 lead id
 target artifact locator: section | paragraph | page | slide | note | appendix
 source ids
+source registry ids or final citation markers
 source role: event fact | official claim | independent report | limiting evidence | expert analysis | historical background | hypothesis | forecast trigger
 source date or freshness
 claim use: direct support | scope limiter | contrast | context | forecast trigger
@@ -110,6 +125,41 @@ final prose treatment: main text | footnote | appendix | omitted with reason
 Each important factual claim, official-claim report, analytic inference, limitation, and future hypothesis must have either an inline citation marker or an explicit note that it is uncited framing/background. Do not leave a key paragraph supported only by a final bibliography.
 
 For all substantive investigation writing, the matrix must keep claim origin, direct facts, source statements, scope limits, execution or outcome evidence, context or motive evidence, expert interpretation, counter or limiting evidence, and forecast triggers separate. Interpretation or motive context can support plausibility, but cannot support a claim that execution, causality, outcome, or broader scope has been established.
+
+The matrix must agree with the source registry. Treat these as audit failures:
+
+- final prose uses `[S#]` with no matching source entry;
+- two different source entries share the same final marker without an intentional merge;
+- a source is used as direct support for a role it does not cover;
+- execution, outcome, causality, or scope claims cite only announcement, context, motive, or interpretation sources;
+- important limiting evidence is present in the registry but omitted from the paragraph it narrows.
+
+## Conclusion Tournament
+
+Before strong final conclusions, run or simulate a conclusion tournament:
+
+```text
+preferred conclusion
+steelman opposition
+material alternative explanations
+strongest support
+strongest opposition
+selected model lenses and warrants
+expert stance families
+assumption load
+scope fit
+unanswered rebuttals
+robustness if strongest source is removed
+robustness if strongest opposition is accepted
+winner: preferred | alternative | unresolved | downgraded
+allowed final wording
+```
+
+If the preferred conclusion wins narrowly, use qualified wording. If the steelman opposition or an alternative explanation wins, downgrade, omit, or send the gap back to SourceGuard or TraceGuard.
+
+Model lenses must do work. A selected lens should create a warrant, branch, evidence need, limitation, or falsifier. A decorative lens name is not a LogicGuard pass.
+
+Expert stances must remain typed. Do not convert expert interpretation, forecast, stakeholder statement, or method commentary into direct fact evidence.
 
 ## Section And Paragraph Blueprint
 
@@ -201,8 +251,25 @@ Audit final prose for:
 - missing "who says this" wording for paragraphs that combine source claims, evidence, and inference.
 - final artifact reads like a diagnostic dump or tool log instead of the requested genre;
 - required coverage categories appear as forced visible headings when they would damage the requested artifact.
+- inline citation markers that do not resolve to the source registry;
+- duplicate or ambiguous source ids;
+- important source-registry entries used in prose without matching claim-to-source matrix rows;
+- important final claims whose nearest citation supports only context, motive, announcement, or interpretation rather than the claim as written.
+- preferred conclusions that did not face steelman opposition;
+- live alternative explanations hidden from the final limitation or appendix;
+- selected analytical lenses that are named but not used as warrants, limitations, or evidence needs;
+- expert stance families treated as if they were all the same kind of support;
+- robustness failures hidden behind polished prose.
 
 Run this audit after the last material prose edit. If the report changes after audit, rerun the audit or mark the closure evidence stale.
+
+When the final artifact is Markdown with compact `[S#]` markers, run the citation helper if available before closure:
+
+```powershell
+python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\audit_markdown_sources.py <artifact.md> --json
+```
+
+The helper only catches structural marker problems. LogicGuard must still check semantic role mismatch, overclaiming, missing warrant, and missing limitation.
 
 If audit fails, choose one:
 
@@ -215,3 +282,22 @@ remove claim
 ```
 
 Record the audit result in the appendix and History Ledger postflight.
+
+## Final Research Quality Gate
+
+Before claiming the artifact is complete, combine the LogicGuard audit with upstream evidence gates:
+
+```text
+source registry status
+source-role coverage status from SourceGuard
+TraceGuard evidence/execution-chain status
+TraceGuard competing-storyline, causal-chain, counterfactual, and confounder status
+Research Reasoning Atlas branch, model-lens, expert-stance, and debate status
+claim-to-source matrix status
+citation consistency status
+conclusion tournament result
+remaining argument gaps
+allowed final claim strength
+```
+
+If the weakest important gate is partial or blocked, LogicGuard should recommend a targeted SourceGuard search, TraceGuard reconstruction pass, claim downgrade, or omission rather than polishing unsupported prose.

@@ -1,6 +1,6 @@
 # TraceGuard Loop
 
-Use TraceGuard for messy investigation material, evidence-to-event reconstruction, logic leads, explanation candidates, storyline candidates, gaps, contradictions, and claim boundaries. Use SourceGuard before TraceGuard when the task still needs source discovery planning, source-role coverage, counter-source search, or access-gap routing.
+Use TraceGuard for messy investigation material, evidence-to-event reconstruction, logic leads, explanation candidates, competing storyline candidates, causal-chain status, counterfactual traces, confounder ledgers, gaps, contradictions, and claim boundaries. Use SourceGuard before TraceGuard when the task still needs source discovery planning, branch-aware source search, source-role coverage, counter-source search, or access-gap routing.
 
 ## Boundary
 
@@ -10,7 +10,7 @@ TraceGuard answers:
 What story does the evidence support?
 ```
 
-It does not write final truth claims. It does not replace LogicGuard final claim audit. It should separate event facts from explanation leads: evidence that an event happened is not automatically evidence for motive, outcome, or future impact.
+It does not write final truth claims. It does not replace LogicGuard final claim audit. It should separate event facts from explanation leads: evidence that an event happened is not automatically evidence for motive, outcome, future impact, or superiority over alternative explanations.
 
 For substantive investigations, TraceGuard should also separate claim origin, direct facts, source statements, scope boundaries, execution or outcome evidence, context or motive evidence, interpretation, counter or limiting evidence, and future triggers. Context can explain why a claim is plausible, but it does not validate execution, causality, outcome, or broader scope.
 
@@ -23,6 +23,38 @@ outcome or impact: what changed, operated, shipped, failed, improved, or harmed
 ```
 
 Evidence for one layer does not validate the others. An official announcement may support a source statement; it does not establish execution or outcome without execution/outcome evidence. Motive or context evidence may support plausibility; it does not establish causality without a warrant and bridging evidence.
+
+For follow-through claims, maintain an explicit execution chain:
+
+```text
+announcement or claim
+planned action
+implementation signal
+operating or outcome signal
+affected-stakeholder signal
+counter, delay, cancellation, non-occurrence, or limiting signal
+future trigger that would change the conclusion
+```
+
+If the chain stops at announcement or plan, the safe wording must say that execution or outcome evidence is missing.
+
+For Atlas-driven work, preserve competing storylines instead of prematurely forcing one clean narrative:
+
+```text
+storyline id
+storyline claim
+supporting evidence
+opposing evidence
+alternative explanation relationship
+confounders or scope limits
+causal-chain state
+counterfactual question
+safe wording
+unsafe wording
+next evidence need
+```
+
+The strongest opposing storyline should be explicit when it materially affects the final conclusion.
 
 SourceGuard answers a different question:
 
@@ -91,6 +123,7 @@ event facts involved
 explanation hypothesis involved
 follow-up impact or outcome claim
 supporting evidence ids
+source registry ids
 counter or support-limiting evidence ids
 missing evidence
 status: confirmed | supported-incomplete | candidate | weak | contradicted | access-gap | not-supported
@@ -106,7 +139,12 @@ Recommended tables:
 - evidence-role table: claim origin, direct fact, source statement, scope, execution/outcome, context/motive, interpretation, counter/limiting evidence, future trigger;
 - explanation chain: candidate explanation, supporting evidence, limiting evidence, current status;
 - execution chain: announced outcome, implementation evidence, missing execution proof;
+- non-occurrence or delay chain when the investigation checks whether an expected follow-up has not happened;
 - contradiction/gap table: conflict or gap, affected lead, needed evidence, action.
+- competing storyline table: storyline, support, opposition, gaps, safe wording, final treatment;
+- causal chain table: proposed cause, mechanism, effect, evidence for each link, weakest link;
+- counterfactual trace table: proposed cause, what might happen without it, evidence need, claim impact;
+- confounder ledger: alternative driver, evidence status, affected branch, next action.
 
 Do not pass a lead to final prose as a finding unless its status and safe wording support that strength.
 
@@ -117,6 +155,7 @@ lead status known
 event evidence anchored
 explanation evidence separated from event evidence
 outcome or impact evidence separated from announcement/context evidence
+execution chain status recorded for follow-through claims
 counter or limiting evidence considered
 safe wording available
 unsafe wording listed when overclaim risk is material
@@ -140,6 +179,9 @@ For each important gap, decide:
 - Is this an outcome claim that requires later execution evidence?
 - Is this a future-impact claim that needs observable trigger conditions?
 - Does this claim require a concrete execution, outcome, causal, scope, or stakeholder signal that is still missing?
+- Is the final prose likely to imply execution, outcome, causality, or scope that the trace only supports as announcement, context, or hypothesis?
+- Does a competing storyline remain viable enough to require LogicGuard conclusion tournament review?
+- Does a counterfactual path show that the outcome may occur without the proposed main cause?
 
 After new evidence:
 
@@ -179,3 +221,17 @@ Keep wording guidance explicit:
 - `not-supported`: omit as a claim or move to a rejected lead.
 
 Pass only stable, important, selected support to LogicGuard. Do not bulk-promote the whole case.
+
+Before final writing handoff, provide safe/unsafe wording for every high-impact lead where source roles could be confused. Typical unsafe wording includes treating an official statement as independent fact, treating announcement as execution, treating motive/context as causality, or treating no discovered source as proof of absence without a strong searched-source set.
+
+For Atlas-driven handoff, also provide:
+
+```text
+competing storyline ids
+causal-chain weakest links
+counterfactual trace status
+confounder ledger summary
+red-team storyline
+branches that need SourceGuard search
+claims that need LogicGuard conclusion tournament
+```

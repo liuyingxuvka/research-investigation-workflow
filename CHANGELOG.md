@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.3.0 - 2026-06-02
+
+Generic Research Reasoning Atlas upgrade.
+
+- Added a domain-neutral Research Reasoning Atlas stage for branch trees, debate matrices, alternative explanations, confounder ledgers, model-lens selection, expert stance maps, causal-chain questions, counterfactual traces, conclusion tournaments, and future falsifiers.
+- Routed Atlas branch gaps through SourceGuard, TraceGuard, and LogicGuard so source discovery, trace reconstruction, and final argument audits all preserve competing branches instead of collapsing to one preferred story too early.
+- Added generic anti-overfit rules so core skill guidance uses reusable reasoning categories and keeps topic-specific details in selected lenses, examples, or future domain packs.
+- Added FlowGuard/OpenSpec model coverage for Atlas ownership, install synchronization, anti-overfit validation, and final quality gates.
+
+## v0.2.2 - 2026-06-02
+
+Research source and citation quality hardening.
+
+- Added source-registry requirements so substantive artifacts keep source ids, roles, freshness clues, locators, access status, and claim use aligned from discovery through final delivery.
+- Added final research quality gates for source-role coverage, execution/evidence chains, claim-to-source matrix status, citation consistency, and reader-facing limitation placement.
+- Added Markdown citation-marker and source-role coverage helper scripts for lightweight structural audits before final closure.
+- Strengthened SourceGuard, TraceGuard, and LogicGuard handoffs around post-draft source gaps, announcement-to-execution chains, semantic citation mismatch, and downgraded conclusion boundaries.
+
 ## v0.2.1 - 2026-06-01
 
 Research artifact contract hardening.
