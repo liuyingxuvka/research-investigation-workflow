@@ -103,6 +103,25 @@ The requested artifact genre controls final organization and tone. LogicGuard mu
 
 Use source roles, claim types, limitations, and gaps as internal coverage obligations and audit dimensions. They may appear as natural prose, citations, footnotes, tables, or appendix depending on the requested artifact. The final artifact should read like the requested artifact, not like a model audit, while still keeping important claims traceable.
 
+LogicGuard must review against the user's requested artifact type, not against a fixed report standard. A report, paper, memo, article, literature review, deck storyline, and decision note can all be valid outputs, but each needs its own structure, evidence placement, limitation placement, citation density, and reader handoff.
+
+## Hierarchical Artifact Modeling
+
+For substantive final artifacts, LogicGuard must model the artifact at its natural hierarchy before final prose or final audit:
+
+```text
+report: document -> section -> paragraph -> local claim/evidence/warrant/limitation
+paper: paper -> section -> paragraph -> method/result/claim/warrant/limitation
+memo: memo -> decision block -> claim/evidence/risk/recommendation
+deck storyline: deck -> section -> slide -> message/support/visual role/limitation
+article: article -> section or scene -> paragraph -> fact/source/inference
+literature review: review -> theme -> source cluster -> synthesis claim/contrast/limitation
+```
+
+High-importance sections, paragraphs, slides, or artifact units are not acceptable leaves. Each should expose local claim, source support, warrant or mechanism, assumption, limitation, rebuttal or undercutter when relevant, source role, citation marker, final treatment, and whether the unit's wording is allowed by its support.
+
+If only a root conclusion or top-level outline was checked, report LogicGuard coverage as partial or under-modeled. Do not claim deep LogicGuard use until the important artifact-unit layers have been inspected or intentionally reduced with a reason.
+
 ## Claim-To-Source Matrix
 
 Before writing final artifact prose, build or inspect a claim-to-source matrix:
@@ -120,19 +139,24 @@ claim strength
 inline citation marker, such as [S1] or [S1; S4]
 limitation or rebuttal
 final prose treatment: main text | footnote | appendix | omitted with reason
+source can support
+source cannot support
+semantic-fit risk: none | scope | tense | causality | execution | outcome | price-layer | source-role | forecast | independence | locator
 ```
 
 Each important factual claim, official-claim report, analytic inference, limitation, and future hypothesis must have either an inline citation marker or an explicit note that it is uncited framing/background. Do not leave a key paragraph supported only by a final bibliography.
 
 For all substantive investigation writing, the matrix must keep claim origin, direct facts, source statements, scope limits, execution or outcome evidence, context or motive evidence, expert interpretation, counter or limiting evidence, and forecast triggers separate. Interpretation or motive context can support plausibility, but cannot support a claim that execution, causality, outcome, or broader scope has been established.
 
-The matrix must agree with the source registry. Treat these as audit failures:
+The matrix must agree with the source registry and the key-claim/key-number ledger when one exists. Treat these as audit failures:
 
 - final prose uses `[S#]` with no matching source entry;
 - two different source entries share the same final marker without an intentional merge;
 - a source is used as direct support for a role it does not cover;
 - execution, outcome, causality, or scope claims cite only announcement, context, motive, or interpretation sources;
 - important limiting evidence is present in the registry but omitted from the paragraph it narrows.
+- a key number lacks source date, coverage period, or observed-versus-forecast status;
+- an effect claim jumps from planning, wholesale, capacity, transmission, or intermediate signal to retail, outcome, national, or stakeholder wording without bridge evidence.
 
 ## Conclusion Tournament
 
@@ -189,6 +213,7 @@ source markers
 claim strength label
 source-role label when ambiguity matters
 final treatment: main text | footnote | appendix | omitted with reason
+semantic source-fit risk and allowed wording
 ```
 
 This blueprint is the bridge between LogicGuard modeling and readable target-artifact prose. If it is missing for a core section or artifact region, report the draft as under-modeled.
@@ -202,6 +227,7 @@ which sentence is a source or actor claim
 which sentence is expert interpretation
 which sentence is the report's inference
 which [S#] marker supports or limits each sentence
+whether a source supports the exact scope, tense, causality, execution, outcome, price layer, or forecast wording
 ```
 
 ## Synthesis
@@ -212,7 +238,7 @@ Create a story plan or outline before final prose:
 python %USERPROFILE%\\.codex\\skills\logicguard\scripts\run_logicguard.py synthesize <model> --goal "<goal>" --profile report --delivery
 ```
 
-Use the synthesized plan to write a readable target artifact. Do not expose every diagnostic detail in the reader-facing artifact, but keep source markers and claim-strength wording visible where they matter. Preserve the requested genre: report, paper, memo, brief, article, literature review, deck storyline, or another user-specified artifact.
+Use the synthesized plan to write an artifact-native target output. Do not expose every diagnostic detail in the reader-facing artifact, but keep source markers and claim-strength wording visible where they matter. Preserve the requested genre: report, paper, memo, brief, article, literature review, deck storyline, decision note, or another user-specified artifact.
 
 Recommended prose pattern:
 
@@ -250,11 +276,13 @@ Audit final prose for:
 - internal Guard-family tool names leaked into the reader-facing artifact when no methods appendix was requested;
 - missing "who says this" wording for paragraphs that combine source claims, evidence, and inference.
 - final artifact reads like a diagnostic dump or tool log instead of the requested genre;
+- final artifact is judged against the wrong genre profile, such as forcing report structure onto a paper, memo, article, or deck storyline;
 - required coverage categories appear as forced visible headings when they would damage the requested artifact.
 - inline citation markers that do not resolve to the source registry;
 - duplicate or ambiguous source ids;
 - important source-registry entries used in prose without matching claim-to-source matrix rows;
 - important final claims whose nearest citation supports only context, motive, announcement, or interpretation rather than the claim as written.
+- final claims whose wording exceeds the source's scope, time status, execution layer, outcome layer, price layer, causal support, or forecast boundary.
 - preferred conclusions that did not face steelman opposition;
 - live alternative explanations hidden from the final limitation or appendix;
 - selected analytical lenses that are named but not used as warrants, limitations, or evidence needs;
@@ -292,8 +320,12 @@ source registry status
 source-role coverage status from SourceGuard
 TraceGuard evidence/execution-chain status
 TraceGuard competing-storyline, causal-chain, counterfactual, and confounder status
+TraceGuard effect-chain and scope-transfer status for causal or impact claims
 Research Reasoning Atlas branch, model-lens, expert-stance, and debate status
 claim-to-source matrix status
+key-claim/key-number ledger status
+semantic source-fit status
+hierarchical artifact model depth
 citation consistency status
 conclusion tournament result
 remaining argument gaps

@@ -23,6 +23,11 @@ Use this skill to run a deep, evidence-led investigation from user goal intake t
 - Do not reward branch volume by itself. Branches matter only when they affect conclusion strength, scope, method, evidence needs, or reader decisions.
 - Keep a source registry for every substantive final artifact. A source listed in the appendix must have a source id, role, date or freshness clue when known, locator or access note, and the important claims it supports or limits.
 - Do not let final citations drift away from the source registry. Every important inline marker must resolve to one registered source, and every important registered source must have a visible role or an explicit reason it is appendix-only.
+- Keep a source portfolio plan for substantive investigations. Important source classes should be explicitly considered: primary or closest-available records, official/regulatory records when relevant, execution or outcome records, independent or third-party records, expert/model sources when interpretation matters, counter or limiting sources, source-lineage checks, and future-trigger sources. Missing high-value classes must become SourceGuard search actions, access gaps, or claim downgrades.
+- Keep a key-claim and key-number ledger for material figures, quantified claims, and central conclusions. Each entry should name the source id, source role, date or coverage period, claim type, what the source can support, what it cannot support, unsafe overclaim wording, allowed wording, final treatment, and required citation marker.
+- For causal, price, market, policy, adoption, execution, outcome, or impact claims, keep an explicit transmission/effect chain. Separate cause, mechanism, intermediate signal, outcome, stakeholder signal, counter or limiting evidence, and future trigger before writing strong final wording.
+- Use TraceGuard and LogicGuard deeply, not just as final coarse gates. TraceGuard should preserve lead-level, event/explanation/outcome-layer, execution-chain, competing-storyline, causal, counterfactual, and confounder state. LogicGuard should model the requested artifact at its natural hierarchy: document/section/paragraph, deck/section/slide, paper/section/paragraph, memo/decision block, or another user-requested structure.
+- Final artifact review must be genre-adaptive. Check whether the output fits the user's requested artifact type, audience, and delivery profile; do not impose a fixed report style when the user asked for a paper, memo, article, deck storyline, decision note, or another form.
 - Keep generated investigation outputs local-only by default. Do not commit reports, TraceGuard cases, LogicGuard source libraries, or History Ledger records to the skill/software repository unless the user explicitly asks for a sanitized published sample.
 
 ## Required Start
@@ -34,10 +39,11 @@ Use this skill to run a deep, evidence-led investigation from user goal intake t
 5. Build a general evidence-role map before writing: claim or rumor origin, direct/original facts, source statements, scope boundaries, execution or outcome evidence, context or motive evidence, expert interpretation, counter/limiting evidence, and future trigger conditions. Do not collapse these roles into one storyline.
 6. Build a generic Research Reasoning Atlas before broad search or final writing: branch tree, debate matrix, alternative explanations, confounders, selected analytical lenses, expert stance map when relevant, counterfactual needs, and conclusion-tournament candidates.
 7. Start a source registry before broad search. Add candidate source ids as soon as material is found, then update each record with role, locator, access status, source date, coverage period, and claim use as the investigation matures.
-8. Build or update a SourceGuard belief state before broad search. Let SourceGuard rank the next public/local/internal search actions and record permission-gated material as access gaps.
-9. For substantive final artifacts, run the minimum investigation rounds: original-fact round, counter/limiting round, impact/execution round, stakeholder round, and future-trigger round. If a round cannot be completed, downgrade the closure and claim strength.
-10. Check current SourceGuard, TraceGuard, LogicGuard, and FlowGuard command surfaces before claiming a concrete command path is valid.
-11. Use FlowGuard for multi-stage freshness and closure when the investigation has more than a short single-pass answer.
+8. Build a source portfolio plan and key-claim/key-number ledger before broad drafting. Keep them lightweight but explicit enough to show high-value source gaps, numeric provenance, support boundaries, and unsafe wording.
+9. Build or update a SourceGuard belief state before broad search. Let SourceGuard rank the next public/local/internal search actions and record permission-gated material as access gaps.
+10. For substantive final artifacts, run the minimum investigation rounds: original-fact round, counter/limiting round, impact/execution round, stakeholder round, and future-trigger round. If a round cannot be completed, downgrade the closure and claim strength.
+11. Check current SourceGuard, TraceGuard, LogicGuard, and FlowGuard command surfaces before claiming a concrete command path is valid.
+12. Use FlowGuard for multi-stage freshness and closure when the investigation has more than a short single-pass answer.
 
 ## Route
 
@@ -56,7 +62,7 @@ Use `references/evidence-source-policy.md` before searching or using non-public 
 Run the investigation as:
 
 ```text
-history preflight -> goal intake -> research plan card -> evidence policy -> logic-lead map -> evidence-role map -> Research Reasoning Atlas -> source registry -> SourceGuard branch-aware search plan -> execute allowed searches -> SourceGuard observations/update -> source-role coverage check -> per-round replan gate -> TraceGuard competing storyline / causal / counterfactual / execution-chain model -> SourceGuard gap-driven re-search loop -> explicit source promotion -> LogicGuard claim-to-source matrix and conclusion tournament -> section/paragraph/artifact blueprint -> citation-grounded final artifact -> citation registry audit -> LogicGuard final claim audit -> final research quality gate -> reader-facing artifact cleanup -> FlowGuard closure -> final delivery -> history postflight
+history preflight -> goal intake -> research plan card -> evidence policy -> logic-lead map -> evidence-role map -> Research Reasoning Atlas -> source registry -> source portfolio plan -> key-claim/key-number ledger -> SourceGuard branch-aware search plan -> execute allowed searches -> SourceGuard observations/update -> source-role and portfolio coverage check -> per-round replan gate -> TraceGuard layered lead / competing storyline / causal / counterfactual / execution-chain / effect-chain model -> SourceGuard gap-driven re-search loop -> explicit source promotion -> LogicGuard hierarchical claim-to-source matrix and conclusion tournament -> genre-adaptive section/paragraph/slide/artifact blueprint -> citation-grounded final artifact -> citation registry and semantic source-fit audit -> LogicGuard final claim audit -> final research quality gate -> reader-facing artifact cleanup -> FlowGuard closure -> final delivery -> history postflight
 ```
 
 Continue the loop until the requested conclusion strength is supported, the budget is reached, critical evidence is inaccessible, remaining gaps are accepted, or claims are downgraded to match evidence.
@@ -83,6 +89,16 @@ python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\sou
 
 If required roles are missing, not run, or gap-labeled, return to SourceGuard for targeted discovery or downgrade the claim strength.
 
+When source portfolio, key-claim, or semantic-fit ledgers exist, run the corresponding helpers when available:
+
+```powershell
+python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\source_portfolio_check.py <portfolio.json-or-yaml> --json
+python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\key_claim_ledger_check.py <ledger.json-or-yaml> --json
+python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\claim_support_fit_check.py <fit-ledger.json-or-yaml> --json
+```
+
+Helper checks catch structural gaps only. LogicGuard still owns exact semantic review of whether a cited source supports the final wording, scope, tense, causality, execution, outcome, price layer, or forecast claim.
+
 For negative or partial findings, name the missing evidence roles or concrete signals that were checked or not found. Examples: direct primary record, scope-defining document, implementation or execution record, outcome data, affected-stakeholder evidence, limiting source, or observable future trigger.
 
 If the fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, do not label the output a complete investigation or conclusive artifact. Deliver an initial investigation, staged artifact, qualified finding, or downgraded conclusion that matches the evidence.
@@ -90,11 +106,14 @@ If the fact, counter/limiting, impact/execution, stakeholder, or future-trigger 
 Before final delivery, run or simulate a final research quality gate:
 
 - Source registry complete enough for the artifact's important claims.
+- Source portfolio complete enough for the artifact's claim strength, or missing high-value source classes named and downgraded.
+- Key-claim/key-number ledger covers material figures and central conclusions with support boundaries and unsafe wording.
 - Research Reasoning Atlas complete enough for central claims: branch tree, strongest opposition, alternatives, selected lenses, expert stances when relevant, and conclusion tournament status.
+- TraceGuard has modeled important leads at the needed depth: event fact, explanation, outcome or impact, execution chain, competing storyline, causal chain, counterfactual, confounder, and safe wording.
 - Source-role coverage checked and unresolved gaps named.
 - Announcement, implementation, execution, outcome, stakeholder, and future-trigger chains separated where relevant.
-- Claim-to-source matrix and inline citation markers agree.
-- Reader-facing prose does not hide material limitations or leak internal workflow terms unless requested.
+- LogicGuard has modeled important artifact units at the requested genre's natural hierarchy, and the claim-to-source matrix, inline citation markers, and semantic source-fit checks agree.
+- Reader-facing prose follows the user's requested artifact type and does not hide material limitations or leak internal workflow terms unless requested.
 - Closure status matches the weakest important unresolved evidence role, stale check, or citation audit result.
 
 If closure is partial or blocked, say exactly what is missing and which claim strength remains supported.

@@ -36,6 +36,54 @@
 - Rerun affected FlowGuard models/tests before broad completion claims when behavior, tests, or version records change.
 
 
+## strengthen-layered-research-evidence-contract-20260602 - Strengthen layered research evidence contracts across Guard skills
+
+- Project: ResearchInvestigationWorkflow_20260531
+- Trigger reason: User requested OpenSpec and FlowGuard governed upgrade after comparing local research output with ChatGPT Deep Research, then explicitly asked for deeper TraceGuard and LogicGuard hierarchy down to sections, paragraphs, and local artifact units.
+- Status: completed
+- Skill decision: use_direct_flowguard_skill: existing_model_preflight plus development_process_flow; companion OpenSpec change strengthen-layered-research-evidence-contract
+- Started: 2026-06-02T11:20:00+00:00
+- Ended: 2026-06-02T11:27:13+00:00
+- Commands OK: True
+
+### Model Files
+- .flowguard/existing_model_preflight/model.py
+- .flowguard/development_process_flow/model.py
+
+### Commands
+- OK: `python -c "import flowguard; print(flowguard.SCHEMA_VERSION)"` -> schema 1.0
+- OK: `python -c "import importlib.metadata as m; print(m.version('flowguard'))"` -> package 0.40.4
+- OK: `python -m flowguard project-audit --root .`
+- OK: `openspec validate strengthen-layered-research-evidence-contract --strict`
+- OK: installed research/sourceguard/traceguard/logicguard `quick_validate.py` checks
+- OK: `python -m py_compile` for source portfolio, key-claim ledger, and semantic-fit helper scripts
+- OK: ledger helper smoke tests; known-good fixtures passed and known-bad fixtures failed as expected
+- OK: SourceGuard, TraceGuard, and LogicGuard command-surface checks
+- OK: targeted layered-evidence text regression checks
+- OK: `python .flowguard\existing_model_preflight\run_checks.py` -> valid route passed; duplicate all-in-one engine fixture blocked as expected
+- OK: `python .flowguard\development_process_flow\run_checks.py` -> valid lifecycle passed; stale-validation fixture blocked as expected
+
+### Findings
+- Research workflow now requires source portfolio planning, key-claim/key-number ledgers, transmission/effect chains, semantic source-fit checks, hierarchical Guard modeling, and genre-adaptive final artifact review before strong closure claims.
+- SourceGuard guidance now treats broad bibliography as insufficient and requires source-class coverage, source-lineage independence, key-number provenance, and bridge evidence for scope/time/effect-layer jumps.
+- TraceGuard guidance now requires layered lead modeling and effect-chain/scope-transfer status before handing impact, price, market, policy, adoption, execution, or outcome claims to LogicGuard.
+- LogicGuard guidance now adapts to the requested artifact genre and models high-importance units at natural hierarchy, such as document-section-paragraph or deck-section-slide, instead of judging all outputs as fixed reports.
+- FlowGuard remained lifecycle/process governance only; no FlowGuard report-writing behavior was changed.
+
+### Counterexamples
+- The duplicate all-in-one research engine model remains blocked by ExistingModelPreflight.
+- The stale lifecycle model remains blocked when validation evidence predates later skill edits.
+- Helper bad fixtures fail when regional/forecast/announcement/planning evidence is used to support national/observed/outcome/retail wording without bridge evidence.
+
+### Risk Evidence Summary
+- The contract improves structure and evidence discipline, but helper scripts are structural warnings, not factual truth engines; LogicGuard still owns exact wording and semantic support judgment.
+- Deeper hierarchy should be used for substantive source-backed artifacts, while small quick answers may downgrade to lightweight leads or hypotheses.
+
+### Skipped Steps
+- No remote push or release publication was performed.
+- FlowGuard's own installed skill behavior was not modified.
+
+
 ## add-research-reasoning-atlas-20260602 - Generic Research Reasoning Atlas upgrade
 
 - Project: ResearchInvestigationWorkflow_20260531

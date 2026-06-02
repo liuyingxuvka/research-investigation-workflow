@@ -1,0 +1,18 @@
+key_claim_ledger:
+  - claim_id: claim-1
+    claim_or_number: ""
+    material: true
+    claim_type: observed_fact
+    source_ids: []
+    source_date: ""
+    coverage_period: ""
+    source_role: ""
+    scope: unknown
+    effect_layer: not-applicable
+    can_support: ""
+    cannot_support: ""
+    unsafe_overclaim_wording: ""
+    allowed_wording: ""
+    required_citation_marker: ""
+    final_treatment: main text
+    notes: ""

@@ -1,0 +1,21 @@
+effect_chains:
+  - chain_id: chain-1
+    lead_id: ""
+    proposed_driver_or_cause: ""
+    mechanism: ""
+    intermediate_signal: ""
+    outcome_or_impact_signal: ""
+    stakeholder_or_affected_party_signal: ""
+    counter_or_limiting_evidence_ids: []
+    alternative_drivers_or_confounders: []
+    future_trigger: ""
+    weakest_link: ""
+    status: partial
+    safe_wording: ""
+    unsafe_wording: ""
+    scope_transfer_warnings:
+      - transfer_type: ""
+        current_evidence_layer: ""
+        desired_wording_layer: ""
+        bridge_evidence: missing
+        safe_wording: ""

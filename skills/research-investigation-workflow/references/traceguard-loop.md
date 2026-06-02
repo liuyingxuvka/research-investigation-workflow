@@ -24,6 +24,22 @@ outcome or impact: what changed, operated, shipped, failed, improved, or harmed
 
 Evidence for one layer does not validate the others. An official announcement may support a source statement; it does not establish execution or outcome without execution/outcome evidence. Motive or context evidence may support plausibility; it does not establish causality without a warrant and bridging evidence.
 
+For substantive investigations, use a layered lead model rather than one coarse storyline:
+
+```text
+lead
+event fact layer
+explanation layer
+execution or follow-through layer
+outcome or impact layer
+stakeholder or affected-party layer
+counter, delay, contradiction, or non-occurrence layer
+future trigger layer
+safe wording and unsafe wording
+```
+
+The model can stay lightweight, but every high-impact lead should show which layer is supported and which layer remains candidate, weak, access-gap, or not-supported.
+
 For follow-through claims, maintain an explicit execution chain:
 
 ```text
@@ -37,6 +53,24 @@ future trigger that would change the conclusion
 ```
 
 If the chain stops at announcement or plan, the safe wording must say that execution or outcome evidence is missing.
+
+For price, market, policy, adoption, causal, reliability, performance, or other effect claims, maintain an effect chain:
+
+```text
+driver or proposed cause
+mechanism
+intermediate signal
+observed outcome or impact
+affected-stakeholder signal
+counter or limiting evidence
+alternative drivers or confounders
+future trigger
+weakest link
+safe wording
+unsafe wording
+```
+
+Do not let an intermediate signal become the final effect. Planning pressure, capacity-market movement, wholesale price movement, transmission cost, retail bill impact, and stakeholder harm are separate effect layers unless bridge evidence links them.
 
 For Atlas-driven work, preserve competing storylines instead of prematurely forcing one clean narrative:
 
@@ -83,6 +117,12 @@ Use or create:
 SourceGuard source action -> lead/direction -> source -> evidence -> event fact or explanation candidate -> trace/storyline -> gap ledger -> contradiction ledger -> claim boundary
 ```
 
+For report-grade or paper-grade investigations, case evidence should preserve enough structure to rebuild:
+
+```text
+case -> lead -> source -> evidence anchor -> event fact -> explanation candidate -> execution/follow-through state -> effect-chain state -> competing storyline -> gap/contradiction -> safe wording
+```
+
 Suggested commands when available:
 
 ```powershell
@@ -122,6 +162,7 @@ lead question or hypothesis
 event facts involved
 explanation hypothesis involved
 follow-up impact or outcome claim
+effect-chain layer and weakest link
 supporting evidence ids
 source registry ids
 counter or support-limiting evidence ids
@@ -139,6 +180,7 @@ Recommended tables:
 - evidence-role table: claim origin, direct fact, source statement, scope, execution/outcome, context/motive, interpretation, counter/limiting evidence, future trigger;
 - explanation chain: candidate explanation, supporting evidence, limiting evidence, current status;
 - execution chain: announced outcome, implementation evidence, missing execution proof;
+- effect or transmission chain: driver, mechanism, intermediate signal, outcome signal, stakeholder signal, counter evidence, weakest link, safe wording;
 - non-occurrence or delay chain when the investigation checks whether an expected follow-up has not happened;
 - contradiction/gap table: conflict or gap, affected lead, needed evidence, action.
 - competing storyline table: storyline, support, opposition, gaps, safe wording, final treatment;
@@ -156,6 +198,7 @@ event evidence anchored
 explanation evidence separated from event evidence
 outcome or impact evidence separated from announcement/context evidence
 execution chain status recorded for follow-through claims
+effect-chain status recorded for price, market, policy, causal, adoption, or impact claims
 counter or limiting evidence considered
 safe wording available
 unsafe wording listed when overclaim risk is material
@@ -180,6 +223,7 @@ For each important gap, decide:
 - Is this a future-impact claim that needs observable trigger conditions?
 - Does this claim require a concrete execution, outcome, causal, scope, or stakeholder signal that is still missing?
 - Is the final prose likely to imply execution, outcome, causality, or scope that the trace only supports as announcement, context, or hypothesis?
+- Is the final prose likely to imply national scope from local or regional evidence, observed fact from forecast/model evidence, retail impact from wholesale/capacity/planning evidence, or sector-wide impact from actor-specific evidence?
 - Does a competing storyline remain viable enough to require LogicGuard conclusion tournament review?
 - Does a counterfactual path show that the outcome may occur without the proposed main cause?
 
@@ -202,6 +246,16 @@ When sources conflict, do not resolve the conflict by averaging or by selecting 
 - whether the conflict affects event fact, explanation, outcome, or scope;
 - whether SourceGuard follow-up, LogicGuard warrant review, or claim downgrade is required.
 
+When source scope or effect layer conflicts with desired final wording, record a scope-transfer warning:
+
+```text
+transfer type: local-to-national | actor-to-sector | forecast-to-fact | wholesale-to-retail | planning-to-outcome | announcement-to-operation | chronology-to-causality | interpretation-to-direct-fact
+current evidence layer
+desired wording layer
+bridge evidence found or missing
+safe wording
+```
+
 Suggested write-back:
 
 ```powershell
@@ -223,6 +277,8 @@ Keep wording guidance explicit:
 Pass only stable, important, selected support to LogicGuard. Do not bulk-promote the whole case.
 
 Before final writing handoff, provide safe/unsafe wording for every high-impact lead where source roles could be confused. Typical unsafe wording includes treating an official statement as independent fact, treating announcement as execution, treating motive/context as causality, or treating no discovered source as proof of absence without a strong searched-source set.
+
+For effect claims, unsafe wording also includes treating capacity, wholesale, planning, resource-procurement, pilot, queue, forecast, or company-announcement evidence as terminal outcome, retail, national, or stakeholder-impact evidence without bridge support.
 
 For Atlas-driven handoff, also provide:
 

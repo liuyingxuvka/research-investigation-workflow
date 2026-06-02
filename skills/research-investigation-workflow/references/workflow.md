@@ -54,6 +54,8 @@ requested final artifact genre
 target audience
 3-7 key leads or subquestions
 priority source classes
+source portfolio requirements and any high-value source classes that would change the answer
+expected key numbers or quantified claims that need provenance
 required counter or support-limiting evidence
 required execution, outcome, stakeholder, or freshness evidence when relevant
 out-of-scope boundaries
@@ -173,6 +175,63 @@ important claims supported or limited
 
 A source may have multiple roles, but do not let a broad role such as context or interpretation silently become proof of execution, outcome, causality, or scope. If a source cannot be read or anchored, keep it as candidate or access gap rather than final support.
 
+## Stage 3D: Source Portfolio Plan
+
+Before broad search, create a source portfolio plan. This is not a source-count target; it is a coverage map for high-value source classes that could change the conclusion.
+
+Use generic source classes:
+
+```text
+primary or closest-available record
+official or regulatory record
+execution, implementation, operating, or outcome record
+independent or third-party corroboration
+expert, model, method, or benchmark source
+affected-stakeholder source
+counter, limiting, delay, or non-occurrence source
+source-lineage or independence check
+future trigger or falsifier source
+```
+
+For each class, record:
+
+```text
+source class
+why it matters
+required for claim strength: yes | no | conditional
+current source ids or candidates
+source-lineage or false-diversity risk
+status: complete | supported-incomplete | gap | access-gap | not-applicable | not-run
+next SourceGuard action or downgrade decision
+```
+
+If a source class is expected for the requested conclusion strength and remains `gap`, `access-gap`, or `not-run`, do not begin confident final prose. Route a targeted SourceGuard action, make the gap visible, or downgrade the affected claim.
+
+## Stage 3E: Key-Claim And Key-Number Ledger
+
+Before broad drafting, create a key-claim/key-number ledger for material figures, quantified claims, and central conclusions. This ledger prevents polished prose from outrunning what the sources can support.
+
+For each item, record:
+
+```text
+claim id
+claim or number
+claim type: observed fact | forecast | model estimate | official claim | company claim | inference | hypothesis | background
+source ids
+source date or coverage period
+source role
+scope: local | regional | national | global | actor-specific | unknown
+effect layer when relevant: planning | wholesale | capacity | transmission | retail | stakeholder | other
+what the source can support
+what the source cannot support
+unsafe overclaim wording
+allowed wording
+required citation marker
+final treatment: main text | footnote | appendix | omitted | follow-up
+```
+
+Forecast, scenario, model-estimate, announcement, and company-claim entries cannot be written as observed independent fact unless a separate observed-fact source supports that wording. Regional, actor-specific, wholesale, capacity, or planning evidence cannot silently become national, sector-wide, retail, outcome, or stakeholder evidence without a bridging source.
+
 ## Stage 4: SourceGuard Discovery Plan
 
 Before broad search, build or update a SourceGuard discovery state:
@@ -182,6 +241,8 @@ case goal
 claim strength target
 lead map
 Research Reasoning Atlas branch ids and missing branch roles
+source portfolio classes and gaps
+key-claim/key-number ledger entries needing provenance or bridge evidence
 required evidence roles
 source registry path or current entries
 known source candidates
@@ -232,6 +293,8 @@ handoff readiness
 If an important evidence role is still missing, route the gap back through SourceGuard before promoting the material to TraceGuard or LogicGuard. If the missing role cannot be searched under the current permissions, record an access gap and downgrade the claim boundary.
 
 If an important Atlas branch still lacks evidence, opposition, alternative-explanation coverage, expert/model support, or falsifier search, route the gap back through SourceGuard before treating the Atlas as complete.
+
+If the source portfolio shows missing high-value source classes, or the key-claim ledger shows weak numeric provenance, source-lineage risk, scope mismatch, or missing bridge evidence, route the gap back through SourceGuard before final drafting. Do not treat a broad first-pass bibliography as enough when a specific missing source class would materially change the answer.
 
 ## Stage 6A: Source-Role Coverage Review
 
@@ -292,6 +355,7 @@ Use TraceGuard for messy case material, weak signals, and gaps. Keep rejected or
 
 Build and evaluate a TraceGuard model. Record:
 
+- layered lead model: lead -> event fact -> explanation hypothesis -> outcome or impact claim -> execution chain -> safe wording;
 - storyline candidates;
 - competing storyline candidates;
 - lead map and lead status;
@@ -309,6 +373,36 @@ Build and evaluate a TraceGuard model. Record:
 - contradiction ledger;
 - safe and unsafe wording guidance;
 - suggested next evidence.
+
+For price, market, policy, adoption, causal, execution, or impact claims, also record a transmission/effect chain:
+
+```text
+proposed cause or driver
+mechanism
+intermediate signal
+outcome or impact signal
+stakeholder or affected-party signal
+counter, delay, non-occurrence, or limiting evidence
+alternative drivers or confounders
+future trigger
+weakest link
+safe wording
+unsafe wording
+```
+
+For follow-through claims, use a funnel rather than a single status:
+
+```text
+announcement or source statement
+plan, application, queue, or request
+funding, contract, payment, or approval
+implementation or construction
+operation, deployment, or observed behavior
+outcome, impact, market result, or stakeholder effect
+delay, cancellation, non-occurrence, or limiting signal
+```
+
+Record scope-transfer risks explicitly: local-to-national, actor-to-sector, forecast-to-fact, wholesale-to-retail, planning-to-outcome, announcement-to-operation, correlation-to-causation, or expert-interpretation-to-direct-fact.
 
 ## Stage 9: Gap-Driven Search Loop
 
@@ -356,6 +450,18 @@ SourceGuard candidates may point to material worth preserving, but promotion req
 
 Model root claims, support, warrants, assumptions, rebuttals, limitations, and scope. Deepen high-importance or weak nodes before writing confident prose.
 
+For substantive final artifacts, model the artifact at the requested genre's natural hierarchy before final prose. Examples:
+
+```text
+report: document -> section -> paragraph -> local claim/evidence/warrant/limitation
+paper: paper -> section -> paragraph -> method/result/claim/warrant/limitation
+memo: memo -> decision block -> claim/evidence/risk/recommendation
+deck storyline: deck -> section -> slide -> message/support/visual role/limitation
+article: article -> section or scene -> paragraph -> fact/source/inference
+```
+
+High-importance artifact units are not acceptable leaves. Each must expose local claim, evidence, warrant or mechanism, assumption, limitation, rebuttal or undercutter when relevant, source role, citation marker, and final treatment. If the user asked for a non-report genre, the hierarchy and audit criteria must adapt to that genre rather than forcing report structure.
+
 For Atlas-driven work, model or preserve:
 
 ```text
@@ -384,6 +490,9 @@ claim strength
 required inline citation marker
 missing support or limitation
 final prose treatment: main text | footnote | appendix | omitted with reason
+source can support
+source cannot support
+semantic-fit risk: none | scope | tense | causality | execution | outcome | price-layer | source-role | forecast | independence | locator
 ```
 
 Every important factual claim, official-claim report, analytic inference, limitation, and future hypothesis needs a citation marker or an explicit reason it is uncited background.
@@ -424,7 +533,7 @@ decision note
 deck storyline
 ```
 
-The story plan should include section order, section handoffs, paragraph or artifact-location blueprints for core sections, and where inline citations must appear. Coverage obligations may be satisfied through narrative prose, compact citations, footnotes, tables, or appendix. Do not force evidence-role categories into visible headings unless that improves the requested artifact.
+The story plan should include section order, section handoffs, paragraph, slide, page, note, or artifact-location blueprints for core units, and where inline citations must appear. Coverage obligations may be satisfied through narrative prose, compact citations, footnotes, tables, or appendix. Do not force evidence-role categories into visible headings unless that improves the requested artifact.
 
 Atlas obligations may appear in the final artifact as natural prose, concise comparison tables, footnotes, or appendix material. Do not turn the reader-facing artifact into a full internal Atlas unless the user asks for a methods or research-notes appendix.
 
@@ -466,6 +575,19 @@ no final bibliography-only support for important claims
 unused registry sources are appendix-only, method-only, background-only, or removed
 ```
 
+Also audit semantic source fit:
+
+```text
+claim wording does not exceed source role
+claim scope does not exceed source scope without bridge evidence
+observed-fact wording does not cite only forecast, model, scenario, announcement, or company-claim sources
+execution, outcome, adoption, or impact wording does not cite only announcement/context/motive sources
+causal wording has mechanism and link evidence, not just chronology
+price-effect wording distinguishes planning, wholesale, capacity, transmission, retail, and stakeholder layers
+national or sector-wide wording is not supported only by regional, local, actor-specific, or pilot evidence
+important key numbers match the key-claim ledger and carry source date or coverage period
+```
+
 For Markdown artifacts using `[S#]` markers, run the citation helper when available:
 
 ```powershell
@@ -490,6 +612,10 @@ source-role coverage: complete | partial | blocked
 minimum investigation rounds: complete | partial | blocked | downgraded
 TraceGuard execution/evidence chain status: complete | partial | blocked
 LogicGuard claim-to-source and citation audit: passed | partial | blocked
+source portfolio status: complete | partial | blocked
+key-claim/key-number ledger: complete | partial | blocked
+semantic source-fit audit: passed | partial | blocked
+hierarchical LogicGuard model depth: complete | partial | blocked | reduced
 reader-facing limitation placement: passed | partial | blocked
 final claim strength allowed by weakest gate
 ```

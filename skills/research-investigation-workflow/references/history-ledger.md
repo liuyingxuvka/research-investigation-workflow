@@ -103,6 +103,14 @@ sourceguard:
   planned_actions: []
   completed_actions: []
   candidate_sources: []
+  source_portfolio_path: path-or-null
+  source_portfolio_status: complete-or-partial-or-blocked-or-not-run
+  source_portfolio:
+    required_classes_checked: []
+    high_value_missing_classes: []
+    source_lineage_risks: []
+    independence_notes: []
+    downgrade_reason: ""
   source_registry_path: path-or-null
   source_registry_status: complete-or-partial-or-blocked-or-not-run
   source_role_coverage:
@@ -122,6 +130,13 @@ sourceguard:
   access_gaps: []
   handoff_to_traceguard: []
   handoff_to_logicguard: []
+key_claims:
+  ledger_path: path-or-null
+  status: complete-or-partial-or-blocked-or-not-run
+  material_numbers: []
+  material_claims: []
+  unsupported_overclaim_patterns: []
+  bridge_evidence_gaps: []
 traceguard:
   case_library_root: path-or-null
   case_id: case-id-or-null
@@ -157,6 +172,24 @@ traceguard:
       status: complete-or-partial-or-gap-or-not-applicable
       safe_wording: ""
       unsafe_wording: ""
+  effect_chains:
+    - lead_id: lead-id
+      proposed_driver: ""
+      mechanism: ""
+      intermediate_signal: ""
+      outcome_or_impact_signal: ""
+      stakeholder_signal: ""
+      counter_or_limiting_evidence: []
+      confounders: []
+      weakest_link: ""
+      status: complete-or-partial-or-gap-or-not-applicable
+      safe_wording: ""
+      unsafe_wording: ""
+  scope_transfer_warnings:
+    - lead_id: lead-id
+      transfer_type: local-to-national-or-forecast-to-fact-or-wholesale-to-retail-or-other
+      bridge_evidence: found-or-missing-or-not-needed
+      safe_wording: ""
   competing_storylines:
     - storyline_id: storyline-id
       status: supported-or-candidate-or-contradicted-or-gap
@@ -179,6 +212,19 @@ logicguard:
   model_paths: []
   promoted_source_ids: []
   claim_to_source_matrix: path-or-null
+  semantic_source_fit_path: path-or-null
+  semantic_source_fit:
+    status: passed-or-partial-or-blocked-or-not-run
+    scope_mismatches: []
+    tense_mismatches: []
+    execution_or_outcome_mismatches: []
+    price_layer_mismatches: []
+    source_role_mismatches: []
+  hierarchical_artifact_model:
+    status: complete-or-partial-or-blocked-or-reduced-or-not-run
+    artifact_genre: report-or-paper-or-memo-or-article-or-literature-review-or-deck-storyline-or-decision-note-or-other
+    modeled_levels: []
+    reduced_reason: ""
   inline_citation_coverage: complete-or-partial-or-not-run
   citation_consistency_audit:
     status: passed-or-partial-or-blocked-or-not-run
@@ -207,10 +253,14 @@ final_artifacts:
     expert_stance_map: mapped-or-not-needed-or-partial-or-blocked
     conclusion_tournament: passed-or-qualified-or-unresolved-or-blocked
     source_registry: complete-or-partial-or-blocked
+    source_portfolio: complete-or-partial-or-blocked
     source_role_coverage: complete-or-partial-or-blocked
+    key_claim_ledger: complete-or-partial-or-blocked
     minimum_rounds: complete-or-partial-or-blocked-or-downgraded
     execution_or_evidence_chain: complete-or-partial-or-blocked-or-not-applicable
     claim_to_source_matrix: complete-or-partial-or-blocked
+    semantic_source_fit: passed-or-partial-or-blocked
+    hierarchical_logicguard_model_depth: complete-or-partial-or-blocked-or-reduced
     citation_consistency: passed-or-partial-or-blocked
     reader_limitation_placement: passed-or-partial-or-blocked
     allowed_claim_strength: ""
@@ -299,15 +349,17 @@ At the end of a run:
 2. Update `index.yaml` with topic, date, status, privacy label, report type, artifact pointers, and reusable keywords.
 3. Record useful and failed search directions.
 4. Record SourceGuard planned and completed search actions, failed routes, useful fallback actions, access gaps, and source-role coverage.
-5. Record Research Reasoning Atlas status: branch tree, debate matrix, selected lenses, expert stance families, counterfactual questions, and conclusion tournament outcomes.
-6. Record source registry status, important source ids, and unresolved source-role gaps without copying sensitive source content.
-7. Record reusable logic leads and whether support, limiting evidence, execution evidence, outcome evidence, and stakeholder evidence were found.
-8. Record the reusable evidence-role map, minimum investigation round status, checked missing signals, competing-storyline status, execution-chain status, counterfactual trace status, and watchlist triggers.
-9. Record unresolved gaps.
-10. Record requested versus delivered conclusion strength.
-11. Record inline citation coverage, citation consistency audit, claim-to-source matrix pointer, and conclusion-tournament audit when available.
-12. Record final research quality gate status.
-13. Record FlowGuard closure status and installed/source parity status when the run changed skill behavior.
-14. Keep sensitive source content in owning systems, not in the ledger.
+5. Record source portfolio status: required classes checked, high-value missing classes, source-lineage risks, useful source families, and downgrade reasons.
+6. Record key-claim/key-number ledger status: material figures, original-source provenance, support boundaries, unsafe overclaim patterns, and bridge-evidence gaps.
+7. Record Research Reasoning Atlas status: branch tree, debate matrix, selected lenses, expert stance families, counterfactual questions, and conclusion tournament outcomes.
+8. Record source registry status, important source ids, and unresolved source-role gaps without copying sensitive source content.
+9. Record reusable logic leads and whether support, limiting evidence, execution evidence, outcome evidence, stakeholder evidence, and effect-chain bridge evidence were found.
+10. Record the reusable evidence-role map, minimum investigation round status, checked missing signals, competing-storyline status, execution-chain status, effect-chain status, scope-transfer warnings, counterfactual trace status, and watchlist triggers.
+11. Record unresolved gaps.
+12. Record requested versus delivered conclusion strength.
+13. Record inline citation coverage, semantic source-fit status, hierarchical LogicGuard model depth, citation consistency audit, claim-to-source matrix pointer, and conclusion-tournament audit when available.
+14. Record final research quality gate status.
+15. Record FlowGuard closure status and installed/source parity status when the run changed skill behavior.
+16. Keep sensitive source content in owning systems, not in the ledger.
 
 If postflight cannot be written, report the blocker and provide the intended record structure in the final appendix.

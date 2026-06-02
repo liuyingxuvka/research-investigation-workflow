@@ -14,11 +14,15 @@ It does not answer whether a claim is true. Its utility score ranks search value
 
 SourceGuard also does not audit final citation correctness. It should make source-role coverage and source-registry gaps visible so LogicGuard and the final artifact can audit them later.
 
+For substantive investigations, SourceGuard must also make the source portfolio visible. A strong report rarely depends on source count alone; it depends on whether the right source families were searched, read, anchored, and separated by role and independence.
+
 ## Default Loop
 
 ```text
 goal and evidence policy
 -> Research Reasoning Atlas branch tree and debate gaps
+-> source portfolio classes and high-value omissions
+-> key-claim/key-number provenance needs
 -> SourceGuard belief state
 -> branch-aware ranked search actions
 -> execute allowed public/local/internal searches with available tools
@@ -42,6 +46,8 @@ Record:
 - evidence anchors with exact locators when available;
 - gaps, contradictions, source roles, and modalities;
 - source policy: public, local, internal, permission-gated, unavailable, or unknown;
+- source portfolio classes, required status, and source-lineage risk;
+- key numbers, statistics, or central claims that need original-source tracing or bridge evidence;
 - planned search actions and utility reasons.
 
 Use conservative defaults. Missing fields do not become high confidence.
@@ -64,6 +70,9 @@ When TraceGuard or LogicGuard reports a gap, convert it into SourceGuard search 
 | --- | --- |
 | Missing primary source | primary source search, source-domain search |
 | Missing independent source | independent report search, local media, regulator, expert source |
+| Missing high-value source class | source portfolio search action for the missing class |
+| Key number lacks provenance | numeric provenance search, original table/report search, source-lineage search |
+| Multiple sources repeat one origin | source-lineage search, independent-source search |
 | One-sided support | counterevidence search, limiting evidence search |
 | Weak signals only | primary source + independent + counter/limiting search |
 | Missing execution or outcome evidence | public record, procurement, operating record, local report, stakeholder, image, video, report-page search |
@@ -77,6 +86,8 @@ When TraceGuard or LogicGuard reports a gap, convert it into SourceGuard search 
 | Alternative explanation remains live | branch-distinguishing search, independent-source search |
 | Model lens lacks support | model-source search, method-source search, benchmark-source search |
 | Expert stance is material | expert-stance source search, stance-family contrast search |
+| Draft claim exceeds source role | targeted source-role search or downgrade action |
+| Draft uses regional/wholesale/planning evidence for national/retail/outcome claim | bridge-evidence search or semantic-fit downgrade |
 
 ## Search Tactic Catalog
 
@@ -87,6 +98,7 @@ For important leads, choose tactics by branch and evidence role rather than repe
 | `original-source` | A claim needs primary or closest-available records | Do not treat summaries as primary records |
 | `specific-site` | The user, source policy, or evidence role points to a known domain, publisher, repository, or archive | Preserve the site/domain searched and access limits |
 | `source-lineage` | A claim, rumor, quotation, or statistic needs its origin traced | Do not cite later repeats as origin unless lineage is checked |
+| `numeric-provenance` | A material number, table value, forecast, model estimate, or statistic needs its original source and coverage period | Preserve whether the number is observed fact, forecast, model estimate, company claim, or scenario |
 | `independent-source` | Support is one-sided, official-only, vendor-only, or otherwise dependent | Record independence limits when sources share origin |
 | `counter-limiting` | A claim may be overstated, contested, or scope-limited | Preserve limiting evidence instead of treating it as noise |
 | `execution-outcome` | A claim says something happened, launched, operated, changed behavior, or produced impact | Separate announcement evidence from implementation or outcome evidence |
@@ -98,6 +110,36 @@ For important leads, choose tactics by branch and evidence role rather than repe
 | `disconfirming-source` | A strong conclusion needs its best possible falsifier or limiting source | Prefer sources that could weaken the preferred claim before upgrading confidence |
 | `expert-stance-source` | Expert or institutional interpretation materially affects the conclusion | Preserve stance family and role; do not treat interpretation as direct fact |
 | `model-source` | A selected analytical lens needs a source, method, definition, or benchmark | Preserve what the lens can warrant and what it cannot prove |
+| `bridge-evidence` | A claim moves across scope, time, effect layer, or source role | Search for evidence that licenses the bridge instead of treating the bridge as obvious |
+
+## Source Portfolio Plan
+
+Before broad search and again before final drafting, produce a compact source portfolio plan:
+
+```text
+source class
+why it matters to the requested claim strength
+branch or claim affected
+required: yes | no | conditional
+current source ids or candidates
+independence and source-lineage status
+status: complete | supported-incomplete | gap | access-gap | not-applicable | not-run
+next search action or downgrade
+```
+
+Default source classes for substantive investigations:
+
+- primary or closest-available records;
+- official, regulatory, or institutional records when relevant;
+- implementation, operating, execution, outcome, or market-result records;
+- independent or third-party records;
+- expert, model, method, benchmark, or analytical-lens sources;
+- affected-stakeholder sources;
+- counter, limiting, non-occurrence, delay, or cancellation sources;
+- source-lineage and independence checks;
+- future-trigger or falsifier sources.
+
+Do not hard-code topic-specific institutions into the universal plan. Topic-specific source classes can be added as selected model lenses or case notes.
 
 ## Branch-Aware Search Plan
 
@@ -112,6 +154,8 @@ expected confirmation value
 expected disconfirmation value
 source diversity need
 source-lineage risk
+numeric provenance need
+scope or effect-layer bridge need
 expert or model-lens relevance
 handoff target: SourceGuard only | TraceGuard-ready | LogicGuard-candidate | omit/downgrade
 ```
@@ -137,11 +181,14 @@ what the source says
 what it can support
 what it cannot support
 source role
+source class and independence/source-lineage status
 Atlas branch id or debate-matrix row
 source date or freshness
 coverage period
 locator
 contradiction or limitation
+numbers or key claims anchored by this source
+scope and effect layer supported
 new lead or follow-up tactic
 handoff readiness: SourceGuard only | TraceGuard-ready | LogicGuard-candidate | omit/downgrade
 ```
@@ -187,6 +234,28 @@ branch-distinguishing evidence
 
 If a central preferred conclusion has no meaningful opposition or alternative-explanation search, do not mark the source plan complete.
 
+Also review source portfolio coverage:
+
+```text
+required source classes checked
+high-value missing source classes
+source-lineage or false-diversity risks
+key numbers lacking original provenance
+bridge evidence still missing for scope, tense, execution, outcome, causality, or effect-layer moves
+post-draft paragraph or claim gaps that require new search
+```
+
+If a draft already exists, inspect unresolved source gaps at the artifact-unit level. Examples:
+
+- a paragraph has a citation but the cited source only supports context;
+- a national claim cites regional evidence;
+- an observed-fact claim cites a forecast, model estimate, scenario, or announcement;
+- a retail-price claim cites only wholesale, capacity, or planning evidence;
+- an execution or outcome claim cites only an actor statement;
+- a key number lacks original-source provenance or date/coverage period.
+
+Each finding should become a targeted search action, an access-gap note, or a downgrade recommendation.
+
 ## Handoff To TraceGuard
 
 Hand off to TraceGuard when there are enough candidate sources and anchors to model event facts, timelines, contradictions, or storylines. Export only sources and anchors. Do not generate validated events in SourceGuard.
@@ -202,6 +271,8 @@ Hand off to LogicGuard only selected material that is stable, important to final
 Do not bulk-promote raw search results, duplicate hits, weak signals, or unanchored candidates into LogicGuard.
 
 Before LogicGuard handoff, provide the current source registry or a source id map. LogicGuard needs that map to build the claim-to-source matrix and detect citation drift.
+
+Also provide the source portfolio status and key-claim/key-number ledger entries that affect final wording. LogicGuard needs these to detect semantic source-fit risks after the prose is written.
 
 ## Downgrade Rules
 

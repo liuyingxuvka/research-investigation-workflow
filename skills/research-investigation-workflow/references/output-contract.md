@@ -17,6 +17,8 @@ The final artifact may be a research report, paper, memo, brief, article, litera
 
 Write in human-readable artifact-native prose. Do not make the final artifact a diagnostic dump or Guard-family process log.
 
+Artifact-native means the output is reviewed against the user-requested genre and audience, not against a fixed report template. A paper can use paper-style structure, a memo can use decision blocks, a deck storyline can use slide logic, and a report can use executive-summary/report flow.
+
 The reader-facing final artifact should not expose internal Guard-family tool names such as `SourceGuard`, `TraceGuard`, `LogicGuard`, `FlowGuard`, or `History Ledger` unless the user explicitly asked for a methods appendix. Use ordinary artifact-appropriate language instead: source search plan, event chain, evidence chain, argument structure, process check, source appendix, and run notes.
 
 Important claims in the final artifact must carry compact inline source markers such as `[S1]`, `[S2; S5]`, or `[S3, limiting]`, or another citation form appropriate to the requested artifact. Do not rely on a final bibliography alone for source-backed claims.
@@ -38,6 +40,8 @@ Use a brief reader route near the start of long artifacts: what question is answ
 
 For every substantive final artifact, explicitly separate claim origin, direct facts, source statements, scope limits, execution or outcome evidence, context or motive evidence, expert interpretation, counter or limiting evidence, and forecast triggers in the underlying reasoning. Do not force these categories into visible headings unless that improves the requested artifact. Do not let context, motive, or expert interpretation stand in for execution, causality, outcome, or broader-scope evidence.
 
+For every substantive final artifact, also maintain source portfolio status and a key-claim/key-number ledger behind the reader-facing copy. The reader does not need to see these ledgers unless useful, but final wording must respect their boundaries.
+
 For deep or high-stakes artifacts, also maintain a Research Reasoning Atlas behind the reader-facing copy. The Atlas should include branch tree status, debate matrix, alternative explanations, confounders, selected model lenses, expert stance map when relevant, causal/counterfactual trace status, conclusion tournament result, and final wording strength. These are support obligations, not mandatory visible headings.
 
 If the official/original fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, title and close the output as an initial investigation, staged artifact, qualified finding, or downgraded conclusion rather than a complete or conclusive artifact.
@@ -52,6 +56,19 @@ If the artifact discusses an announcement, plan, forecast, launch, implementatio
 - future triggers that would change the conclusion.
 
 Do not write an announcement as execution or impact unless the source registry and evidence chain support that bridge.
+
+For price, market, policy, adoption, causal, or other effect claims, also separate the effect layer being supported:
+
+```text
+planning or forecast signal
+wholesale, capacity, transmission, resource-procurement, or intermediate market signal
+retail, terminal, user-facing, or stakeholder impact
+bridge evidence between layers
+alternative drivers and confounders
+future trigger that would confirm or weaken the chain
+```
+
+Do not write intermediate or regional evidence as terminal, national, or stakeholder impact without bridge evidence.
 
 ## Evidence Levels
 
@@ -75,6 +92,9 @@ For substantial final artifacts, include or append:
 - source-discovery coverage table: source role, search action, result, access status, follow-up, claim impact;
 - event/evidence timeline: date, event, source markers, confidence, relevance;
 - claim-to-source matrix: important claim, artifact locator such as paragraph, section, page, or slide, source markers, source role, source date/freshness, claim use, limitation, final treatment;
+- source portfolio table: required source class, status, source ids or access gaps, source-lineage risk, and claim impact;
+- key-claim/key-number ledger: claim or figure, source ids, observed/forecast/model/announcement status, source date/coverage period, support boundary, unsafe wording, allowed wording, final treatment;
+- semantic source-fit table: artifact unit, claim wording, source role/scope/time/effect layer, mismatch risk, repair or downgrade;
 - final research quality gate: source registry status, source-role coverage status, execution-chain status when relevant, citation consistency status, and claim-strength downgrade if any;
 - unresolved gap/watchlist table.
 
@@ -86,7 +106,10 @@ Include:
 
 - evidence-source policy summary;
 - source-discovery plan, completed search actions, access gaps, and candidate-source downgrade notes;
+- source portfolio plan and high-value source-class gaps;
 - source registry or source appendix;
+- key-claim/key-number ledger;
+- semantic source-fit review;
 - Research Reasoning Atlas summary;
 - debate and alternative-explanation matrix;
 - selected model lenses and what each lens contributed;
@@ -97,9 +120,11 @@ Include:
 - execution/evidence-chain summary when the artifact relies on follow-through or impact claims;
 - claim-to-source matrix;
 - TraceGuard case and model summary;
+- layered TraceGuard lead/effect-chain summary;
 - TraceGuard gaps and contradictions;
 - LogicGuard source promotion summary;
 - LogicGuard argument/audit summary;
+- hierarchical LogicGuard artifact-unit model summary;
 - FlowGuard closure summary;
 - hypothesis and assumption ledger;
 - unresolved gaps;
@@ -129,6 +154,7 @@ Avoid:
 - writing inference, interpretation, or source commentary as established fact;
 - omitting source-role wording when the reader needs to know who says the point;
 - leaking internal workflow terms into the reader-facing final artifact;
+- judging the output against the wrong artifact genre rather than the user's requested form;
 - using a section, paragraph, page, or slide order that reads like a process log rather than the requested artifact.
 
 ## Citation Consistency Gate
@@ -141,6 +167,7 @@ Before final delivery, check:
 - source roles in prose match the source registry and claim-to-source matrix;
 - source entries used only for methods, background, or appendix support are labeled that way;
 - inaccessible or unread sources are not used as direct factual support.
+- important final claims do not exceed source scope, time status, execution layer, outcome layer, price layer, causal support, or forecast boundary.
 
 When the artifact is Markdown with compact `[S#]` markers, run the citation helper if available:
 
@@ -161,10 +188,14 @@ Before closure, report the weakest gate in plain language:
 - expert stance map: mapped | not-needed | partial | blocked;
 - conclusion tournament: passed | qualified | unresolved | blocked;
 - source registry: complete | partial | blocked;
+- source portfolio: complete | partial | blocked;
+- key-claim/key-number ledger: complete | partial | blocked;
 - source-role coverage: complete | partial | blocked;
 - minimum investigation rounds: complete | partial | blocked | downgraded;
 - execution/evidence chain: complete | partial | blocked | not-applicable;
 - claim-to-source matrix: complete | partial | blocked;
+- semantic source-fit: passed | partial | blocked;
+- hierarchical LogicGuard model depth: complete | partial | blocked | reduced;
 - citation consistency: passed | partial | blocked;
 - reader-facing limitation placement: passed | partial | blocked.
 
@@ -187,9 +218,13 @@ Model lens and expert stance coverage:
 Conclusion tournament:
 Inline citation coverage:
 Source registry status:
+Source portfolio status:
 Source-role coverage:
+Key-claim/key-number ledger:
 Execution/evidence-chain coverage:
 Logic-lead coverage:
+Semantic source-fit audit:
+Hierarchical LogicGuard model depth:
 Citation consistency audit:
 Stale or skipped checks:
 Unresolved gaps:

@@ -1,0 +1,61 @@
+source_portfolio:
+  - source_class: primary_or_closest_available_record
+    required: true
+    why_it_matters: ""
+    branch_or_claim: ""
+    source_ids: []
+    candidate_ids: []
+    independence_status: unknown
+    source_lineage_risk: unknown
+    status: not-run
+    next_action_or_downgrade: ""
+  - source_class: official_or_regulatory_record
+    required: conditional
+    why_it_matters: ""
+    branch_or_claim: ""
+    source_ids: []
+    candidate_ids: []
+    independence_status: unknown
+    source_lineage_risk: unknown
+    status: not-run
+    next_action_or_downgrade: ""
+  - source_class: execution_or_outcome_record
+    required: conditional
+    why_it_matters: ""
+    branch_or_claim: ""
+    source_ids: []
+    candidate_ids: []
+    independence_status: unknown
+    source_lineage_risk: unknown
+    status: not-run
+    next_action_or_downgrade: ""
+  - source_class: independent_or_third_party_record
+    required: true
+    why_it_matters: ""
+    branch_or_claim: ""
+    source_ids: []
+    candidate_ids: []
+    independence_status: unknown
+    source_lineage_risk: unknown
+    status: not-run
+    next_action_or_downgrade: ""
+  - source_class: counter_or_limiting_record
+    required: true
+    why_it_matters: ""
+    branch_or_claim: ""
+    source_ids: []
+    candidate_ids: []
+    independence_status: unknown
+    source_lineage_risk: unknown
+    status: not-run
+    next_action_or_downgrade: ""
+  - source_class: future_trigger_or_falsifier
+    required: conditional
+    why_it_matters: ""
+    branch_or_claim: ""
+    source_ids: []
+    candidate_ids: []
+    independence_status: unknown
+    source_lineage_risk: unknown
+    status: not-run
+    next_action_or_downgrade: ""
