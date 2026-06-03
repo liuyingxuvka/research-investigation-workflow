@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.4.1 - 2026-06-03
+
+Academic thesis revision routing patch.
+
+- Added an explicit handoff to `academic-thesis-revision-workflow` for existing thesis, dissertation, and paper drafts that need DOCX editing, visible revision provenance, original-text rewriting, and chapter/paragraph repair.
+- Kept Research Investigation Workflow focused on evidence-led investigations and new research-backed artifacts while allowing its source registries, TraceGuard cases, and reasoning atlases to feed thesis revision work.
+- Upgraded the local FlowGuard project record to package version `0.40.8`.
+
 ## v0.4.0 - 2026-06-02
 
 Layered research evidence contract upgrade.

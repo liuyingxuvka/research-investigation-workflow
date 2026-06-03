@@ -2,6 +2,8 @@
 
 Use this file for the default investigation route. This skill defaults to deep, logic-lead-driven investigation. Keep the work staged, and show when evidence, claims, or validation are partial.
 
+If the user's primary task is to revise an existing thesis, dissertation, or paper draft with DOCX output, visible edit provenance, original-text rewriting, chapter/paragraph restructuring, or a Chinese revision report, route to `academic-thesis-revision-workflow`. This workflow can still provide evidence discovery, trace reconstruction, reasoning atlas material, and source registries as inputs to that thesis route.
+
 ## Stage 0: History Preflight
 
 Search `.research-investigation-history/index.yaml` and run summaries for similar topics, entities, report types, evidence policies, and useful search directions.

@@ -2,6 +2,8 @@
 
 Use this contract before final delivery. The final artifact should follow the user's requested genre; the appendix or support material should carry evidence, audit, and process details when useful.
 
+For an existing thesis, dissertation, or paper revision, use `academic-thesis-revision-workflow` for the final DOCX/report contract. In that route, this output contract applies only to supporting investigation material, source appendices, evidence ledgers, or new research-backed sections that feed the revision.
+
 ## Main Artifact
 
 The final artifact may be a research report, paper, memo, brief, article, literature review, deck storyline, decision note, or another research-backed artifact requested by the user. Include, when relevant to that genre:

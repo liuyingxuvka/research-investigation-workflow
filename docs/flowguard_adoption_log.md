@@ -538,3 +538,81 @@
 
 ### Next Actions
 - Rerun affected FlowGuard models/tests before broad completion claims when behavior, tests, or version records change.
+
+
+## flowguard-project-upgrade - FlowGuard project upgrade record update
+
+- Project: ResearchInvestigationWorkflow_20260531
+- Trigger reason: target project uses FlowGuard and needs durable AGENTS/version records
+- Status: completed
+- Skill decision: used_flowguard
+- Started: 2026-06-03T20:13:24+00:00
+- Ended: 2026-06-03T20:13:24+00:00
+- Duration seconds: 0.000
+- Commands OK: True
+
+### Model Files
+- none recorded
+
+### Commands
+- none recorded
+
+### Findings
+- FlowGuard repository recorded: https://github.com/liuyingxuvka/FlowGuard
+- FlowGuard package version recorded: 0.40.8
+- FlowGuard schema version recorded: 1.0
+- Artifact upgrade scan: apply: scanned=2 upgraded=0 blocked=0 changed=0
+
+### Counterexamples
+- none recorded
+
+### Friction Points
+- none recorded
+
+### Skipped Steps
+- Project adoption record does not replace executable model checks, tests, replay, or closure evidence.
+
+### Risk Evidence Summary
+- none recorded
+
+### Next Actions
+- Rerun affected FlowGuard models/tests before broad completion claims when behavior, tests, or version records change.
+
+
+## thesis-revision-research-workflow-v0.4.1 - Research workflow thesis revision handoff upgrade
+
+- Project: ResearchInvestigationWorkflow_20260531
+- Trigger reason: Non-trivial skill guidance/version update with release confidence boundary
+- Status: completed
+- Skill decision: used_flowguard
+- Started: 2026-06-03T20:42:05+00:00
+- Ended: 2026-06-03T20:42:05+00:00
+- Duration seconds: 0.000
+- Commands OK: True
+
+### Model Files
+- none recorded
+
+### Commands
+- OK (0.000s): `python -m flowguard project-audit --root .`
+- OK (0.000s): `python .flowguard\development_process_flow\run_checks.py`
+- OK (0.000s): `python .flowguard\existing_model_preflight\run_checks.py`
+- OK (0.000s): `python -m py_compile skills\research-investigation-workflow\scripts\audit_markdown_sources.py skills\research-investigation-workflow\scripts\source_role_coverage_check.py skills\research-investigation-workflow\scripts\source_portfolio_check.py skills\research-investigation-workflow\scripts\key_claim_ledger_check.py skills\research-investigation-workflow\scripts\claim_support_fit_check.py`
+
+### Findings
+- v0.4.1 routes existing thesis/DOCX revision mechanics to academic-thesis-revision-workflow
+
+### Counterexamples
+- none recorded
+
+### Friction Points
+- none recorded
+
+### Skipped Steps
+- none recorded
+
+### Risk Evidence Summary
+- FlowGuard scripts include intentional stale-evidence and duplicate-boundary negative fixtures; project-audit, current skill validation, and py_compile passed
+
+### Next Actions
+- none recorded
