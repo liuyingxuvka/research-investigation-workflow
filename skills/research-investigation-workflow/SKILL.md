@@ -1,6 +1,6 @@
 ---
 name: research-investigation-workflow
-description: Coordinate heavy multi-round research and investigation work with existing Guard-family workflows. Use when Codex must investigate a topic, build a generic Research Reasoning Atlas, expand logic branches, map pro/con and alternative explanations, select analytical model lenses, map expert stances, plan public/local/internal evidence discovery with SourceGuard, reconstruct competing timelines or storylines with TraceGuard, synthesize a research-backed final artifact such as a report, paper, memo, brief, article, or deck storyline, audit claims with LogicGuard, track stale evidence, or record reusable investigation history.
+description: Coordinate heavy multi-round research and investigation work with existing Guard-family workflows. Use when Codex must investigate a topic, build a generic Research Reasoning Atlas, expand logic branches, map pro/con and alternative explanations, select analytical model lenses, map expert stances, plan public/local/internal evidence discovery with SourceGuard, reconstruct competing timelines or storylines with TraceGuard, synthesize a research-backed final artifact such as a report, paper, memo, brief, article, or deck storyline, audit claims with LogicGuard, track stale evidence, or record reusable investigation history. Route existing thesis/paper revision and parent-child/downstream/conclusion-recovery structure repair to academic-thesis-revision-workflow.
 ---
 
 # Research Investigation Workflow
@@ -9,7 +9,7 @@ Use this skill to run a deep, evidence-led investigation from user goal intake t
 
 ## Core Boundaries
 
-- For existing thesis, dissertation, or paper drafts that need chapter/paragraph logic repair, original-text rewriting, visible revision provenance, DOCX/redline output, or a Chinese revision report, use `academic-thesis-revision-workflow` as the upper-level route. This skill may still supply source registries, trace cases, reasoning atlases, or paper-grade evidence work to that route.
+- For existing thesis, dissertation, or paper drafts that need chapter/paragraph logic repair, parent-child support review, downstream consumer mapping, conclusion recovery, structural contribution graph work, original-text rewriting, visible revision provenance, DOCX/redline output, or a Chinese revision report, use `academic-thesis-revision-workflow` as the upper-level route. This skill may still supply source registries, trace cases, reasoning atlases, or paper-grade evidence work to that route.
 - Keep TraceGuard Case Library for messy case evidence, directions, events, traces, gaps, and contradictions.
 - Keep SourceGuard for source-discovery planning, candidate source records, evidence-anchor needs, access gaps, and next-search action ranking.
 - Keep LogicGuard Source Library for durable formal source support and argument models.
@@ -48,7 +48,7 @@ Use this skill to run a deep, evidence-led investigation from user goal intake t
 
 ## Route
 
-Use `academic-thesis-revision-workflow` when the user's primary object is an existing thesis, dissertation, or paper draft and the work includes DOCX editing, visible AI-change provenance, title/section/paragraph rewriting, original-text integration, multi-level LogicGuard models, or a separate revision report. Research Investigation Workflow remains the route for evidence-led investigations and new research-backed artifacts where existing-document revision mechanics are not the main task.
+Use `academic-thesis-revision-workflow` when the user's primary object is an existing thesis, dissertation, or paper draft and the work includes DOCX editing, visible AI-change provenance, title/section/paragraph rewriting, original-text integration, parent-child structural support, downstream-consumption repair, conclusion-recovery repair, structural contribution graph closure, multi-level LogicGuard models, or a separate revision report. Research Investigation Workflow remains the route for evidence-led investigations and new research-backed artifacts where existing-document revision mechanics are not the main task.
 
 Use SourceGuard when the task needs source discovery, branch-aware evidence search planning, local/internal/public source triage, counter/limiting or disconfirming source search, source-lineage review, expert/model source discovery, multimodal anchor planning, permission/access-gap tracking, source-role coverage review, or post-draft source-gap planning. Load `references/sourceguard-discovery-loop.md`. SourceGuard ranks search value; it does not validate facts, traces, citations, or final claims.
 

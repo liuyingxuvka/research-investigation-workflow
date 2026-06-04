@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.4.2 - 2026-06-04
+
+Structural thesis-routing patch.
+
+- Strengthened routing so existing thesis, dissertation, and paper revision tasks with parent-child support, downstream consumer, conclusion recovery, or structural contribution graph work route to `academic-thesis-revision-workflow`.
+- Clarified that Research Investigation Workflow can supply evidence discovery, TraceGuard cases, source registries, and Research Reasoning Atlas material to thesis revision without owning the document-revision route.
+- Updated public README and skill metadata for the structural routing boundary.
+
 ## v0.4.1 - 2026-06-03
 
 Academic thesis revision routing patch.
