@@ -10,7 +10,7 @@
 </p>
 <!-- README HERO END -->
 
-- **Current version:** `v0.4.2`
+- **Current version:** `v0.4.3`
 - **Surface:** Codex skill and reference workflow, not a standalone app
 - **Guard stack:** SourceGuard, TraceGuard, LogicGuard, FlowGuard, and a local Research Investigation History Ledger
 - **Language note:** English comes first; the second half is a Chinese mirror.
@@ -18,6 +18,8 @@
 Research Investigation Workflow is a Codex skill for planning and running source-backed investigation work over multiple rounds. It coordinates existing Guard-family workflows instead of inventing a new reasoning engine: SourceGuard plans source discovery and access-gap handling, TraceGuard reconstructs evidence-backed timelines and storylines, LogicGuard preserves sources and checks whether claims are structurally supported, and FlowGuard keeps the process ordered, current, and honestly closed.
 
 The core rule is simple: investigation depth is measured by pursued logic leads and evidence chains, not by source counts or shallow/medium/deep modes.
+
+Version `v0.4.3` adds a Guard closure helper that aggregates source audit, role coverage, portfolio, key-claim ledger, claim-support fit, stale evidence, skipped checks, and next actions, so a research task cannot stop after a partial Guard pass.
 
 Version `v0.4.2` strengthens the thesis-routing boundary. Existing thesis, dissertation, and paper drafts that need parent-child support review, downstream consumer mapping, conclusion recovery, or structural contribution graph closure now route to `academic-thesis-revision-workflow`; this workflow can still supply evidence discovery, trace cases, source registries, and Research Reasoning Atlas inputs.
 
@@ -155,13 +157,15 @@ CHANGELOG.md                            Release history
 
 # Research Investigation Workflow 中文镜像
 
-- **当前版本：** `v0.4.2`
+- **当前版本：** `v0.4.3`
 - **形态：** Codex skill 和 reference workflow，不是独立 app
 - **Guard stack：** SourceGuard、TraceGuard、LogicGuard、FlowGuard 和本地 Research Investigation History Ledger
 
 Research Investigation Workflow 是一个用于多轮调查研究的 Codex skill。它不新造一套推理引擎，而是编排已有 Guard-family 工作流：SourceGuard 负责规划证据来源发现和访问缺口，TraceGuard 负责把证据重建成时间线和故事线，LogicGuard 负责保存来源并检查结论是否被结构化支持，FlowGuard 负责让流程顺序、证据新鲜度和完成声明可审计。
 
 核心规则是：调查深度不按来源数量或浅/中/深档位衡量，而按关键逻辑线索和证据链是否被追踪、限制、反驳、补证或降级来衡量。
+
+`v0.4.3` 增加了 Guard closure helper，会把 source audit、source-role coverage、source portfolio、key-claim ledger、claim-support fit、stale evidence、skipped checks 和 next actions 聚合成一个报告。这样研究任务不会因为某一个 Guard 做了局部 pass 就提前停下。
 
 `v0.4.2` 强化了 thesis routing 边界。已有 thesis、dissertation 或 paper 如果需要父子结构支撑检查、后文消费映射、结论回收或 structural contribution graph 闭合，应交给 `academic-thesis-revision-workflow`；本 workflow 仍然可以给它提供证据发现、TraceGuard case、来源 registry 和 Research Reasoning Atlas 输入。
 

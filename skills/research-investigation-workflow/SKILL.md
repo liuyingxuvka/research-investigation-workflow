@@ -102,6 +102,21 @@ python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\cla
 
 Helper checks catch structural gaps only. LogicGuard still owns exact semantic review of whether a cited source supports the final wording, scope, tense, causality, execution, outcome, price layer, or forecast claim.
 
+Before claiming final research closure, run the aggregate closure helper when
+available:
+
+```powershell
+python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\research_closure_check.py --ledger <research-run-ledger.json> --artifact <artifact.md> --coverage <coverage.json-or-yaml> --portfolio <portfolio.json-or-yaml> --key-claim-ledger <ledger.json-or-yaml> --fit-ledger <fit-ledger.json-or-yaml> --json
+```
+
+The helper returns a Guard closure report with `closure_status`, `findings`,
+`missing_inputs`, `stale_evidence`, `skipped_checks`, and `next_actions`.
+If it returns `partial`, `blocked`, or `downgraded`, continue through the named
+next action owner, such as SourceGuard for source gaps, TraceGuard for missing
+trace layers, LogicGuard for claim support gaps, or FlowGuard for stale process
+evidence. Do not treat a helper warning, skipped check, or stale final artifact
+as a passed research investigation.
+
 For negative or partial findings, name the missing evidence roles or concrete signals that were checked or not found. Examples: direct primary record, scope-defining document, implementation or execution record, outcome data, affected-stakeholder evidence, limiting source, or observable future trigger.
 
 If the fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, do not label the output a complete investigation or conclusive artifact. Deliver an initial investigation, staged artifact, qualified finding, or downgraded conclusion that matches the evidence.

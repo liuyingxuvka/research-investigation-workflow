@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.4.3 - 2026-06-07
+
+Guard closure maintenance upgrade.
+
+- Added a research closure helper that aggregates source audit, source-role
+  coverage, source portfolio, key-claim ledger, claim-support fit, stale
+  evidence, skipped check, and next-action checks into one report.
+- Updated the research workflow skill so partial SourceGuard, TraceGuard,
+  LogicGuard, or FlowGuard outputs route back to the responsible Guard instead
+  of allowing a research task to stop after one pass.
+- Added OpenSpec and FlowGuard self-model evidence for the closure-report
+  maintenance path.
+
 ## v0.4.2 - 2026-06-04
 
 Structural thesis-routing patch.
