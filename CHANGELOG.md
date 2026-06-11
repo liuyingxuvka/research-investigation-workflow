@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.4.4 - 2026-06-11
+
+Completion ledger gate upgrade.
+
+- Added explicit top-level completion ledger guidance for SourceGuard,
+  TraceGuard, LogicGuard, FlowGuard, and research-owned rows.
+- Updated the research closure helper to inspect completion ledger rows, stale
+  row evidence, skipped child routes, and downgraded child-route status before
+  a final research closure claim.
+
 ## v0.4.3 - 2026-06-07
 
 Guard closure maintenance upgrade.

@@ -94,9 +94,52 @@ def check(args: argparse.Namespace) -> dict[str, Any]:
     _add_check(findings, checked_inputs, "key_claim_ledger", args.key_claim_ledger, key_claim.check)
     _add_check(findings, checked_inputs, "claim_support_fit", args.fit_ledger, fit.check)
 
-    for required in ("source_registry_status", "traceguard_status", "logicguard_status", "final_artifact_status"):
+    for required in ("source_registry_status", "traceguard_status", "logicguard_status", "final_artifact_status", "completion_ledger_rows"):
         if not ledger.get(required):
             missing_inputs.append({"field": required, "message": f"Research ledger is missing {required}."})
+
+    completion_rows = ledger.get("completion_ledger_rows", [])
+    if isinstance(completion_rows, list):
+        for index, row in enumerate(completion_rows):
+            if not isinstance(row, dict):
+                continue
+            route = str(row.get("route") or f"row_{index}")
+            status = str(row.get("status", "")).lower()
+            if status in {"blocked", "failed"}:
+                findings.append({
+                    "severity": "error",
+                    "type": "completion_ledger_blocked_row",
+                    "route": route,
+                    "message": "A child route row blocks final research closure.",
+                })
+            elif status in {"partial", "downgraded"}:
+                findings.append({
+                    "severity": "warning",
+                    "type": "completion_ledger_partial_row",
+                    "route": route,
+                    "message": "A child route row requires downgraded research closure.",
+                })
+            elif status == "skipped_with_reason":
+                reason = str(row.get("skip_reason") or row.get("reason") or "").strip()
+                skipped_checks.append({"check": route, "message": reason or "Completion ledger row was skipped without a reason."})
+                if not reason:
+                    findings.append({
+                        "severity": "warning",
+                        "type": "completion_ledger_skip_reason_missing",
+                        "route": route,
+                    })
+            elif status not in {"passed", "pass"}:
+                findings.append({
+                    "severity": "warning",
+                    "type": "completion_ledger_status_missing",
+                    "route": route,
+                    "message": "A child route row has no recognized status.",
+                })
+            if row.get("stale_evidence"):
+                stale_evidence.append({
+                    "field": f"completion_ledger_rows[{index}].stale_evidence",
+                    "message": f"Completion ledger row has stale evidence: {route}",
+                })
 
     if str(ledger.get("final_artifact_status", "")).lower() in {"stale_after_edit", "draft_after_audit"}:
         stale_evidence.append({

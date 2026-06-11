@@ -117,6 +117,35 @@ trace layers, LogicGuard for claim support gaps, or FlowGuard for stale process
 evidence. Do not treat a helper warning, skipped check, or stale final artifact
 as a passed research investigation.
 
+## Completion Ledger
+
+For substantive investigations, keep a top-level completion ledger before the
+final artifact is claimed complete. This is the workflow's "what is done, what
+is missing, what cannot be claimed yet" table. It does not replace child Guard
+judgment; it carries child results into one final decision.
+
+Each relevant child route should have a row with:
+
+- `route`: `sourceguard`, `traceguard`, `logicguard`, `flowguard`, or
+  `research-investigation-workflow`;
+- `status`: `passed`, `partial`, `blocked`, `downgraded`, or
+  `skipped_with_reason`;
+- `evidence`: source registry, trace case, argument model, process model,
+  helper output, or final artifact reference;
+- `missing_inputs`: material source, trace, warrant, citation, date/freshness,
+  access, or process evidence still missing;
+- `stale_evidence`: evidence that no longer covers the latest artifact or claim;
+- `skipped_checks`: skipped rounds or helper checks with reasons;
+- `safe_claim`: what the current evidence can support;
+- `unsafe_claim_boundary`: wording or conclusion strength that remains unsafe;
+- `next_actions`: which route should repair, downgrade, or stop.
+
+Do not let a prose summary replace this ledger. If SourceGuard, TraceGuard,
+LogicGuard, or FlowGuard would normally be relevant but is skipped, record the
+skip reason and downgrade closure when that skip weakens a central claim. The
+final research claim strength must match the weakest important unresolved row,
+not the best-looking row.
+
 For negative or partial findings, name the missing evidence roles or concrete signals that were checked or not found. Examples: direct primary record, scope-defining document, implementation or execution record, outcome data, affected-stakeholder evidence, limiting source, or observable future trigger.
 
 If the fact, counter/limiting, impact/execution, stakeholder, or future-trigger rounds were not completed, do not label the output a complete investigation or conclusive artifact. Deliver an initial investigation, staged artifact, qualified finding, or downgraded conclusion that matches the evidence.
