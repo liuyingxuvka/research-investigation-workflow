@@ -6,301 +6,280 @@
 </p>
 
 <p align="center">
-  <strong>A Codex skill for deep multi-round investigations with separated evidence, reasoning, and process guards.</strong>
+  <strong>A Codex skill for deep investigations where evidence, traces, reasoning, and final wording must stay separate.</strong>
 </p>
 <!-- README HERO END -->
 
-- **Current version:** `v0.4.4`
-- **Surface:** Codex skill and reference workflow, not a standalone app
-- **Guard stack:** SourceGuard, TraceGuard, LogicGuard, FlowGuard, and a local Research Investigation History Ledger
-- **Language note:** English comes first; the second half is a Chinese mirror.
+| Current Version | Skill | Runtime | License |
+| --- | --- | --- | --- |
+| `v0.4.4` | `research-investigation-workflow` | Codex skill repository | MIT |
 
-Research Investigation Workflow is a Codex skill for planning and running source-backed investigation work over multiple rounds. It coordinates existing Guard-family workflows instead of inventing a new reasoning engine: SourceGuard plans source discovery and access-gap handling, TraceGuard reconstructs evidence-backed timelines and storylines, LogicGuard preserves sources and checks whether claims are structurally supported, and FlowGuard keeps the process ordered, current, and honestly closed.
+English comes first. A Chinese mirror follows below.
 
-Version `v0.4.4` adds explicit completion ledger rows for child Guard routes so
-the final research claim follows the weakest important unresolved evidence row,
-not the strongest-looking summary.
+## What It Is
 
-The core rule is simple: investigation depth is measured by pursued logic leads and evidence chains, not by source counts or shallow/medium/deep modes.
+Research Investigation Workflow is a Codex skill for deep, multi-round investigation work.
 
-Version `v0.4.3` adds a Guard closure helper that aggregates source audit, role coverage, portfolio, key-claim ledger, claim-support fit, stale evidence, skipped checks, and next actions, so a research task cannot stop after a partial Guard pass.
+It is built for questions where a quick search summary is not enough: policy rumors, technical claims, competitor signals, incident chains, research leads, source conflicts, causal claims, market or stakeholder effects, and report-grade conclusions.
 
-Version `v0.4.2` strengthens the thesis-routing boundary. Existing thesis, dissertation, and paper drafts that need parent-child support review, downstream consumer mapping, conclusion recovery, or structural contribution graph closure now route to `academic-thesis-revision-workflow`; this workflow can still supply evidence discovery, trace cases, source registries, and Research Reasoning Atlas inputs.
+The workflow coordinates SourceGuard, TraceGuard, LogicGuard, FlowGuard, and a local history ledger. It keeps source discovery, event facts, actor claims, interpretation, causal links, counterevidence, report structure, and final wording in separate lanes so an agent does not turn partial evidence into a confident story too early.
 
-Version `v0.4.1` adds an explicit handoff to `academic-thesis-revision-workflow` for existing thesis, dissertation, and paper drafts that need DOCX editing, visible edit provenance, original-text rewriting, and chapter/paragraph repair.
+## The Problem
 
-Version `v0.4.0` strengthens the layered evidence contract for substantive investigations. The workflow now requires source portfolio planning, key-claim and key-number ledgers, transmission/effect chains, semantic source-fit checks, and deeper TraceGuard/LogicGuard modeling down to important leads, sections, paragraphs, slides, or artifact units before strong final wording.
+Most failed investigations do not fail because there was no information. They fail because different layers get collapsed:
 
-Version `v0.3.0` adds a generic Research Reasoning Atlas stage for branch trees, debate matrices, alternative explanations, confounder ledgers, model-lens selection, expert stance maps, causal-chain questions, counterfactual traces, conclusion tournaments, and future falsifiers.
+1. A source says something happened, but the report writes that it caused an outcome.
+2. An announcement is treated as implementation evidence.
+3. Local evidence is stretched into a broader-sector claim.
+4. A clean storyline hides a live alternative explanation.
+5. A report has citations, but the source role does not match the claim wording.
+6. A search round finds some evidence and the agent stops before checking counterevidence.
+7. Useful investigation lessons disappear instead of becoming reusable history.
 
-Version `v0.2.1` strengthens the research artifact contract across the Guard stack. The workflow now records the requested final artifact genre, creates a research plan card before evidence gathering, replans after each round, and treats evidence-role labels as internal coverage obligations instead of forcing diagnostic headings into the final prose.
+This workflow exists to prevent that collapse.
 
-Version `v0.2.0` adds SourceGuard as the default source-discovery planner for substantive investigations. Before broad search, the skill now builds a source-discovery state, ranks public/local/internal/counter/effect evidence actions, records observations and access gaps, and routes missing-source problems back to SourceGuard before TraceGuard, LogicGuard, or final prose can overclaim.
+## How It Works
 
-## Why It Exists
-
-Long research runs fail when evidence, interpretation, report prose, and process notes collapse into one undifferentiated pile. This skill keeps those layers separate:
-
-```text
-source discovery -> SourceGuard belief state and search actions
-messy evidence -> TraceGuard case work
-formal source support -> LogicGuard source and claim work
-process freshness -> FlowGuard closure work
-run-level lessons -> Research Investigation History Ledger
-```
-
-The result is a report workflow that can say what is supported, what is contradicted, what is only an official claim, what still needs evidence, and what should be downgraded before publication.
-
-## What It Orchestrates
-
-| Layer | Owned by | Used for |
-| --- | --- | --- |
-| Source discovery | SourceGuard | Search planning, candidate source records, source-role coverage, local/internal/public access gaps, counter-source and follow-up actions |
-| Messy case evidence | TraceGuard Case Library | Sources, evidence snippets, search directions, timelines, contradictions, gaps, and safe wording |
-| Durable source support | LogicGuard Source Library | Preserved sources, claim-to-source matrices, source roles, paragraph blueprints, and final claim audits |
-| Process and closure | FlowGuard | Stage order, changed artifacts, stale evidence, revalidation, skipped checks, and completion claims |
-| Run memory | Research Investigation History Ledger | Reusable workflow lessons, useful search directions, prior run summaries, and local artifact pointers |
-
-These stores are deliberately not merged. A saved source, a history record, a confidence score, or a hypothesis is not factual proof by itself.
-
-## Guard Stack Repositories
-
-This workflow depends on separate Guard-family skills and keeps their responsibilities distinct:
-
-| Sub-skill / tool | Repository | Role in this workflow |
-| --- | --- | --- |
-| SourceGuard | [liuyingxuvka/SourceGuard](https://github.com/liuyingxuvka/SourceGuard) | Plans source discovery, ranks search actions, records candidate sources, anchors, observations, and access gaps |
-| TraceGuard | [liuyingxuvka/TraceGuard](https://github.com/liuyingxuvka/TraceGuard) | Reconstructs event chains, storylines, contradictions, gaps, and claim boundaries from anchored evidence |
-| LogicGuard | [liuyingxuvka/LogicGuard](https://github.com/liuyingxuvka/LogicGuard) | Preserves durable sources and audits whether final claims follow from declared support |
-| FlowGuard | [liuyingxuvka/FlowGuard](https://github.com/liuyingxuvka/FlowGuard) | Checks process order, validation freshness, skipped checks, and completion claims |
-
-The Research Investigation History Ledger is local workflow memory inside this repository's skill contract, not a separate public sub-skill repository.
-
-## Main Workflow
+The core route is:
 
 ```text
-history preflight
--> goal and evidence policy
--> logic-lead map
--> SourceGuard source-discovery state
--> ranked source search and preservation
--> SourceGuard observation update
--> TraceGuard lead/event/evidence-chain model
--> SourceGuard gap-driven follow-up search
--> LogicGuard claim-to-source matrix
--> section and paragraph blueprint
--> citation-grounded report
--> LogicGuard final claim audit
+question
+-> source discovery plan
+-> evidence intake
+-> TraceGuard lead and effect chains
+-> LogicGuard claim and source-fit model
+-> Research Reasoning Atlas
 -> FlowGuard closure check
--> final report plus local history postflight
+-> report or briefing synthesis
+-> history ledger write-back
 ```
 
-The workflow continues until the requested claim strength is supported, important evidence is inaccessible, remaining gaps are explicitly accepted, or claims are downgraded to match the evidence.
+In plain language:
 
-## What The Final Report Should Contain
+- **SourceGuard** plans what evidence roles are needed, not just what keywords to search.
+- **TraceGuard** separates event facts, explanation, execution, outcome, counterevidence, and future triggers.
+- **LogicGuard** checks whether the written conclusion is structurally licensed by evidence, warrants, assumptions, limitations, and rebuttals.
+- **Research Reasoning Atlas** keeps alternatives, opposition, model lenses, confidence boundaries, and future falsifiers visible.
+- **FlowGuard** checks process order, stale evidence, skipped gates, and final completion claims.
+- **History ledger** preserves reusable investigation patterns without turning private working notes into public claims.
 
-- readable findings first, appendix material second;
-- inline citation markers for important claims;
-- source roles such as event fact, official claim, independent report, limiting evidence, expert analysis, historical background, or hypothesis;
-- visible "who says this" wording when a paragraph mixes direct facts, source claims, interpretation, and the report's inference;
-- completion or downgrade status for original-fact, counter/limiting, impact/execution, stakeholder, and future-trigger rounds;
-- a source-discovery coverage table that separates planned searches, completed searches, access gaps, and candidate-source downgrades;
-- a logic-lead coverage table;
-- an event/evidence timeline or storyline when relevant;
-- a claim-to-source matrix;
-- unresolved gaps and watchlist items;
-- TraceGuard, LogicGuard, FlowGuard, and History Ledger closure summaries.
+## What It Produces
+
+| Investigation need | Workflow output |
+| --- | --- |
+| Know what to search next | Source discovery plan and missing evidence roles |
+| Keep source facts separate | Source portfolio and key-claim ledger |
+| Reconstruct what happened | TraceGuard event, execution, outcome, and counter chains |
+| Avoid causal overclaim | Weakest-link and scope-transfer warnings |
+| Compare live explanations | Research Reasoning Atlas and conclusion tournament |
+| Write a report safely | Claim-source fit checks and artifact-native synthesis |
+| Know whether the task is done | Guard closure report with stale/skipped/missing rows |
+| Reuse lessons later | Local history ledger entries |
 
 ## Good Fit
 
-Use this skill when Codex needs to investigate a topic, reconstruct a timeline, separate findings from hypotheses, compare competing explanations, synthesize a sourced report, or reuse lessons from a previous investigation run.
+Use this workflow when:
 
-It is especially useful when the work needs more than a single answer pass: follow-up searches, contradictions, source promotion, report structure, citation placement, and final claim audit all matter.
+- the answer depends on source quality, source role, timing, or missing counterevidence;
+- the claim involves causality, implementation, outcome, scope transfer, or stakeholder effect;
+- the final output is a report, briefing, memo, research note, or structured investigation summary;
+- several Guard-family tools must coordinate without losing evidence boundaries;
+- you need a reusable record of how the investigation was done.
 
 ## Not A Fit
 
-This repository does not provide a UI, database server, crawler, truth oracle, official PSL runtime, or combined all-in-one research engine. It also does not replace SourceGuard, TraceGuard, LogicGuard, or FlowGuard. The skill is a thin orchestration layer over those existing systems.
+Do not use it for:
+
+- quick factual lookups;
+- casual summaries where source roles and claim strength do not matter;
+- private or access-gated claims that cannot be checked and should not be inferred;
+- existing thesis or paper revision that needs DOCX editing and marked prose integration. Use `academic-thesis-revision-workflow` for that upper-level route.
 
 ## Quick Start
 
-Install the Codex skill from this repository path:
+Install the skill folder into your Codex skills directory:
 
 ```powershell
-python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
-  --repo liuyingxuvka/research-investigation-workflow `
-  --path skills/research-investigation-workflow
+Copy-Item -Recurse -Force .\skills\research-investigation-workflow "$env:USERPROFILE\.codex\skills\research-investigation-workflow"
 ```
 
-Then ask Codex to use the skill for a substantive investigation:
+Run representative closure and source checks:
 
-```text
-Use research-investigation-workflow to investigate this topic and produce a sourced report.
+```powershell
+python .\skills\research-investigation-workflow\scripts\source_portfolio_check.py --input .\skills\research-investigation-workflow\references\templates\source_portfolio_template.yaml
+python .\skills\research-investigation-workflow\scripts\key_claim_ledger_check.py --input .\skills\research-investigation-workflow\references\templates\key_claim_ledger_template.yaml
+python .\skills\research-investigation-workflow\scripts\research_closure_check.py --ledger .\skills\research-investigation-workflow\references\templates\key_claim_ledger_template.yaml --json
 ```
 
-The skill will read its reference contracts under `skills/research-investigation-workflow/references/` and route work to SourceGuard, TraceGuard, LogicGuard, and FlowGuard as needed.
+The exact investigation will usually create its own source portfolio, trace rows, claim ledger, and final artifact plan. The templates are starting points, not proof.
 
-## Public Boundary
+## Relationship To The Guard Stack
 
-This repository contains the skill instructions, reference contracts, OpenSpec change records, and FlowGuard implementation evidence needed to maintain the workflow. It intentionally excludes local investigation outputs.
-
-Do not commit generated reports, TraceGuard cases, LogicGuard source libraries, Research Investigation History Ledger records, local notes, credentials, or machine-specific configuration unless a separate sanitized sample is explicitly approved.
+| Tool | Role in this workflow |
+| --- | --- |
+| SourceGuard | Plans source discovery, evidence roles, access gaps, and candidate source actions |
+| TraceGuard | Reconstructs event, execution, outcome, causal, counter, and effect chains |
+| LogicGuard | Audits claim support, source fit, rebuttals, assumptions, and final wording strength |
+| FlowGuard | Checks process gates, stale evidence, skipped checks, and final closure claims |
+| Academic Thesis Revision Workflow | Owns existing thesis/paper revision when DOCX edits and academic prose integration are required |
 
 ## Repository Layout
 
 ```text
-skills/research-investigation-workflow/  Installable Codex skill source
-docs/                                    Planning notes and Guard-family basis
-openspec/                                Change proposals, specs, and task records
-.flowguard/                              Local FlowGuard models and adoption log
-assets/readme-hero/                      README concept hero image and design notes
-VERSION                                  Current public version
-CHANGELOG.md                            Release history
+skills/research-investigation-workflow/     Installable Codex skill
+skills/.../references/                      Workflow, source, trace, atlas, and output contracts
+skills/.../references/templates/            Source portfolio, key-claim, and effect-chain templates
+skills/.../scripts/                         Source, claim, role, and closure validators
+docs/                                       Guard-family basis, roadmap, history, and adoption notes
+openspec/                                   Change proposals and specs used to evolve the workflow
+assets/readme-hero/                         README concept hero assets
+VERSION                                     Current public version
+CHANGELOG.md                                Release history
 ```
+
+## Public Boundary
+
+This repository contains the public workflow, templates, scripts, docs, and skill material.
+
+It does not contain private investigation sources, confidential reports, personal notes, credentials, paid database exports, live source portfolios, local case libraries, or real history-ledger entries. The workflow can say that evidence is missing, partial, access-gated, contradicted, or not enough for a conclusion. It must not invent facts or convert a failed search into proof that something did not happen.
+
+## License
+
+No standalone `LICENSE` file is present in this repository snapshot. Add one before making a strong public reuse or redistribution claim.
 
 ---
 
-# Research Investigation Workflow 中文镜像
+# Research Investigation Workflow 中文说明
 
-- **当前版本：** `v0.4.4`
-- **形态：** Codex skill 和 reference workflow，不是独立 app
-- **Guard stack：** SourceGuard、TraceGuard、LogicGuard、FlowGuard 和本地 Research Investigation History Ledger
+| 当前版本 | Skill | 运行形态 | 许可证 |
+| --- | --- | --- | --- |
+| `v0.4.4` | `research-investigation-workflow` | Codex skill 仓库 | MIT |
 
-Research Investigation Workflow 是一个用于多轮调查研究的 Codex skill。它不新造一套推理引擎，而是编排已有 Guard-family 工作流：SourceGuard 负责规划证据来源发现和访问缺口，TraceGuard 负责把证据重建成时间线和故事线，LogicGuard 负责保存来源并检查结论是否被结构化支持，FlowGuard 负责让流程顺序、证据新鲜度和完成声明可审计。
+## 它是什么
 
-核心规则是：调查深度不按来源数量或浅/中/深档位衡量，而按关键逻辑线索和证据链是否被追踪、限制、反驳、补证或降级来衡量。
+Research Investigation Workflow 是一个用于深度、多轮调查研究的 Codex skill。
 
-`v0.4.4` 增加了子 Guard 路线的完成状态账本。最终研究结论必须跟随最弱的关键未解决证据行，而不是跟随看起来最完整的一段总结。
+它适合“快速搜索总结不够”的问题：政策传闻、技术说法、竞品信号、事故链、研究线索、来源冲突、因果判断、市场或利益相关方影响，以及需要写成报告级结论的调查。
 
-`v0.4.3` 增加了 Guard closure helper，会把 source audit、source-role coverage、source portfolio、key-claim ledger、claim-support fit、stale evidence、skipped checks 和 next actions 聚合成一个报告。这样研究任务不会因为某一个 Guard 做了局部 pass 就提前停下。
-
-`v0.4.2` 强化了 thesis routing 边界。已有 thesis、dissertation 或 paper 如果需要父子结构支撑检查、后文消费映射、结论回收或 structural contribution graph 闭合，应交给 `academic-thesis-revision-workflow`；本 workflow 仍然可以给它提供证据发现、TraceGuard case、来源 registry 和 Research Reasoning Atlas 输入。
-
-`v0.4.1` 增加了到 `academic-thesis-revision-workflow` 的明确分流：当用户要修改已有 thesis、dissertation 或 paper，并且需要 DOCX 编辑、可见修改痕迹、原文改写、章节/段落修复时，应由新的论文修订上层技能负责。
-
-`v0.4.0` 强化了 substantive investigation 的分层证据契约：workflow 现在要求 source portfolio plan、key-claim/key-number ledger、transmission/effect chain、semantic source-fit check，并要求 TraceGuard/LogicGuard 深入到重要 lead、章节、段落、slide 或 artifact unit 后，才能给出强结论措辞。
-
-`v0.3.0` 增加了通用 Research Reasoning Atlas 阶段，用来管理 branch tree、debate matrix、alternative explanation、confounder ledger、model-lens selection、expert stance map、causal-chain question、counterfactual trace、conclusion tournament 和 future falsifier。
-
-`v0.2.1` 强化了 Guard stack 之间的最终产物契约：workflow 会先记录用户要的最终产物类型，建立 research plan card，每轮证据工作后重新规划，并把事实、官方说法、推论和缺口这些标签作为内部覆盖义务，而不是强迫最终正文写成诊断标题。
-
-`v0.2.0` 把 SourceGuard 纳入默认重型调查编排：先建立来源发现状态，排序公开/本地/内部/反证/执行证据的搜索动作，记录搜索观察和访问缺口，再把可用材料交给 TraceGuard 与 LogicGuard。缺来源的问题会回流到 SourceGuard，而不是直接写成结论。
+它协调 SourceGuard、TraceGuard、LogicGuard、FlowGuard 和本地 history ledger。它把来源发现、事件事实、行动方说法、解释、因果链、反证、报告结构和最终措辞分开，避免 agent 太早把局部证据写成确定故事。
 
 ## 为什么需要它
 
-长研究任务容易把证据、解释、报告正文和流程笔记混在一起。这个 skill 把这些层次拆开：
+很多调查失败，不是因为没有信息，而是因为层级混在一起：
+
+1. 来源只能证明发生了某事，报告却写成它导致了某个结果。
+2. 公告被当成实施证据。
+3. 局部证据被扩大成行业或全国范围结论。
+4. 一个顺畅故事掩盖了仍然活着的替代解释。
+5. 报告有引用，但来源角色支撑不了那句具体说法。
+6. 搜到一些材料后，agent 没有继续查反证。
+7. 有用的调查经验没有进入可复用 history。
+
+这个 workflow 就是为了防止这些层级坍缩。
+
+## 它怎么工作
+
+核心路线是：
 
 ```text
-来源发现 -> SourceGuard belief state and search actions
-杂乱证据 -> TraceGuard case work
-正式来源支持 -> LogicGuard source and claim work
-流程新鲜度 -> FlowGuard closure work
-运行经验 -> Research Investigation History Ledger
-```
-
-这样最终报告可以清楚说明哪些结论被支持，哪些被反驳，哪些只是官方说法，哪些仍然缺证据，以及哪些表达必须在发布前降级。
-
-## 它编排什么
-
-| 层次 | 归属 | 用途 |
-| --- | --- | --- |
-| 来源发现 | SourceGuard | 搜索规划、候选来源记录、来源角色覆盖、本地/内部/公开访问缺口、反证和后续搜索动作 |
-| 杂乱 case 证据 | TraceGuard Case Library | 来源、证据片段、搜索方向、时间线、矛盾、缺口和安全表述 |
-| 稳定来源支持 | LogicGuard Source Library | 保存来源、claim-to-source matrix、来源角色、段落蓝图和最终 claim audit |
-| 流程与闭环 | FlowGuard | 阶段顺序、变更过的 artifact、陈旧证据、重验证、跳过检查和完成声明 |
-| 运行记忆 | Research Investigation History Ledger | 可复用的工作流经验、搜索方向、历史 run 摘要和本地 artifact 指针 |
-
-这些存储边界不能合并。保存过的来源、历史记录、置信度分数或假设，本身都不是事实证明。
-
-## Guard Stack 仓库
-
-这个 workflow 依赖几个相互独立的 Guard-family 技能，并且保持它们的职责边界：
-
-| 子技能 / 工具 | GitHub 仓库 | 在本 workflow 中的职责 |
-| --- | --- | --- |
-| SourceGuard | [liuyingxuvka/SourceGuard](https://github.com/liuyingxuvka/SourceGuard) | 规划来源发现、排序搜索动作、记录候选来源、锚点、观察和访问缺口 |
-| TraceGuard | [liuyingxuvka/TraceGuard](https://github.com/liuyingxuvka/TraceGuard) | 基于已锚定证据重建事件链、故事线、矛盾、缺口和 claim boundary |
-| LogicGuard | [liuyingxuvka/LogicGuard](https://github.com/liuyingxuvka/LogicGuard) | 保存稳定来源，并审核最终 claim 是否能从声明的支持中推出 |
-| FlowGuard | [liuyingxuvka/FlowGuard](https://github.com/liuyingxuvka/FlowGuard) | 检查流程顺序、验证新鲜度、跳过检查和完成声明 |
-
-Research Investigation History Ledger 是这个仓库技能合同里的本地 workflow 记忆，不是单独的公开子技能仓库。
-
-## 主流程
-
-```text
-history preflight
--> 目标和证据策略
--> logic-lead map
--> SourceGuard 来源发现状态
--> 按价值排序搜索和保存来源
--> SourceGuard 搜索观察写回
--> TraceGuard lead/event/evidence-chain model
--> SourceGuard 按缺口继续补证
--> LogicGuard claim-to-source matrix
--> 章节和段落蓝图
--> 带正文引用的报告
--> LogicGuard final claim audit
+question
+-> source discovery plan
+-> evidence intake
+-> TraceGuard lead and effect chains
+-> LogicGuard claim and source-fit model
+-> Research Reasoning Atlas
 -> FlowGuard closure check
--> 最终报告和本地 history postflight
+-> report or briefing synthesis
+-> history ledger write-back
 ```
 
-流程会一直推进到：目标结论强度已有足够支持、关键证据无法取得、剩余缺口被明确接受，或结论被降级到证据能够支持的范围。
+翻成人话：
 
-## 最终报告应该包含什么
+- **SourceGuard** 先规划需要哪些证据角色，而不是只列搜索关键词。
+- **TraceGuard** 区分事件事实、解释、执行、结果、反证和未来触发条件。
+- **LogicGuard** 检查最终结论是否真的被证据、warrant、assumption、limitation 和 rebuttal 支撑。
+- **Research Reasoning Atlas** 保留替代解释、反方论证、模型视角、信心边界和未来证伪点。
+- **FlowGuard** 检查流程顺序、旧证据、跳过的门槛和最终完成声明。
+- **History ledger** 保存可复用调查经验，但不把私人工作记录写成公开结论。
 
-- 先给可读主报告，再给 appendix；
-- 重要 claim 有正文引用标记；
-- 标明来源角色，例如 event fact、official claim、independent report、limiting evidence、expert analysis、historical background 或 hypothesis；
-- 段落里混合事实、来源说法、解释和推论时，要能看出“是谁说的”和“我们推到哪里为止”；
-- 标明原始事实、反证/限制、影响/执行、利益相关方和未来触发点五轮是否完成，未完成时降级闭合；
-- source-discovery coverage table，区分计划搜索、完成搜索、访问缺口和候选来源降级；
-- logic-lead coverage table；
-- 相关的事件/证据时间线或故事线；
-- claim-to-source matrix；
-- unresolved gaps 和 watchlist；
-- TraceGuard、LogicGuard、FlowGuard、History Ledger 的闭环摘要。
+## 它会产出什么
+
+| 调查需求 | Workflow 产出 |
+| --- | --- |
+| 知道下一步该搜什么 | source discovery plan 和 missing evidence roles |
+| 区分来源事实 | source portfolio 和 key-claim ledger |
+| 重建发生了什么 | TraceGuard event / execution / outcome / counter chains |
+| 避免因果过度声明 | weakest-link 和 scope-transfer warning |
+| 比较多个解释 | Research Reasoning Atlas 和 conclusion tournament |
+| 安全写报告 | claim-source fit check 和 artifact-native synthesis |
+| 判断任务是否完成 | Guard closure report |
+| 下次复用经验 | local history ledger entry |
 
 ## 适合什么任务
 
-当 Codex 需要调查一个主题、重建时间线、区分发现和假设、比较不同解释、合成有来源的报告，或复用过去类似调查的经验时，可以使用这个 skill。
+适合：
 
-它尤其适合不是一次回答就能结束的工作：后续搜索、矛盾处理、来源升级、报告结构、正文引用位置和最终 claim audit 都会影响结果质量。
+- 答案取决于来源质量、来源角色、时间或反证；
+- claim 涉及因果、实施、结果、范围迁移或 stakeholder effect；
+- 最终产物是 report、briefing、memo、research note 或结构化调查总结；
+- 多个 Guard-family 工具需要协作；
+- 你需要保留调查过程的可复用记录。
 
-## 不适合什么任务
+不适合：
 
-这个仓库不提供 UI、数据库服务器、爬虫、事实真理机、官方 PSL runtime，也不是把所有功能合并到一起的新研究引擎。它只是一个薄编排层，不替代 SourceGuard、TraceGuard、LogicGuard 或 FlowGuard。
+- 简单事实查询；
+- 不需要来源角色和 claim strength 的普通总结；
+- 无法检查、也不应该推断的私有或权限受限 claim；
+- 需要 DOCX 修改和学术正文融合的已有 thesis/paper 修订。这类工作交给 `academic-thesis-revision-workflow`。
 
 ## 快速开始
 
-从这个仓库路径安装 Codex skill：
+把 skill 文件夹复制到 Codex skills 目录：
 
 ```powershell
-python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
-  --repo liuyingxuvka/research-investigation-workflow `
-  --path skills/research-investigation-workflow
+Copy-Item -Recurse -Force .\skills\research-investigation-workflow "$env:USERPROFILE\.codex\skills\research-investigation-workflow"
 ```
 
-然后让 Codex 用它处理一个实质性调查任务：
+运行代表性检查：
 
-```text
-Use research-investigation-workflow to investigate this topic and produce a sourced report.
+```powershell
+python .\skills\research-investigation-workflow\scripts\source_portfolio_check.py --input .\skills\research-investigation-workflow\references\templates\source_portfolio_template.yaml
+python .\skills\research-investigation-workflow\scripts\key_claim_ledger_check.py --input .\skills\research-investigation-workflow\references\templates\key_claim_ledger_template.yaml
+python .\skills\research-investigation-workflow\scripts\research_closure_check.py --ledger .\skills\research-investigation-workflow\references\templates\key_claim_ledger_template.yaml --json
 ```
 
-skill 会读取 `skills/research-investigation-workflow/references/` 下的 reference contracts，并按需要路由到 SourceGuard、TraceGuard、LogicGuard 和 FlowGuard。
+真实调查通常会生成自己的 source portfolio、trace rows、claim ledger 和 final artifact plan。模板只是起点，不是证据。
 
-## 公开边界
+## Guard Stack 关系
 
-这个仓库只包含维护 workflow 所需的技能说明、reference contracts、OpenSpec 记录和 FlowGuard 实施证据。它有意不包含本地调查输出。
-
-不要提交生成的报告、TraceGuard cases、LogicGuard source libraries、Research Investigation History Ledger records、本地笔记、凭据或机器专属配置，除非用户明确批准发布一个已经脱敏的样例。
+| 工具 | 在本 workflow 里的角色 |
+| --- | --- |
+| SourceGuard | 规划来源发现、证据角色、访问缺口和候选搜索动作 |
+| TraceGuard | 重建事件、执行、结果、因果、反证和影响链 |
+| LogicGuard | 审查 claim 支撑、source fit、反驳、假设和最终措辞强度 |
+| FlowGuard | 检查流程门槛、旧证据、跳过检查和最终 closure claim |
+| Academic Thesis Revision Workflow | 当已有 thesis/paper 需要 DOCX 编辑和学术正文融合时接管 |
 
 ## 仓库结构
 
 ```text
-skills/research-investigation-workflow/  可安装的 Codex skill 源文件
-docs/                                    规划说明和 Guard-family 基础
-openspec/                                change proposal、spec 和 task 记录
-.flowguard/                              本地 FlowGuard model 和 adoption log
-assets/readme-hero/                      README concept hero 图和设计说明
-VERSION                                  当前公开版本
-CHANGELOG.md                            发布历史
+skills/research-investigation-workflow/     可安装 Codex skill
+skills/.../references/                      workflow、source、trace、atlas 和 output contracts
+skills/.../references/templates/            source portfolio、key-claim 和 effect-chain 模板
+skills/.../scripts/                         source、claim、role 和 closure 验证脚本
+docs/                                       Guard-family basis、roadmap、history 和 adoption notes
+openspec/                                   workflow 演进 proposal/spec
+assets/readme-hero/                         README hero 素材
+VERSION                                     当前公开版本
+CHANGELOG.md                                发布历史
 ```
+
+## 公开边界
+
+这个仓库包含公开 workflow、模板、脚本、文档和 skill material。
+
+它不包含私人调查来源、机密报告、个人笔记、credential、付费数据库导出、真实 source portfolio、本地 case library 或真实 history-ledger entry。workflow 可以说明证据缺失、部分支持、权限受限、互相矛盾或不足以支持结论。它不能编造事实，也不能把没有搜到结果当成“事情不存在”的证明。
+
+## 许可证
+
+当前仓库快照中没有独立 `LICENSE` 文件。公开声称可复用或可再分发之前，应先补上明确许可证。

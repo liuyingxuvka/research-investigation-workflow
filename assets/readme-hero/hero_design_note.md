@@ -18,7 +18,7 @@ Public sources, local notes, and evidence cards move through TraceGuard lead rec
 
 ## Hero Tagline
 
-A Codex skill for deep multi-round investigations with separated evidence, reasoning, and process guards.
+A Codex skill for deep investigations where evidence, traces, reasoning, and final wording must stay separate.
 
 ## Visual Concept
 
