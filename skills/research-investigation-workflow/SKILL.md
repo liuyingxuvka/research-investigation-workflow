@@ -79,7 +79,7 @@ The final artifact must include inline citation markers for important claims and
 For Markdown final artifacts that use compact `[S#]` source markers, run the citation-marker helper when available before final delivery:
 
 ```powershell
-python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\audit_markdown_sources.py <artifact.md> --json
+python <local-path> <artifact.md> --json
 ```
 
 If the helper reports undefined citation markers, duplicate source ids, or another hard error, repair the artifact or downgrade closure. Warnings such as unused source entries may remain only when they are explicitly appendix-only, method-only, or background-only.
@@ -87,7 +87,7 @@ If the helper reports undefined citation markers, duplicate source ids, or anoth
 For source-role coverage ledgers written as JSON or YAML, run the coverage helper when available before claiming a complete or deep investigation:
 
 ```powershell
-python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\source_role_coverage_check.py <coverage.json-or-yaml> --json
+python <local-path> <coverage.json-or-yaml> --json
 ```
 
 If required roles are missing, not run, or gap-labeled, return to SourceGuard for targeted discovery or downgrade the claim strength.
@@ -95,9 +95,9 @@ If required roles are missing, not run, or gap-labeled, return to SourceGuard fo
 When source portfolio, key-claim, or semantic-fit ledgers exist, run the corresponding helpers when available:
 
 ```powershell
-python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\source_portfolio_check.py <portfolio.json-or-yaml> --json
-python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\key_claim_ledger_check.py <ledger.json-or-yaml> --json
-python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\claim_support_fit_check.py <fit-ledger.json-or-yaml> --json
+python <local-path> <portfolio.json-or-yaml> --json
+python <local-path> <ledger.json-or-yaml> --json
+python <local-path> <fit-ledger.json-or-yaml> --json
 ```
 
 Helper checks catch structural gaps only. LogicGuard still owns exact semantic review of whether a cited source supports the final wording, scope, tense, causality, execution, outcome, price layer, or forecast claim.
@@ -106,7 +106,7 @@ Before claiming final research closure, run the aggregate closure helper when
 available:
 
 ```powershell
-python %USERPROFILE%\\.codex\\skills\research-investigation-workflow\scripts\research_closure_check.py --ledger <research-run-ledger.json> --artifact <artifact.md> --coverage <coverage.json-or-yaml> --portfolio <portfolio.json-or-yaml> --key-claim-ledger <ledger.json-or-yaml> --fit-ledger <fit-ledger.json-or-yaml> --json
+python <local-path> --ledger <research-run-ledger.json> --artifact <artifact.md> --coverage <coverage.json-or-yaml> --portfolio <portfolio.json-or-yaml> --key-claim-ledger <ledger.json-or-yaml> --fit-ledger <fit-ledger.json-or-yaml> --json
 ```
 
 The helper returns a Guard closure report with `closure_status`, `findings`,
@@ -164,3 +164,47 @@ Before final delivery, run or simulate a final research quality gate:
 - Closure status matches the weakest important unresolved evidence role, stale check, or citation audit result.
 
 If closure is partial or blocked, say exactly what is missing and which claim strength remains supported.
+
+
+<!-- BEGIN SKILLGUARD CONTRACT LAYER -->
+## Purpose
+
+Use this skill for its declared academic_writing workflow while binding each run to a route, evidence, checks, and a bounded completion claim.
+
+## Entrypoint Scope
+
+The entrypoint covers the installed research-investigation-workflow skill and the local materials explicitly routed by its instructions. It does not expand to unrelated repositories, private files, external services, publication, or release claims unless the user request and skill workflow explicitly include them.
+
+## Local Material Routing
+
+Resolve local materials from the active workspace, this skill directory, user-provided files, or explicitly configured project paths. Treat private machine paths as local-only inputs and keep public-facing instructions portable.
+
+## Entrypoint Acceptance Map
+
+A valid run selects one declared route, follows the phase order, records direct evidence, runs required checks, reports blockers and failures, and closes only inside the claim boundary. Available routes: source intake, structure or story plan, artifact revision, closure.
+
+## Use When
+
+Use when the user request matches the research-investigation-workflow activation boundary and needs this skill's governed workflow, source material, checks, or handoff behavior.
+
+## Do Not Use When
+
+Do not use when the task is outside this skill's domain, when required local materials are unavailable, when another more specific skill owns the request, or when the user asks only for a tiny direct answer.
+
+## Required Workflow
+
+Select the route, inspect local materials, perform the work in phase order, collect direct evidence, run the required checks, fix failures, and only then report progress or completion.
+
+## Hard Gates
+
+Do not skip phases, do not replace required evidence with prose, do not treat stale reports as current, do not weaken validation to pass, and do not claim completion when blockers remain.
+
+## Output Requirements
+
+When reporting, include evidence, failures, blockers, skipped_checks with reasons, residual_risk, and claim_boundary. State clearly what was checked, what was not checked, and what remains blocked or uncertain.
+
+## SkillGuard Maintenance
+
+Keep the `.skillguard` control root, work contract, check manifest, check scripts, evidence records, and progress ledger current. Re-run SkillGuard checks after changing this entrypoint, route behavior, evidence rules, or closure wording.
+
+<!-- END SKILLGUARD CONTRACT LAYER -->
