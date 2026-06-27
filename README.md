@@ -12,7 +12,7 @@
 
 | Current Version | Skill | Runtime | License |
 | --- | --- | --- | --- |
-| `v0.4.4` | `research-investigation-workflow` | Codex skill repository | MIT |
+| `v0.4.5` | `research-investigation-workflow` | Codex skill repository | MIT |
 
 English comes first. A Chinese mirror follows below.
 
@@ -153,7 +153,7 @@ No standalone `LICENSE` file is present in this repository snapshot. Add one bef
 
 | 当前版本 | Skill | 运行形态 | 许可证 |
 | --- | --- | --- | --- |
-| `v0.4.4` | `research-investigation-workflow` | Codex skill 仓库 | MIT |
+| `v0.4.5` | `research-investigation-workflow` | Codex skill 仓库 | MIT |
 
 ## 它是什么
 
