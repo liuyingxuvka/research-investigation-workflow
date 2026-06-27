@@ -2,16 +2,75 @@
   "schema_version": "skillguard.work_contract.v1",
   "skill_id": "research-investigation-workflow",
   "target_path": ".codex/skills/research-investigation-workflow",
-  "contract_version": "2",
+  "contract_version": "3",
+  "integration_mode": "hybrid-extension",
+  "native_route_owner": "Target writing/research skill workflow and any referenced Guard-family checks",
+  "native_route_bindings": [
+    {
+      "binding_id": "source_intake_native_route",
+      "native_route_id": "academic_writing.source_intake",
+      "source": "Target writing/research skill workflow and any referenced Guard-family checks",
+      "required_before_closure": true
+    },
+    {
+      "binding_id": "structure_or_story_plan_native_route",
+      "native_route_id": "academic_writing.structure_or_story_plan",
+      "source": "Target writing/research skill workflow and any referenced Guard-family checks",
+      "required_before_closure": true
+    },
+    {
+      "binding_id": "artifact_revision_native_route",
+      "native_route_id": "academic_writing.artifact_revision",
+      "source": "Target writing/research skill workflow and any referenced Guard-family checks",
+      "required_before_closure": true
+    },
+    {
+      "binding_id": "closure_native_route",
+      "native_route_id": "academic_writing.closure",
+      "source": "Target writing/research skill workflow and any referenced Guard-family checks",
+      "required_before_closure": true
+    }
+  ],
+  "native_check_bindings": [
+    {
+      "binding_id": "source_or_structure_review_native_check",
+      "native_check_id": "source_or_structure_review",
+      "evidence_source": "Target writing/research skill workflow and any referenced Guard-family checks",
+      "required": true
+    },
+    {
+      "binding_id": "claim_boundary_review_native_check",
+      "native_check_id": "claim_boundary_review",
+      "evidence_source": "Target writing/research skill workflow and any referenced Guard-family checks",
+      "required": true
+    }
+  ],
+  "skillguard_role": "hybrid_contract_executor",
+  "may_define_parallel_execution_route": false,
+  "may_define_skillguard_runtime_route": false,
+  "integration_claim_boundary": "SkillGuard executes missing contract gates around the native workflow owned by Target writing/research skill workflow and any referenced Guard-family checks only where evidence, freshness, quality-floor, or closure gates are missing. It must not replace native route/check ownership or create a parallel route map.",
   "routes": [
     {
       "route_id": "source_intake",
-      "summary": "Use the source intake route for academic_writing work when the task wording and local evidence match this path.",
+      "summary": "SkillGuard contract-executor extension for the target skill's existing source intake workflow surface. This runs missing evidence, check, and closure gates without replacing the target skill's own workflow route.",
+      "route_source": "hybrid_extension",
       "activation_keywords": [
-        "research-investigation-workflow",
+        "source_intake",
         "source intake",
-        "academic_writing"
+        "source-intake",
+        "source",
+        "来源",
+        "资料",
+        "材料",
+        "intake",
+        "入口",
+        "接入",
+        "开始",
+        "盘点",
+        "准备"
       ],
+      "default_route": true,
+      "route_priority": 0,
       "do_not_use_when": [
         "The task is outside this skill's activation boundary."
       ],
@@ -25,12 +84,21 @@
     },
     {
       "route_id": "structure_or_story_plan",
-      "summary": "Use the structure or story plan route for academic_writing work when the task wording and local evidence match this path.",
+      "summary": "SkillGuard contract-executor extension for the target skill's existing structure or story plan workflow surface. This runs missing evidence, check, and closure gates without replacing the target skill's own workflow route.",
+      "route_source": "hybrid_extension",
       "activation_keywords": [
-        "research-investigation-workflow",
+        "structure_or_story_plan",
         "structure or story plan",
-        "academic_writing"
+        "structure-or-story-plan",
+        "structure",
+        "or",
+        "story",
+        "plan",
+        "计划",
+        "方案"
       ],
+      "default_route": false,
+      "route_priority": 1,
       "do_not_use_when": [
         "The task is outside this skill's activation boundary."
       ],
@@ -44,12 +112,20 @@
     },
     {
       "route_id": "artifact_revision",
-      "summary": "Use the artifact revision route for academic_writing work when the task wording and local evidence match this path.",
+      "summary": "SkillGuard contract-executor extension for the target skill's existing artifact revision workflow surface. This runs missing evidence, check, and closure gates without replacing the target skill's own workflow route.",
+      "route_source": "hybrid_extension",
       "activation_keywords": [
-        "research-investigation-workflow",
+        "artifact_revision",
         "artifact revision",
-        "academic_writing"
+        "artifact-revision",
+        "artifact",
+        "产物",
+        "文档",
+        "资产",
+        "revision"
       ],
+      "default_route": false,
+      "route_priority": 2,
       "do_not_use_when": [
         "The task is outside this skill's activation boundary."
       ],
@@ -63,12 +139,19 @@
     },
     {
       "route_id": "closure",
-      "summary": "Use the closure route for academic_writing work when the task wording and local evidence match this path.",
+      "summary": "SkillGuard contract-executor extension for the target skill's existing closure workflow surface. This runs missing evidence, check, and closure gates without replacing the target skill's own workflow route.",
+      "route_source": "hybrid_extension",
       "activation_keywords": [
-        "research-investigation-workflow",
         "closure",
-        "academic_writing"
+        "close",
+        "收尾",
+        "闭环",
+        "完成",
+        "归档",
+        "发布"
       ],
+      "default_route": false,
+      "route_priority": 3,
       "do_not_use_when": [
         "The task is outside this skill's activation boundary."
       ],
@@ -285,7 +368,7 @@
       "binding_id": "target_skill_prompt",
       "path": "SKILL.md",
       "stales": [
-        "route_selection",
+        "overlay_selection",
         "run_record",
         "closure_report"
       ]
@@ -294,12 +377,12 @@
       "binding_id": "work_contract",
       "path": ".skillguard/work-contract.json",
       "stales": [
-        "route_selection",
+        "overlay_selection",
         "run_record",
         "closure_report"
       ]
     }
   ],
-  "claim_boundary": "This work contract governs only the declared target skill and local run evidence. It does not prove external services, package publication, GitHub release readiness, or future AI correctness.",
-  "contract_hash": "62EAE7EBC151E27CDCDB49305186A6369010F12319FE7B04CAD8204DF89EEB74"
+  "claim_boundary": "This work contract governs only SkillGuard overlay evidence for the declared target skill. It does not replace the target skill's native router/check system and does not prove external services, package publication, GitHub release readiness, or future AI correctness.",
+  "contract_hash": "156297C46C131BF29941C7DE3249C122CB5B054E289D92527E51281E5FA9B47F"
 }
